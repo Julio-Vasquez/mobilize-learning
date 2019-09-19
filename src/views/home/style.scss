@@ -1,0 +1,13 @@
+#cont{
+  background: url(./../../assets/images/signals/01.jpg);
+  background-size: 100% 100%;
+  .content{
+    min-height: 79vh;
+    max-height: 1079px;
+    #dintext, .typed-cursor{
+      font-size: 50px;
+      display: inline;
+    }
+  }
+
+}

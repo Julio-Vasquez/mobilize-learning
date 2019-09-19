@@ -1,0 +1,37 @@
+.titlemain{
+  color: gold;
+}
+a:hover .titlemain{
+  color: red;
+}
+.nbc{
+  overflow: hidden;
+  background-color: rgba(0, 0, 0, 0.377);
+  color: rgba(255, 255, 255, 0.6);
+}
+
+nav{
+  height: 100px;
+  .navbar-brand, .navbar-collapse{
+    margin-left: 10%;
+    margin-right: 15%;
+    strong a{
+      color: red;
+    }
+  }
+  #navbarCollapse3 ul li{
+    a{
+      font-size: 16px;
+      color: white;
+      font-weight: 400;
+      font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif
+    }
+    a:hover{
+      color: gold;
+    }
+  } 
+}
+
+.nav-item a:hover{
+  color: gold;
+}
