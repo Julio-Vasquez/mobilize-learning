@@ -10,16 +10,19 @@ export default class Home extends Component{
 
   constructor(props){
     super(props);
-    this.state = {
-      text : {}
-    };
+    this.state ={};
   }
 
   componentDidMount(){
     const text = {
-      strings: ['test inicial', 'la test 2', ' test fianl'],
-      typeSpeed: 100,
-      backSpeed: 60,
+      strings: [
+        '¿No sabes nada acerca de señales de transito?',
+        '¿Mucho menos del comportamientos de movilidad?',
+        'Este es el lugar indicado!!',
+        '¿Qué estas esperando?'
+      ],
+      typeSpeed: 105,
+      backSpeed: 45,
       loop: true
     }
     new Typed('#dintext', text);
@@ -27,12 +30,12 @@ export default class Home extends Component{
 
 
   render(){
-
     return(
       <div id="cont">
         <NavBar />
-        <div className="content"><span id="dintext"></span></div>
-        
+        <div className="content">
+          <span id="dintext"></span>
+        </div>
         <Footer />
       </div>
     );

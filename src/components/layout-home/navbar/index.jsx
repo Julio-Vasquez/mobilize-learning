@@ -34,9 +34,6 @@ return(
             <MDBNavLink to="/about">About</MDBNavLink>
           </MDBNavItem>
           <MDBNavItem>
-            <MDBNavLink to="/information">Information</MDBNavLink>
-          </MDBNavItem>
-          <MDBNavItem>
             <MDBNavLink to="/contact">Contact</MDBNavLink>
           </MDBNavItem>
           <MDBNavItem active>

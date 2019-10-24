@@ -21,7 +21,7 @@ export default function Login(props){
       </div>
       <div className="main-agileinfo">
         <div className="wthree-form">
-          <h2>Fill out the form below to login</h2>
+          <h2>Rellene el siguiente formulario para iniciar sesión</h2>
           <form action="#" method="post">
             <div className="form-sub">
               <input type="text" name="Username" placeholder="Username " required="" />
