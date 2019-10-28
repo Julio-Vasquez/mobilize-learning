@@ -1,12 +1,21 @@
-p{
-  text-align: justify;
+p {
+    text-align: justify;
 }
-.footer-copyright .container-fluid a{
-  color: gold;
-  b{
-    color:red;
-  }
+
+.footer-copyright {
+    width: 100%;
+    .container-fluid {
+        height: 30px;
+        bottom: 0px;
+        a {
+            color: gold;
+            b {
+                color: red;
+            }
+        }
+    }
 }
-.bgfooter{
-  background-color: rgba(0, 0, 0, 0.410);
+
+.bgfooter {
+    background-color: rgba(0, 0, 0, 0.410);
 }

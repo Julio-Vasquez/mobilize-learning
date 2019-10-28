@@ -41,3 +41,5 @@ export default class Home extends Component{
     );
   }
 }
+
+//NO funciona la version responsive, letra muy grande e imagen no funciona bien! falta agregar mediaquery

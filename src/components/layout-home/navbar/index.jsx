@@ -8,7 +8,6 @@ MDBNavLink,
 MDBNavbarToggler,
 MDBCollapse
 } from "mdbreact";
-import { BrowserRouter as Router } from 'react-router-dom';
 import './style.scss';
 
 const NavBar = (props) => {
@@ -19,7 +18,7 @@ const toggleCollapse = ()=>{
 }
 
 return(
-  <Router>
+  <div className="containernav" id="navcolor">
     <MDBNavbar className="nbc" dark expand="md">
       <MDBNavbarBrand>
         <strong className="blue-text"><MDBNavLink to="/"><b className="titlemain">Mobilize</b> Learning</MDBNavLink></strong>
@@ -47,7 +46,7 @@ return(
         </MDBNavbarNav>
       </MDBCollapse>
     </MDBNavbar>
-  </Router>
+  </div>
   );
 }
 
