@@ -1,12 +1,14 @@
 p {
     text-align: justify;
 }
-
+footer{
+    height: 30px;
+    bottom: 0px;
+}
 .footer-copyright {
     width: 100%;
     .container-fluid {
-        height: 30px;
-        bottom: 0px;
+       
         a {
             color: gold;
             b {

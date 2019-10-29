@@ -1,13 +1,19 @@
 import React from 'react';
-import { BrowserRouter as Router, Route, Switch } from 'react-router-dom'
+import { BrowserRouter as Router, Route, Switch, Redirect } from 'react-router-dom';
 
 import { RouteAuth } from './../components/router/index';
 
-import Home from './home/index';
-import { About } from './about/about';
+import { NavBar } from './../components/layout-home/navbar/index';
+import { Footer } from './../components/layout-home/footer/index';
 
-import { Page404 }  from './../components/layout-home/404/index';
-import  Login from './../components/redux-form/login/index'
+import { Home } from './home/index';
+import { About } from './about/index';
+import { Contact } from './contact/index';
+import { SignUp } from './signup/index';
+import { Login } from './login/index';
+
+import { Page404 } from './../components/404/index';
+
 class Routes extends React.Component{
 
   constructor(props){
@@ -15,20 +21,22 @@ class Routes extends React.Component{
     this.state={};
   }
   render(){
-    const { auth } = this.props;
+    //const { auth } = this.props;
     return <Router>
-      <div>
+      <div className="Container">
+      <NavBar />
         {
-          //auth.rols ?
           <Switch className="h-100">
-              <Route exact path="/" component={Home} />
-              <RouteAuth path="/about" redirect="/" component={About} auth={true} />
-              <RouteAuth path="/login" redirect="/" component={Login} auth={true} />
-              <Route component={Page404} />
+            <Route exact path="/" component={Home} />
+            <RouteAuth path="/about" redirect="/" component={About} auth={true} />
+            <RouteAuth path="/contact" redirect="/" component={Contact} auth={true} />
+            <RouteAuth path="/signup" redirect="/" component={SignUp} auth={true} />
+            <RouteAuth path="/login" redirect="/" component={Login} auth={true} />
+            <Route path="/404" component={Page404} />
+            <Redirect to='/404' />
           </Switch>
-          //:
-          //<h1>... pailas papi </h1>
         }
+        <Footer />
       </div>
     </Router> 
   }
@@ -36,3 +44,8 @@ class Routes extends React.Component{
 }
 
 export default Routes;
+/*
+<Route render={
+              () =><Page404 path="/" text="Volver al inicio" />
+            } />
+*/

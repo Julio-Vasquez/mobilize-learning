@@ -5,9 +5,9 @@ import {
 } from "mdbreact";
 import './style.scss';
 
-const Footer = () => {
+export const Footer = () => {
   return(
-    <MDBFooter className="font-small pt-4 mt-4 footercolor">
+    <MDBFooter className=" footercolor">
       <div className="footer-copyright text-center py-3 bgfooter">
         <MDBContainer fluid>
           Copyright &copy; {new Date().getFullYear()} All Rights Reserved : <a href="/" className="footer-title"> <b>Mobilize</b> Learning</a>  
@@ -16,5 +16,3 @@ const Footer = () => {
     </MDBFooter>
   );
 }
-
-export default Footer;

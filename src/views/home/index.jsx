@@ -1,12 +1,10 @@
 import React, {Component} from 'react';
 import Typed from 'typed.js';
 
-import NavBar from './../../components/layout-home/navbar/index';
-import Footer from './../../components/layout-home/footer/index';
 
 import './style.scss';
 
-export default class Home extends Component{
+export  class Home extends Component{
 
   constructor(props){
     super(props);
@@ -28,16 +26,17 @@ export default class Home extends Component{
     new Typed('#dintext', text);
   }
 
+  componentWillMount(){
+    document.body.style.backgroundImage = "url(./../../assets/images/signals/01.jpg)";   
+  }
 
   render(){
     return(
-      <div id="cont">
-        <NavBar />
-        <div className="content">
-          <span id="dintext"></span>
-        </div>
-        <Footer />
+      <div id="conthome">
+      <div className="content">
+        <span id="dintext"></span>
       </div>
+    </div>
     );
   }
 }

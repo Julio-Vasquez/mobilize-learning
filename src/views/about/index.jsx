@@ -1,15 +1,21 @@
-import React from 'react';
+import React, {useEffect} from 'react';
 import { MDBCarousel, MDBContainer, MDBCarouselItem, MDBCarouselInner, MDBIcon, MDBMask } from 'mdbreact';
-import NavBar from './../../components/layout-home/navbar/index';
-import Footer from './../../components/layout-home/footer/index';
 
 import './style.scss';
 
 export const About = props =>{
+  useEffect(
+    ()=>{
+      document.body.style.backgroundImage = "url('https://images.pexels.com/photos/1367192/pexels-photo-1367192.jpeg')"
+      document.body.style.backgroundAttachment = "fixed";
+      document.body.style.backgroundRepeat = "no-repeat";
+      document.body.style.backgroundSize = "cover";
+    }
+  );
+
   return(
-    <div className="cont">
-      <NavBar id="navcolor" />
-      <section id="testimonials" className="text-center py-5 wow fadeIn">
+      <div className="contenido">
+        <section id="testimonials" className="text-center py-5 wow fadeIn">
         <MDBContainer>
           <h2 className="h1-responsive font-weight-bold mb-5">About Us</h2>
           <MDBCarousel id="carousel-example-1" 
@@ -110,8 +116,6 @@ export const About = props =>{
           </MDBCarousel>
         </MDBContainer>
       </section>
-      <Footer />
-    </div>
-    
+      </div>
   );
 }

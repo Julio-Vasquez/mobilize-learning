@@ -1,8 +1,10 @@
 @import url('https://fonts.googleapis.com/css?family=Roboto+Slab&display=swap');
-#cont {
-    background: url(./../../assets/images/signals/01.jpg);
-    background-size: 100%;
+
+#conthome {
+    background-image: url(./../../assets/images/signals/01.jpg);
+    background-size: cover;
     background-repeat: no-repeat;
+    background-attachment: fixed;
     .content {
         min-height: 80.6vh;
         max-height: 1079px;

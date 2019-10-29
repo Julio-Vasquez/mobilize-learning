@@ -1,9 +1,8 @@
 import React, {useEffect} from 'react';
-import NavBar from './../../layout-home/navbar/index';
-import Footer from './../../layout-home/footer/index';
+
 import './style.scss';
 
-export default function Login(props){
+export  function LoginForm(props){
 
   useEffect(()=>{
     setTimeout(hideURLbar, 0); 
@@ -14,8 +13,7 @@ export default function Login(props){
   });
 
   return( 
-    <div className="Container">
-      <NavBar />
+    <div className="logincontainer">
       <div className="header">
 	      <h1>Login Form</h1>
       </div>
@@ -47,7 +45,6 @@ export default function Login(props){
           </form>
         </div>
       </div>
-      <Footer />
     </div>
   );
 }
