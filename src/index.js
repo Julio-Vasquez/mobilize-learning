@@ -6,5 +6,6 @@ import "bootstrap-css-only/css/bootstrap.min.css";
 import "mdbreact/dist/css/mdb.css";
 
 //import Routes from "./views/HomePage/routes";
-import Index from "./views/index";
-ReactDOM.render(<Index />, document.getElementById("root"));
+//import App from "./views";
+import RoutesAdmin from "./views/DashBoard/routes";
+ReactDOM.render(<RoutesAdmin />, document.getElementById("root"));

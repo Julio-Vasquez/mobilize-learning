@@ -1,6 +1,8 @@
 import React from "react";
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 
+import { createBrowserHistory } from "history";
+
 import { RouteAuth } from "./../../components/router/index";
 import { NavBar } from "./../../components/layout-home/NavBar";
 import { Footer } from "./../../components/layout-home/Footer";
@@ -11,10 +13,14 @@ import { About } from "./About";
 import { Contact } from "./Contact";
 import { SignUp } from "./SignUp";
 import { Login } from "./Login";
+import Admin from "./../DashBoard/layout/routes";
+
+const hist = createBrowserHistory();
 
 const Routes = () => {
+  console.log(Admin);
   return (
-    <Router>
+    <Router history={hist}>
       <div className="Container">
         <NavBar />
         {
@@ -44,6 +50,7 @@ const Routes = () => {
               component={Login}
               auth={true}
             />
+
             <Route path="*" component={Page404} />
           </Switch>
         }

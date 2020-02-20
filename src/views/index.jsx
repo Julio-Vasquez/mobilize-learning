@@ -2,16 +2,16 @@ import React from "react";
 
 import Routes from "./HomePage/routes";
 
-import Admin from "./DashBoard/layout/Admin";
+import RoutesAdmin from "./DashBoard/routes";
 
 const auth = true;
 
-export default function Index() {
+export default function App() {
   return (
     <div>
       {auth ? (
         <React.Fragment>
-          <Admin />
+          <RoutesAdmin />
         </React.Fragment>
       ) : (
         <React.Fragment>

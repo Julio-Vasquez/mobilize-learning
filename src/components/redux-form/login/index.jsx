@@ -19,7 +19,7 @@ export function LoginForm(props) {
       <div className="main-agileinfo">
         <div className="wthree-form">
           <h2>Rellene el siguiente formulario para iniciar sesión</h2>
-          <form action="/admin" method="post">
+          <form action="/admin" method="get">
             <div className="form-sub">
               <input
                 type="text"

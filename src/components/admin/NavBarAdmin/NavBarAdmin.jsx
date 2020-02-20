@@ -17,9 +17,10 @@ import Dashboard from "@material-ui/icons/Dashboard";
 import Search from "@material-ui/icons/Search";
 // core components
 import CustomInput from "./../CustomInput";
-import Button from "./../CustomButton";
+import Button from "./../CustomButtons";
 
-import styles from "./../../../assets/jss/material-dashboard-react/components/headerLinksStyle";
+import styles from "./../../../assets/jss/custom/headerLinksStyle";
+
 const useStyles = makeStyles(styles);
 
 export default function AdminNavbarLinks() {

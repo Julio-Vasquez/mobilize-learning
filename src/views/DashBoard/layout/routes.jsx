@@ -1,6 +1,6 @@
 import CommuteOutlinedIcon from "@material-ui/icons/CommuteOutlined";
 import Dashboard from "@material-ui/icons/Dashboard";
-import Task from "./../../../assets/images/svg/task.svg";
+import ListAltOutlinedIcon from "@material-ui/icons/ListAltOutlined";
 import LibraryBooksOutlinedIcon from "@material-ui/icons/LibraryBooksOutlined";
 import CardMembershipOutlinedIcon from "@material-ui/icons/CardMembershipOutlined";
 import NotificationsOutlinedIcon from "@material-ui/icons/NotificationsOutlined";
@@ -30,7 +30,7 @@ const DashBoardRoutes = [
   {
     path: "/mobilitybehaviros",
     name: "Comp de movilidad",
-    icon: Task,
+    icon: ListAltOutlinedIcon,
     component: MobilityBehaviros,
     layout: "/admin"
   },
