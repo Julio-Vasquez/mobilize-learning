@@ -1,14 +1,19 @@
 import React from "react";
 
+import SpecificTheme from "./../../../components/admin/SpecificTheme";
+import bg from "./../../../assets/images/bann.jpg";
+
 export default function DashBoard() {
+  //const arr = ["cont1", "cont1", "cont1", "cont1", "cont1"];
+  const arr = [{ title: "ffffff" }, { title: "xxxxxx" }, { title: "zzzzzz" }];
   return (
     <div>
-      <p>
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Quod temporibus
-        architecto sapiente voluptatibus, quidem quas quae molestiae nemo
-        voluptate voluptas voluptates, reprehenderit eveniet rem ratione quis
-        veritatis magni suscipit sit!
-      </p>
+      <SpecificTheme
+        bg={bg}
+        title="Esto es un puto tst"
+        description="ya valio madres perro"
+        contenido={arr}
+      />
     </div>
   );
 }
