@@ -1,0 +1,20 @@
+@import url("https://fonts.googleapis.com/css?family=Roboto+Slab&display=swap");
+
+#conthome {
+  background-image: url(./../../../assets/images/signals/01.jpg);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  .content {
+    height: 95vh;
+    text-align: center;
+    #dintext,
+    .typed-cursor {
+      font-size: 80px;
+      display: inline;
+      color: white;
+      text-shadow: 1px 1px 1px rgb(75, 74, 74);
+      font-family: "Roboto Slab", serif;
+    }
+  }
+}

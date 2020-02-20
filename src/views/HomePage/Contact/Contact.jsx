@@ -1,25 +1,31 @@
-import React, {useEffect} from "react";
-import { MDBRow, MDBCol, MDBCard, MDBCardBody, MDBIcon, MDBBtn, MDBInput } from "mdbreact";
+import React, { useEffect } from "react";
+import {
+  MDBRow,
+  MDBCol,
+  MDBCard,
+  MDBCardBody,
+  MDBIcon,
+  MDBBtn,
+  MDBInput
+} from "mdbreact";
 
-import './style.scss'
+import "./style.scss";
+
 export const Contact = () => {
-  useEffect(
-    ()=>{
-      document.body.style.backgroundImage = "url('https://images.pexels.com/photos/1367192/pexels-photo-1367192.jpeg')"
-      document.body.style.backgroundAttachment = "fixed";
-      document.body.style.backgroundRepeat = "no-repeat";
-      document.body.style.backgroundSize = "cover";
-    }
-  );
+  useEffect(() => {
+    document.body.style.backgroundImage =
+      "url('https://images.pexels.com/photos/1367192/pexels-photo-1367192.jpeg')";
+  });
+
   return (
     <section className="my-5">
       <h2 className="h1-responsive font-weight-bold text-center my-5">
         Contact us
       </h2>
       <p className="text-center w-responsive mx-auto pb-5">
-        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Fugit,
-        error amet numquam iure provident voluptate esse quasi, veritatis
-        totam voluptas nostrum quisquam eum porro a pariatur veniam.
+        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Fugit, error
+        amet numquam iure provident voluptate esse quasi, veritatis totam
+        voluptas nostrum quisquam eum porro a pariatur veniam.
       </p>
       <MDBRow>
         <MDBCol lg="4" className="lg-0 mb-4 offset-lg-1">
@@ -93,21 +99,21 @@ export const Contact = () => {
           <br />
           <MDBRow className="text-center">
             <MDBCol md="4">
-              <MDBBtn tag="a" floating color="blue" className="accent-1">
+              <MDBBtn tag="a" color="blue" className="accent-1">
                 <MDBIcon icon="map-marker-alt" />
               </MDBBtn>
               <p>New York, 94126</p>
               <p className="mb-md-0">United States</p>
             </MDBCol>
             <MDBCol md="4">
-              <MDBBtn tag="a" floating color="blue" className="accent-1">
+              <MDBBtn tag="a" color="blue" className="accent-1">
                 <MDBIcon icon="phone" />
               </MDBBtn>
               <p>+ 01 234 567 89</p>
               <p className="mb-md-0">Mon - Fri, 8:00-22:00</p>
             </MDBCol>
             <MDBCol md="4">
-              <MDBBtn tag="a" floating color="blue" className="accent-1">
+              <MDBBtn tag="a" color="blue" className="accent-1">
                 <MDBIcon icon="envelope" />
               </MDBBtn>
               <p>info@gmail.com</p>
@@ -118,5 +124,4 @@ export const Contact = () => {
       </MDBRow>
     </section>
   );
-}
-
+};
