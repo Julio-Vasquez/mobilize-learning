@@ -48,7 +48,7 @@ export default function AdminNavbarLinks() {
     setOpenProfile(null);
   };
   return (
-    <div>
+    <div style={{ zIndex: "1 !important" }}>
       <div className={classes.searchWrapper}>
         <CustomInput
           formControlProps={{
@@ -134,7 +134,7 @@ export default function AdminNavbarLinks() {
                       onClick={handleCloseNotification}
                       className={classes.dropdownItem}
                     >
-                      You{"'"}re now friend with Andrew
+                      You're now friend with Andrew
                     </MenuItem>
                     <MenuItem
                       onClick={handleCloseNotification}

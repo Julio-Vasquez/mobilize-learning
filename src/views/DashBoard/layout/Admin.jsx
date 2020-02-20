@@ -13,6 +13,7 @@ import Sidebar from "./../../../components/admin/Sidebar";
 import Navbar from "./../../../components/admin/Navbar";
 
 import styles from "./../../../assets/jss/custom/adminStyle";
+import Footer from "../../../components/admin/Footer";
 
 const switchRoutes = (
   <Switch>
@@ -81,7 +82,7 @@ export default function Admin({ ...rest }) {
         image={bgImage}
         handleDrawerToggle={handleDrawerToggle}
         open={mobileOpen}
-        color="blue"
+        color="orange"
         {...rest}
       />
       <div className={classes.mainPanel} ref={mainPanel}>
@@ -92,6 +93,7 @@ export default function Admin({ ...rest }) {
         />
         <div className={classes.map}>{switchRoutes}</div>
       </div>
+      <Footer />
     </div>
   );
 }
