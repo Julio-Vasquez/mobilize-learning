@@ -13,12 +13,10 @@ import { About } from "./About";
 import { Contact } from "./Contact";
 import { SignUp } from "./SignUp";
 import { Login } from "./Login";
-import Admin from "./../DashBoard/layout/routes";
 
 const hist = createBrowserHistory();
 
 const Routes = () => {
-  console.log(Admin);
   return (
     <Router history={hist}>
       <div className="Container">

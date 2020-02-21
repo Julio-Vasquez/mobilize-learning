@@ -17,7 +17,7 @@ export default function SpecificTheme(props) {
         <Col span={8} offset={3} className="specific-theme__poster">
           <div
             style={{
-              backgroundImage: `url(${props.bg})`
+              backgroundImage: `url(${props.cover})`
             }}
           />
         </Col>

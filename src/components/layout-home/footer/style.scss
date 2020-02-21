@@ -1,11 +1,11 @@
 p {
   text-align: justify;
 }
-footer {
+.footercolor {
   height: 30px;
   bottom: 0px;
   width: 100%;
-  position: absolute;
+  position: flex;
   margin: 0;
 }
 .footer-copyright {

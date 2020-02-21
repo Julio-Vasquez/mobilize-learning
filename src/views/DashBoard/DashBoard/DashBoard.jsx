@@ -10,6 +10,7 @@ export default function DashBoard() {
     <div>
       <SpecificTheme
         bg={bg}
+        cover="https://i2.wp.com/libertadbajopalabra.com/wp-content/uploads/2016/02/prohibido.jpg"
         title="Esto es un puto tst"
         description="ya valio madres perro"
         contenido={arr}

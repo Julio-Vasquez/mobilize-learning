@@ -1,532 +1,531 @@
 *,
- ::after,
- ::before {
-    box-sizing: initial
+::after,
+::before {
+  box-sizing: initial;
 }
 
-
 h1 {
-    text-align: center;
-    font-size: 45px;
-    font-weight: 300;
-    margin: 40px 0;
-    color: #fff;
-    letter-spacing: 9px;
-    text-shadow: 4px 4px 3px #000;
-    word-spacing: 4px;
-    font-weight: 500;
-    font-family: 'Josefin Slab', serif;
+  text-align: center;
+  font-size: 45px;
+  font-weight: 300;
+  margin: 40px 0;
+  color: #fff;
+  letter-spacing: 9px;
+  text-shadow: 4px 4px 3px #000;
+  word-spacing: 4px;
+  font-weight: 500;
+  font-family: "Josefin Slab", serif;
 }
 
 .main-agileinfo {
-    width: 30%;
-    margin: 0 auto;
-    padding: 4em 2em;
-    background: rgba(255, 255, 255, 0.07);
-    -webkit-box-shadow: 0 6px 12px 0 rgb(37, 37, 37);
-    box-shadow: 0 6px 43px 0 rgba(0, 0, 0, 0.4);
-    margin-bottom: 5em;
+  width: 30%;
+  margin: 0 auto;
+  padding: 4em 2em;
+  background: rgba(255, 255, 255, 0.07);
+  -webkit-box-shadow: 0 6px 12px 0 rgb(37, 37, 37);
+  box-shadow: 0 6px 43px 0 rgba(0, 0, 0, 0.4);
+  margin-bottom: 5em;
 }
 
 input::placeholder {
-    color: white;
+  color: white;
 }
 
 .wthree-form h2 {
-    color: #fff;
-    font-size: 20px;
-    font-weight: 300;
-    text-align: center;
-    margin-bottom: 1.5em;
-    letter-spacing: 3px;
-    text-shadow: 3px 3px 4px #000;
+  color: #fff;
+  font-size: 20px;
+  font-weight: 300;
+  text-align: center;
+  margin-bottom: 1.5em;
+  letter-spacing: 3px;
+  text-shadow: 3px 3px 4px #000;
 }
 
 form {
-    margin: 0 auto;
-    width: 100%;
+  margin: 0 auto;
+  width: 100%;
 }
 
 .form-sub {
-    position: relative;
-    margin-bottom: 20px;
-    input[type="text"],
-    input[type="password"] {
-        width: 85%;
-        padding: 15px 66px 15px 19px;
-        text-align: left;
-        background-color: rgba(0, 0, 0, 0.16);
-        border: 0;
-        border-left: 2px solid #00c6d7;
-        font-size: 15px;
-        letter-spacing: 1.5px;
-        color: #fff;
-        outline: 0;
-        box-shadow: 0 6px 12px 0 rgba(0, 0, 0, 0.4);
-        font-family: 'Open Sans', sans-serif;
-        &:focus {
-            border-left: 2px solid green;
-        }
+  position: relative;
+  margin-bottom: 20px;
+  input[type="text"],
+  input[type="password"] {
+    width: 85%;
+    padding: 15px 66px 15px 19px;
+    text-align: left;
+    background-color: rgba(0, 0, 0, 0.16);
+    border: 0;
+    border-left: 2px solid #00c6d7;
+    font-size: 15px;
+    letter-spacing: 1.5px;
+    color: #fff;
+    outline: 0;
+    box-shadow: 0 6px 12px 0 rgba(0, 0, 0, 0.4);
+    font-family: "Open Sans", sans-serif;
+    &:focus {
+      border-left: 2px solid green;
     }
+  }
 }
 
 .icon {
-    display: inline-block;
+  display: inline-block;
+  position: absolute;
+  right: 0px;
+  bottom: 0;
+  width: 53px;
+  height: 50px;
+  text-align: center;
+  background: #00c6d7;
+  i {
+    color: #ffffff;
+    font-size: 19px;
+    line-height: 49px;
+  }
+}
+
+.anim {
+  position: relative;
+  display: block;
+  margin-top: 0.5em;
+  span,
+  a {
+    color: #fff;
+    font-size: 13px;
+    display: inline;
+    letter-spacing: 2px;
+    text-transform: capitalize;
+    padding-left: 10px;
+  }
+  a {
+    display: block;
+    text-decoration: none;
+    float: right;
+    margin-top: 4px;
+    &:hover {
+      color: #00c6d7;
+    }
+  }
+  input.checkbox:checked:after {
+    transform: rotate(-45deg);
+    height: 0.5rem;
+    border-color: transparent;
+    border-right-color: transparent;
+    animation: 0.4s rippling 0.4s ease;
+    animation-fill-mode: forwards;
+  }
+}
+
+input.checkbox {
+  background: #fff;
+  cursor: pointer;
+  width: 0.8em;
+  height: 1em;
+  margin: 0 6px 0 0 !important;
+  &:before {
+    content: "";
     position: absolute;
+    width: 1.3em;
+    height: 1.2em;
+    background: inherit;
+    cursor: pointer;
+  }
+  &:after {
+    content: "";
+    transition: 0.4s ease-in-out;
+    position: absolute;
+    top: 4px;
+    left: 0px;
+    z-index: 1;
+    width: 1.2em;
+    height: 1.2em;
+    margin-top: -1px;
+    border: 1px solid #00c6d7;
+  }
+  &:checked:after {
+    transform: rotate(-45deg);
+    height: 0.5rem;
+    border-color: #00c6d7;
+    border-top-color: transparent;
+    border-right-color: transparent;
+  }
+}
+
+.submit-agileits {
+  text-align: center;
+  margin-top: 2em;
+  input[type="submit"] {
+    text-align: center;
+    border: 0;
+    color: #ffffff;
+    font-size: 17px;
+    font-weight: 600;
+    padding: 14px 90px;
+    background-color: rgba(0, 0, 0, 0.34);
+    border: 3px solid rgba(255, 255, 255, 0.43);
+    box-shadow: 0 12px 32px 0 rgba(0, 0, 0, 0.71);
+    outline: none;
+    cursor: pointer;
+    font-family: "Open Sans", sans-serif;
+    letter-spacing: 1px;
+    transition: 0.5s ease-in-out;
+    &:hover {
+      color: #00c6d7;
+      border-color: #00c6d7;
+    }
+  }
+}
+
+@keyframes rippling {
+  50% {
+    border-left-color: #d24747;
+  }
+  100% {
+    border-bottom-color: #00c6d7;
+    border-left-color: #00c6d7;
+  }
+}
+
+@media screen and (max-width: 1920px) {
+  h1 {
+    margin: 80px 0 80px;
+    font-size: 55px;
+  }
+}
+
+@media screen and (max-width: 1680px) {
+  h1 {
+    margin: 60px 0 70px;
+  }
+  .form-sub {
+    input[type="text"],
+    input[type="password"] {
+      width: 82.6%;
+    }
+  }
+}
+
+@media screen and (max-width: 1600px) {
+  h1 {
+    margin: 2em 0 1.5em;
+    font-size: 50px;
+  }
+  .icon {
     right: 0px;
     bottom: 0;
     width: 53px;
     height: 50px;
-    text-align: center;
-    background: #00c6d7;
-    i {
-        color: #ffffff;
-        font-size: 19px;
-        line-height: 49px;
+  }
+  .form-sub {
+    input[type="text"],
+    input[type="password"] {
+      width: 81.8%;
     }
-}
-
-.anim {
-    position: relative;
-    display: block;
-    margin-top: .5em;
-    span,
-    a {
-        color: #fff;
-        font-size: 13px;
-        display: inline;
-        letter-spacing: 2px;
-        text-transform: capitalize;
-        padding-left: 10px;
-    }
-    a {
-        display: block;
-        text-decoration: none;
-        float: right;
-        margin-top: 4px;
-        &:hover {
-            color: #00c6d7;
-        }
-    }
-    input.checkbox:checked:after {
-        transform: rotate(-45deg);
-        height: .5rem;
-        border-color: transparent;
-        border-right-color: transparent;
-        animation: .4s rippling .4s ease;
-        animation-fill-mode: forwards;
-    }
-}
-
-input.checkbox {
-    background: #fff;
-    cursor: pointer;
-    width: 0.8em;
-    height: 1.1em;
-    margin: 0 6px 0 0!important;
-    &:before {
-        content: "";
-        position: absolute;
-        width: 1.3em;
-        height: 1.2em;
-        background: inherit;
-        cursor: pointer;
-    }
-    &:after {
-        content: "";
-        transition: .4s ease-in-out;
-        position: absolute;
-        top: 1px;
-        left: 0px;
-        z-index: 1;
-        width: 1.2em;
-        height: 1.2em;
-        margin-top: -1px;
-        border: 1px solid #00c6d7;
-    }
-    &:checked:after {
-        transform: rotate(-45deg);
-        height: .5rem;
-        border-color: #00c6d7;
-        border-top-color: transparent;
-        border-right-color: transparent;
-    }
-}
-
-.submit-agileits {
-    text-align: center;
-    margin-top: 2em;
-    input[type="submit"] {
-        text-align: center;
-        border: 0;
-        color: #ffffff;
-        font-size: 17px;
-        font-weight: 600;
-        padding: 14px 90px;
-        background-color: rgba(0, 0, 0, 0.34);
-        border: 3px solid rgba(255, 255, 255, 0.43);
-        box-shadow: 0 12px 32px 0 rgba(0, 0, 0, 0.71);
-        outline: none;
-        cursor: pointer;
-        font-family: 'Open Sans', sans-serif;
-        letter-spacing: 1px;
-        transition: 0.5s ease-in-out;
-        &:hover {
-            color: #00c6d7;
-            border-color: #00c6d7;
-        }
-    }
-}
-
-@keyframes rippling {
-    50% {
-        border-left-color: #d24747;
-    }
-    100% {
-        border-bottom-color: #00c6d7;
-        border-left-color: #00c6d7;
-    }
-}
-
-@media screen and (max-width: 1920px) {
-    h1 {
-        margin: 80px 0 80px;
-        font-size: 55px;
-    }
-}
-
-@media screen and (max-width: 1680px) {
-    h1 {
-        margin: 60px 0 70px;
-    }
-    .form-sub {
-        input[type="text"],
-        input[type="password"] {
-            width: 82.6%;
-        }
-    }
-}
-
-@media screen and (max-width: 1600px) {
-    h1 {
-        margin: 2em 0 1.5em;
-        font-size: 50px;
-    }
-    .icon {
-        right: 0px;
-        bottom: 0;
-        width: 53px;
-        height: 50px;
-    }
-    .form-sub {
-        input[type="text"],
-        input[type="password"] {
-            width: 81.8%;
-        }
-    }
+  }
 }
 
 @media screen and (max-width: 1440px) {
-    .main-agileinfo {
-        width: 33%;
+  .main-agileinfo {
+    width: 33%;
+  }
+  .form-sub {
+    input[type="text"],
+    input[type="password"] {
+      width: 81.5%;
     }
-    .form-sub {
-        input[type="text"],
-        input[type="password"] {
-            width: 81.5%;
-        }
-    }
+  }
 }
 
 @media screen and (max-width: 1366px) {
-    h1 {
-        margin: 0.9em 0 0.7em;
-        font-size: 50px;
+  h1 {
+    margin: 0.9em 0 0.7em;
+    font-size: 50px;
+  }
+  .form-sub {
+    input[type="text"],
+    input[type="password"] {
+      width: 80.8%;
     }
-    .form-sub {
-        input[type="text"],
-        input[type="password"] {
-            width: 80.8%;
-        }
-    }
+  }
 }
 
 @media screen and (max-width: 1280px) {
-    .main-agileinfo {
-        width: 36%;
-    }
+  .main-agileinfo {
+    width: 36%;
+  }
 }
 
 @media screen and (max-width: 1080px) {
-    h1 {
-        margin: 52px 0 0px;
-    }
-    .main-agileinfo {
-        width: 42%;
-    }
+  h1 {
+    margin: 52px 0 0px;
+  }
+  .main-agileinfo {
+    width: 42%;
+  }
 }
 
 @media screen and (max-width: 1050px) {
-    .form-sub {
-        input[type="text"],
-        input[type="password"] {
-            width: 83.5%;
-        }
+  .form-sub {
+    input[type="text"],
+    input[type="password"] {
+      width: 83.5%;
     }
+  }
 }
 
 @media screen and (max-width: 1024px) {
-    h1 {
-        margin: 1.8em 0 0.8em;
+  h1 {
+    margin: 1.8em 0 0.8em;
+  }
+  .main-agileinfo {
+    width: 45%;
+  }
+  .form-sub {
+    input[type="text"],
+    input[type="password"] {
+      width: 80.8%;
     }
-    .main-agileinfo {
-        width: 45%;
-    }
-    .form-sub {
-        input[type="text"],
-        input[type="password"] {
-            width: 80.8%;
-        }
-    }
-    .submit-agileits input[type="submit"] {
-        padding: 11px 90px;
-    }
+  }
+  .submit-agileits input[type="submit"] {
+    padding: 11px 90px;
+  }
 }
 
 @media screen and (max-width: 991px) {
-    h1 {
-        margin: 1.5em 0 0.7em;
-        font-size: 43px;
+  h1 {
+    margin: 1.5em 0 0.7em;
+    font-size: 43px;
+  }
+  .main-agileinfo {
+    padding: 3em 2em;
+  }
+  .wthree-form h2 {
+    font-size: 18px;
+  }
+  .form-sub {
+    input[type="text"],
+    input[type="password"] {
+      width: 80.1%;
     }
-    .main-agileinfo {
-        padding: 3em 2em;
-    }
-    .wthree-form h2 {
-        font-size: 18px;
-    }
-    .form-sub {
-        input[type="text"],
-        input[type="password"] {
-            width: 80.1%;
-        }
-    }
+  }
 }
 
 @media screen and (max-width: 900px) {
-    .main-agileinfo {
-        width: 50%;
-    }
+  .main-agileinfo {
+    width: 50%;
+  }
 }
 
 @media screen and (max-width: 800px) {
-    .main-agileinfo {
-        width: 55%;
+  .main-agileinfo {
+    width: 55%;
+  }
+  .form-sub {
+    input[type="text"],
+    input[type="password"] {
+      width: 79.8%;
     }
-    .form-sub {
-        input[type="text"],
-        input[type="password"] {
-            width: 79.8%;
-        }
-    }
+  }
 }
 
 @media screen and (max-width: 768px) {
-    h1 {
-        margin: 2.5em 0 1em;
-    }
-    .main-agileinfo {
-        width: 58%;
-    }
-    .anim a {
-        margin-top: 3px;
-    }
+  h1 {
+    margin: 2.5em 0 1em;
+  }
+  .main-agileinfo {
+    width: 58%;
+  }
+  .anim a {
+    margin-top: 3px;
+  }
 }
 
 @media screen and (max-width: 767px) {
-    h1 {
-        margin: 1.2em 0 0.7em;
-    }
+  h1 {
+    margin: 1.2em 0 0.7em;
+  }
 }
 
 @media screen and (max-width: 736px) {
-    h1 {
-        font-size: 42px;
+  h1 {
+    font-size: 42px;
+  }
+  .main-agileinfo {
+    width: 60%;
+  }
+  .form-sub {
+    input[type="text"],
+    input[type="password"] {
+      width: 79.7%;
     }
-    .main-agileinfo {
-        width: 60%;
-    }
-    .form-sub {
-        input[type="text"],
-        input[type="password"] {
-            width: 79.7%;
-        }
-    }
+  }
 }
 
 @media screen and (max-width: 667px) {
-    .main-agileinfo {
-        width: 68%;
+  .main-agileinfo {
+    width: 68%;
+  }
+  .form-sub {
+    input[type="text"],
+    input[type="password"] {
+      padding: 12px 60px 12px 15px;
+      font-size: 14px;
+      width: 82.9%;
     }
-    .form-sub {
-        input[type="text"],
-        input[type="password"] {
-            padding: 12px 60px 12px 15px;
-            font-size: 14px;
-            width: 82.9%;
-        }
+  }
+  .icon {
+    width: 45px;
+    height: 43px;
+    i {
+      font-size: 18px;
+      line-height: 44px;
     }
-    .icon {
-        width: 45px;
-        height: 43px;
-        i {
-            font-size: 18px;
-            line-height: 44px;
-        }
-    }
+  }
 }
 
 @media screen and (max-width: 640px) {
-    .main-agileinfo {
-        width: 70%;
+  .main-agileinfo {
+    width: 70%;
+  }
+  .form-sub {
+    input[type="text"],
+    input[type="password"] {
+      width: 82.8%;
     }
-    .form-sub {
-        input[type="text"],
-        input[type="password"] {
-            width: 82.8%;
-        }
-    }
+  }
 }
 
 @media screen and (max-width: 600px) {
-    .main-agileinfo {
-        width: 73%;
+  .main-agileinfo {
+    width: 73%;
+  }
+  .form-sub {
+    input[type="text"],
+    input[type="password"] {
+      width: 82.5%;
     }
-    .form-sub {
-        input[type="text"],
-        input[type="password"] {
-            width: 82.5%;
-        }
-    }
+  }
 }
 
 @media screen and (max-width: 568px) {
-    h1 {
-        font-size: 38px;
-        letter-spacing: 8px;
+  h1 {
+    font-size: 38px;
+    letter-spacing: 8px;
+  }
+  .main-agileinfo {
+    width: 80%;
+  }
+  .form-sub {
+    input[type="text"],
+    input[type="password"] {
+      width: 82.5%;
     }
-    .main-agileinfo {
-        width: 80%;
-    }
-    .form-sub {
-        input[type="text"],
-        input[type="password"] {
-            width: 82.5%;
-        }
-    }
+  }
 }
 
 @media screen and (max-width: 480px) {
-    h1 {
-        letter-spacing: 5px;
+  h1 {
+    letter-spacing: 5px;
+  }
+  .main-agileinfo {
+    width: 80%;
+  }
+  .form-sub {
+    input[type="text"],
+    input[type="password"] {
+      width: 80%;
     }
-    .main-agileinfo {
-        width: 80%;
-    }
-    .form-sub {
-        input[type="text"],
-        input[type="password"] {
-            width: 80%;
-        }
-    }
-    .wthree-form h2 {
-        font-size: 16px;
-    }
+  }
+  .wthree-form h2 {
+    font-size: 16px;
+  }
 }
 
 @media screen and (max-width: 440px) {
-    h1 {
-        letter-spacing: 4px;
-        font-size: 36px;
-        margin: 1.4em 0 0.9em;
+  h1 {
+    letter-spacing: 4px;
+    font-size: 36px;
+    margin: 1.4em 0 0.9em;
+  }
+  .main-agileinfo {
+    padding: 2.5em 2em;
+  }
+  .form-sub {
+    input[type="text"],
+    input[type="password"] {
+      width: 78%;
     }
-    .main-agileinfo {
-        padding: 2.5em 2em;
-    }
-    .form-sub {
-        input[type="text"],
-        input[type="password"] {
-            width: 78%;
-        }
-    }
+  }
 }
 
 @media screen and (max-width: 414px) {
-    h1 {
-        font-size: 35px;
+  h1 {
+    font-size: 35px;
+  }
+  .form-sub {
+    input[type="text"],
+    input[type="password"] {
+      width: 77%;
     }
-    .form-sub {
-        input[type="text"],
-        input[type="password"] {
-            width: 77%;
-        }
-    }
+  }
 }
 
 @media screen and (max-width: 384px) {
-    h1 {
-        font-size: 31px;
+  h1 {
+    font-size: 31px;
+  }
+  .form-sub {
+    input[type="text"],
+    input[type="password"] {
+      width: 73.8%;
     }
-    .form-sub {
-        input[type="text"],
-        input[type="password"] {
-            width: 73.8%;
-        }
-    }
-    .wthree-form h2 {
-        letter-spacing: 2px;
-    }
+  }
+  .wthree-form h2 {
+    letter-spacing: 2px;
+  }
 }
 
 @media screen and (max-width: 320px) {
-    h1 {
-        font-size: 32px;
-        letter-spacing: 0.5px;
-        margin: 1em 0 0.6em;
+  h1 {
+    font-size: 32px;
+    letter-spacing: 0.5px;
+    margin: 1em 0 0.6em;
+  }
+  .main-agileinfo {
+    padding: 1.5em 1.3em;
+    width: 80%;
+  }
+  .wthree-form h2 {
+    letter-spacing: 1.5px;
+    font-size: 14px;
+    margin-bottom: 1em;
+  }
+  .form-sub {
+    input[type="text"],
+    input[type="password"] {
+      padding: 12.5px 60px 12.5px 15px;
+      font-size: 13px;
+      width: 68.2%;
     }
-    .main-agileinfo {
-        padding: 1.5em 1.3em;
-        width: 80%;
+  }
+  .anim {
+    text-align: center;
+    margin-top: 0em;
+    a {
+      margin-top: 12px;
+      text-align: center;
+      float: none;
     }
-    .wthree-form h2 {
-        letter-spacing: 1.5px;
-        font-size: 14px;
-        margin-bottom: 1em;
+  }
+  input.checkbox:after {
+    left: 40.6px;
+  }
+  .submit-agileits {
+    margin-top: 1.3em;
+    input[type="submit"] {
+      padding: 8px 68px;
+      font-size: 15px;
     }
-    .form-sub {
-        input[type="text"],
-        input[type="password"] {
-            padding: 12.5px 60px 12.5px 15px;
-            font-size: 13px;
-            width: 68.2%;
-        }
-    }
-    .anim {
-        text-align: center;
-        margin-top: 0em;
-        a {
-            margin-top: 12px;
-            text-align: center;
-            float: none;
-        }
-    }
-    input.checkbox:after {
-        left: 40.6px;
-    }
-    .submit-agileits {
-        margin-top: 1.3em;
-        input[type="submit"] {
-            padding: 8px 68px;
-            font-size: 15px;
-        }
-    }
+  }
 }
