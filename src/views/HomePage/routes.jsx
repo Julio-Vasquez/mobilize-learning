@@ -4,8 +4,8 @@ import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import { createBrowserHistory } from "history";
 
 import { RouteAuth } from "./../../components/router/index";
-import { NavBar } from "./../../components/layout-home/navbar";
-import { Footer } from "./../../components/layout-home/footer";
+import { NavBar } from "./../../components/layout-home/NavBar";
+import { Footer } from "./../../components/layout-home/Footer";
 import { Page404 } from "./../../components/404";
 
 import { Home } from "./Home";
