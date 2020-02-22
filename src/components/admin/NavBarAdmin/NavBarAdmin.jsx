@@ -1,5 +1,6 @@
 import React from "react";
 import classNames from "classnames";
+import { Link } from "react-router-dom";
 // @material-ui/core components
 import { makeStyles } from "@material-ui/core/styles";
 import MenuItem from "@material-ui/core/MenuItem";
@@ -20,6 +21,7 @@ import CustomInput from "./../CustomInput";
 import Button from "./../CustomButtons";
 
 import styles from "./../../../assets/jss/custom/headerLinksStyle";
+import "./style.scss";
 
 const useStyles = makeStyles(styles);
 
@@ -197,20 +199,26 @@ export default function AdminNavbarLinks() {
                       onClick={handleCloseProfile}
                       className={classes.dropdownItem}
                     >
-                      Profile
+                      <Link to="/profile/profile" className="link-navbar-icon">
+                        Profile
+                      </Link>
                     </MenuItem>
                     <MenuItem
                       onClick={handleCloseProfile}
                       className={classes.dropdownItem}
                     >
-                      Settings
+                      <Link to="/profile/settings" className="link-navbar-icon">
+                        Settings
+                      </Link>
                     </MenuItem>
                     <Divider light />
                     <MenuItem
                       onClick={handleCloseProfile}
                       className={classes.dropdownItem}
                     >
-                      Logout
+                      <Link to="/login" className="link-navbar-icon">
+                        Logout
+                      </Link>
                     </MenuItem>
                   </MenuList>
                 </ClickAwayListener>
