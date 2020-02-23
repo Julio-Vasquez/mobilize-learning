@@ -21,14 +21,14 @@ const DashBoardRoutes = [
     layout: "/admin"
   },
   {
-    path: "/roadsigns",
+    path: "/roadsign",
     name: "Señales de transito",
     icon: CommuteOutlinedIcon,
     component: RoadSigns,
     layout: "/admin"
   },
   {
-    path: "/mobilitybehaviros",
+    path: "/mobilitybehavior",
     name: "Comp de movilidad",
     icon: ListAltOutlinedIcon,
     component: MobilityBehaviros,

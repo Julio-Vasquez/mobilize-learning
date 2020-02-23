@@ -32,14 +32,15 @@ const switchRoutes = (
       }
       return null;
     })}
-    <Route
-      path="/admin/roadsigns/curse=:data"
-      component={SpecificRoad}
-      exact={true}
-    />
+
     <Route
       path="/admin/mobilitybehaviors/curse=:data"
       component={SpecificBehaviors}
+      exact={true}
+    />
+    <Route
+      path="/admin/roadsigns/curse=:data"
+      component={SpecificRoad}
       exact={true}
     />
     <Redirect from="/admin" to="/admin/dashboard" />
@@ -51,7 +52,6 @@ const useStyles = makeStyles(styles);
 let ps;
 
 export default function Admin({ ...rest }) {
-  console.log(logo);
   const classes = useStyles();
 
   const mainPanel = createRef();

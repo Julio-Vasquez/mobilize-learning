@@ -9,6 +9,7 @@ export default function SpecificRoad() {
   const { data } = useParams();
 
   const Data = RoadData.find(item => item.url === data);
+  console.log(typeof Data);
   return (
     <SpecificTheme
       bg={Data.urlImg}
