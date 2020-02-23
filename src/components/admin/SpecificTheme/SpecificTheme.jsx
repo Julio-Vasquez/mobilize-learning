@@ -28,11 +28,11 @@ export default function SpecificTheme(props) {
             </div>
 
             <div className="specific-theme__info-content">
-              <h3>Informacion General</h3>
+              <h2>Informacion General</h2>
               <p>{props.description}</p>
               <h3>Contenido</h3>
               <ul>
-                {props.contenido.map((cont, key) => (
+                {props.content.map((cont, key) => (
                   <li key={key}>
                     <Link to={`${cont.link}`}>{cont.title}</Link>
                   </li>

@@ -15,6 +15,9 @@ import Navbar from "./../../../components/admin/Navbar";
 import styles from "./../../../assets/jss/custom/adminStyle";
 import Footer from "../../../components/admin/Footer";
 
+import SpecificRoad from "./../SpecificRoad";
+import SpecificBehaviors from "./../SpecificBehaviors";
+
 const switchRoutes = (
   <Switch>
     {DashBoardRoutes.map((route, key) => {
@@ -29,6 +32,16 @@ const switchRoutes = (
       }
       return null;
     })}
+    <Route
+      path="/admin/roadsigns/curse=:data"
+      component={SpecificRoad}
+      exact={true}
+    />
+    <Route
+      path="/admin/mobilitybehaviors/curse=:data"
+      component={SpecificBehaviors}
+      exact={true}
+    />
     <Redirect from="/admin" to="/admin/dashboard" />
   </Switch>
 );
@@ -64,7 +77,6 @@ export default function Admin({ ...rest }) {
       document.body.style.overflow = "hidden";
     }
     window.addEventListener("resize", resizeFunction);
-    // Specify how to clean up after this effect:
     return function cleanup() {
       if (navigator.platform.indexOf("Win") > -1) {
         ps.destroy();
