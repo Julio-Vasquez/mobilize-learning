@@ -1,0 +1,14 @@
+.qualification {
+  margin: 50px;
+  &__title {
+    text-align: center;
+    h2 {
+      font-family: serif;
+      font-weight: 600;
+      color: sienna;
+    }
+  }
+  &__body {
+    padding-top: 20px;
+  }
+}

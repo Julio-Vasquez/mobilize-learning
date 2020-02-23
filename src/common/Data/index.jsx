@@ -1,1 +1,1 @@
-export { BehaviorsData, RoadData, Titles } from "./Data";
+export { BehaviorsData, RoadData, Titles, DataTable } from "./Data";
