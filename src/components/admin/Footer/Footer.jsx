@@ -9,6 +9,9 @@ export default function Footer() {
       <div className="footer-copyright text-center py-3 ">
         <MDBContainer fluid>
           Copyright &copy; {new Date().getFullYear()} All Rights Reserved :{" "}
+          <a href="/admin" className="footer-title">
+            <b>Mobilize</b> Learning
+          </a>
         </MDBContainer>
       </div>
     </MDBFooter>
