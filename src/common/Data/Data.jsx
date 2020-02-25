@@ -93,19 +93,29 @@ export const Titles = [
 export const DataTable = [
   {
     key: "1",
-    name: "Julio Alfredo Vasquez Lievano",
+    name: "Alejandro Peña Soto",
     age: 24,
-    address: "jul.vasquez@udla.edu.co - jualvalitube@gmail.com",
+    address: "Alej.pena@udla.edu.co - 700alejandro007@gmail.com",
     theme: "Comportamientos de mobilidad",
     tags: ["Aprobado"],
     cal: 10
   },
+
+  {
+    key: "15",
+    name: "Alejandro Peña Soto",
+    age: 24,
+    address: "Alej.pena@udla.edu.co - 700alejandro007@gmail.com",
+    theme: "Tipos de señales de transito",
+    tags: ["Reprobado"],
+    cal: 2
+  }, 
   {
     key: "2",
-    name: "Julio Alfredo Vasquez Lievano",
-    age: 32,
-    address: "jul.vasquez@udla.edu.co - jualvalitube@gmail.com",
-    theme: "Tipos de señales de transito",
+    name: "Alejandro Peña Soto",
+    age: 24,
+    address: "Alej.pena@udla.edu.co - 700alejandro007@gmail.com",
+    theme: "Reconocimiento de señales Preventivas",
     tags: ["Aceptable"],
     cal: 6
   },
