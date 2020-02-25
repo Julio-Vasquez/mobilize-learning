@@ -105,7 +105,7 @@ export const About = props => {
                     laboriosam labore sit, aspernatur praesentium iste impedit
                     quidem dolor veniam.
                   </p>
-                  <h4 className="font-weight-bold">Fan Bingbing</h4>
+                  <h4 className="font-weight-bold">Alejandro Peña Soto</h4>
                   <h6 className="font-weight-bold my-3">Student / Design</h6>
                   <MDBIcon icon="star" className="amber-text" />
                   <MDBIcon icon="star" className="amber-text" />
