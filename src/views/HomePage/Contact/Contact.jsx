@@ -28,12 +28,13 @@ export const Contact = () => {
         voluptas nostrum quisquam eum porro a pariatur veniam.
       </p>
       <MDBRow>
-        <MDBCol lg="4" className="lg-0 mb-4 offset-lg-1">
+        <MDBCol lg="4" className="lg-0 mb-4 offset-1">
           <MDBCard>
             <MDBCardBody>
-              <div className="form-header blue accent-1">
+              <div className="form-header blue accent-1" id="form-header">
                 <h3 className="mt-2">
-                  <MDBIcon icon="envelope" /> Write to us:
+                  <MDBIcon icon="envelope" style={{ color: "white" }} /> Write
+                  to us:
                 </h3>
               </div>
               <p className="dark-grey-text">
@@ -85,12 +86,12 @@ export const Contact = () => {
           <div
             id="map-container"
             className="rounded z-depth-1-half map-container"
-            style={{ height: "400px" }}
+            style={{ height: "470px" }}
           >
             <iframe
               src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d76765.98321148289!2d-73.96694563267306!3d40.751663750099084!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1spl!2spl!4v1525939514494"
               title="This is a unique title"
-              width="100%"
+              width="99.9%"
               height="100%"
               frameBorder="0"
               style={{ border: 0 }}
@@ -98,26 +99,20 @@ export const Contact = () => {
           </div>
           <br />
           <MDBRow className="text-center">
-            <MDBCol md="4">
-              <MDBBtn tag="a" color="blue" className="accent-1">
+            <MDBCol md="2" className="offset-1">
+              <MDBBtn tag="a" color="blue" className="accent-1 contabou">
                 <MDBIcon icon="map-marker-alt" />
               </MDBBtn>
-              <p>New York, 94126</p>
-              <p className="mb-md-0">United States</p>
             </MDBCol>
             <MDBCol md="4">
-              <MDBBtn tag="a" color="blue" className="accent-1">
+              <MDBBtn tag="a" color="blue" className="accent-1 contabou">
                 <MDBIcon icon="phone" />
               </MDBBtn>
-              <p>+ 01 234 567 89</p>
-              <p className="mb-md-0">Mon - Fri, 8:00-22:00</p>
             </MDBCol>
-            <MDBCol md="4">
-              <MDBBtn tag="a" color="blue" className="accent-1">
+            <MDBCol md="3">
+              <MDBBtn tag="a" color="blue" className="accent-1 contabou">
                 <MDBIcon icon="envelope" />
               </MDBBtn>
-              <p>info@gmail.com</p>
-              <p className="mb-md-0">sale@gmail.com</p>
             </MDBCol>
           </MDBRow>
         </MDBCol>

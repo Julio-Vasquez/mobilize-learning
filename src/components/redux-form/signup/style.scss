@@ -1,15 +1,27 @@
 #classicformpage .view {
-  background-image: url('https://mdbootstrap.com/img/Photos/Others/images/91.jpg');
+  background-image: url("https://mdbootstrap.com/img/Photos/Others/images/91.jpg");
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center center;
-  height: 100vh;
+  height: 95vh;
 }
 
 #classicformpage .gradient {
-  background: -webkit-linear-gradient(45deg, rgba(0, 0, 0, 0.7), rgba(72, 15, 144, 0.4) 100%);
-  background: -webkit-gradient(linear, 45deg, from(rgba(0, 0, 0, 0.7), rgba(72, 15, 144, 0.4) 100%));
-  background: linear-gradient(45deg, rgba(0, 0, 0, 0.7), rgba(72, 15, 144, 0.4) 100%);
+  background: -webkit-linear-gradient(
+    45deg,
+    rgba(0, 0, 0, 0.7),
+    rgba(72, 15, 144, 0.4) 100%
+  );
+  background: -webkit-gradient(
+    linear,
+    45deg,
+    from(rgba(0, 0, 0, 0.7), rgba(72, 15, 144, 0.4) 100%)
+  );
+  background: linear-gradient(
+    45deg,
+    rgba(0, 0, 0, 0.7),
+    rgba(72, 15, 144, 0.4) 100%
+  );
 }
 
 #classicformpage .card {
@@ -21,7 +33,7 @@
 }
 
 #classicformpage .navbar {
-  transition: background .5s ease-in-out,padding .5s ease-in-out;
+  transition: background 0.5s ease-in-out, padding 0.5s ease-in-out;
 }
 
 #classicformpage .top-nav-collapse {
@@ -30,10 +42,10 @@
 
 @media (max-width: 768px) {
   #classicformpage .navbar:not(.top-nav-collapse) {
-      background: #424f95 !important;
+    background: #424f95 !important;
   }
 }
 
 #classicformpage label {
-  color: #fff!important;
+  color: #fff !important;
 }

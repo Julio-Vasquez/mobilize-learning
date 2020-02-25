@@ -28,7 +28,7 @@ export const BehaviorsData = [
     urlImg:
       "https://www.lavanguardia.com/r/GODO/LV/p4/WebSite/2017/07/22/Recortada/img_eortiz_20170722-175728_imagenes_lv_terceros_volante_estres-kfoF-U4325871298ywH-992x558@LaVanguardia-Web.jpg",
     url: "patience",
-    title: "la paciencia es sabiduria",
+    title: "la paciencia es la mejor sabiduria",
     description:
       "En este curso aprenderemos que son las señales de transito informativas"
   }

@@ -49,14 +49,14 @@ export default function MyQualifications() {
           size="small"
           style={{ width: 90, marginRight: 8 }}
         >
-          Search
+          Buscar
         </Button>
         <Button
           onClick={() => handleReset(clearFilters)}
           size="small"
           style={{ width: 90 }}
         >
-          Reset
+          Limpiar
         </Button>
       </div>
     ),

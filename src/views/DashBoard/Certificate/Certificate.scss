@@ -1,0 +1,18 @@
+#btndownload {
+  margin-left: 25%;
+  position: flex !important;
+  text-align: center !important;
+  align-items: center !important;
+  justify-content: center !important;
+  button {
+    color: green;
+    height: 38px;
+    background-color: transparent;
+    border-color: green;
+    float: none;
+    &:hover {
+      color: white;
+      background-color: green;
+    }
+  }
+}
