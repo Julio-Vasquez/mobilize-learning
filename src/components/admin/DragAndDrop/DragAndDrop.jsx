@@ -37,10 +37,15 @@ const Dustbin = props => {
     lineHeight: "normal",
     float: "left"
   };
-  let t;
-  const [{ canDrop, isOver, item }, drop] = useDrop({
+
+  const [{ canDrop, isOver, res }, drop] = useDrop({
     accept: "box",
-    drop: (item, monitor) => ({ item: monitor.getItem() }),
+    drop: monitor => {
+      console.log(
+        `el valor del div ondrag is : ${monitor.value} === ${props.solution}`
+      );
+      return { res: monitor.value };
+    },
     collect: monitor => ({
       isOver: monitor.isOver(),
       canDrop: monitor.canDrop()
@@ -53,11 +58,11 @@ const Dustbin = props => {
   } else if (canDrop) {
     backgroundColor = "darkkhaki";
   }
-  console.log(t);
+  console.log(res);
   return (
     <div ref={drop} style={{ ...style, backgroundColor }}>
       {isActive ? "Release to drop" : "Drag a box here"}
-      {item}
+      {res}
     </div>
   );
 };

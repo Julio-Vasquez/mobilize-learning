@@ -36,17 +36,17 @@ export const Contact = () => {
             <MDBCardBody>
               <div className="form-header blue accent-1" id="form-header">
                 <h3 className="mt-2">
-                  <MDBIcon icon="envelope" style={{ color: "white" }} /> Write
-                  to us:
+                  <MDBIcon icon="envelope" style={{ color: "white" }} />
+                  Escribenos:
                 </h3>
               </div>
               <p className="dark-grey-text">
-                We'll write rarely, but only the best content.
+                Escribenos para mejorar nuestro contenido
               </p>
               <div className="md-form">
                 <MDBInput
                   icon="user"
-                  label="Your name"
+                  label="Tú nombre"
                   iconClass="grey-text"
                   type="text"
                   id="form-name"
@@ -55,7 +55,7 @@ export const Contact = () => {
               <div className="md-form">
                 <MDBInput
                   icon="envelope"
-                  label="Your email"
+                  label="Tú Email"
                   iconClass="grey-text"
                   type="text"
                   id="form-email"
@@ -64,7 +64,7 @@ export const Contact = () => {
               <div className="md-form">
                 <MDBInput
                   icon="tag"
-                  label="Subject"
+                  label="Objectivo"
                   iconClass="grey-text"
                   type="text"
                   id="form-subject"
@@ -73,14 +73,14 @@ export const Contact = () => {
               <div className="md-form">
                 <MDBInput
                   icon="pencil-alt"
-                  label="Icon Prefix"
+                  label="Cotenido del mensaje"
                   iconClass="grey-text"
                   type="textarea"
                   id="form-text"
                 />
               </div>
               <div className="text-center">
-                <MDBBtn color="light-blue">Submit</MDBBtn>
+                <MDBBtn color="light-blue">Enviar Mensaje</MDBBtn>
               </div>
             </MDBCardBody>
           </MDBCard>
@@ -92,7 +92,7 @@ export const Contact = () => {
             style={{ height: "470px" }}
           >
             <iframe
-              src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d76765.98321148289!2d-73.96694563267306!3d40.751663750099084!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1spl!2spl!4v1525939514494"
+              src="https://www.google.com/maps/embed/v1/place?q=place_id:ChIJ_-L3sh1OJI4RrcRKWYUWnwU&key=AIzaSyDhN5xqgSsiuDrXpJIHfpPhxOTKATwv3lI"
               title="This is a unique title"
               width="99.9%"
               height="100%"
