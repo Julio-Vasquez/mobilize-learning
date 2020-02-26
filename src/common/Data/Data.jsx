@@ -109,7 +109,7 @@ export const DataTable = [
     theme: "Tipos de señales de transito",
     tags: ["Reprobado"],
     cal: 2
-  }, 
+  },
   {
     key: "2",
     name: "Alejandro Peña Soto",
@@ -217,5 +217,23 @@ export const DataTable = [
     theme: "Elementos distractores",
     tags: ["Aprovado"],
     cal: 2
+  }
+];
+
+export const DataDnd = [
+  {
+    value: "preventiva",
+    url:
+      "https://images.vexels.com/media/users/3/162863/isolated/lists/b8744315bad08007b69ee6b1cf008cd1-flecha-girar-a-la-izquierda-rombo-advertencia-plana.png"
+  },
+  {
+    value: "reglamentaria",
+    url:
+      "https://images.vexels.com/media/users/3/143471/isolated/lists/a86cfe30d189825f690610965275bd84-senal-de-stop.png"
+  },
+  {
+    value: "informativa",
+    url:
+      "https://cdn11.bigcommerce.com/s-i8wz4ua4j4/images/stencil/500x659/products/141/431/senales_para_discapacitados__31984.1548874337.png"
   }
 ];

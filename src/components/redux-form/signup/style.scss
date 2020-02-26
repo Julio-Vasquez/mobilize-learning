@@ -1,5 +1,10 @@
-#classicformpage .view {
-  min-height: 100vh;
+#classicformpage {
+  .view {
+    height: 100vh;
+    .mask {
+      height: 85% !important;
+    }
+  }
 }
 
 #classicformpage .card {
