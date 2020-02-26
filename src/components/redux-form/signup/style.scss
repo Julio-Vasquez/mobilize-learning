@@ -1,5 +1,5 @@
 #classicformpage .view {
-  height: 100vh;
+  min-height: 100vh;
 }
 
 #classicformpage .card {
@@ -8,6 +8,7 @@
 
 #classicformpage h6 {
   line-height: 1.7;
+  color: white;
 }
 
 #classicformpage .navbar {

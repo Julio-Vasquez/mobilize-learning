@@ -30,19 +30,9 @@ export const SignUpForm = props => {
           <MDBContainer>
             <MDBRow>
               <div className="white-text text-center text-md-left col-md-6 mt-xl-5 mb-5">
-                <h1 className="h1-responsive font-weight-bold">
-                  Sign up right now!{" "}
-                </h1>
+                <h1 className=" font-weight-bold">Sign up right now!</h1>
                 <hr className="hr-light" />
-                <h6 className="mb-4">
-                  Lorem ipsum dolor sit amet, consectetur adipisicing elit. Rem
-                  repellendus quasi fuga nesciunt dolorum nulla magnam veniam
-                  sapiente, fugiat! Commodi sequi non animi ea dolor molestiae,
-                  quisquam iste, maiores. Nulla.
-                </h6>
-                <MDBBtn outline color="white">
-                  Learn More
-                </MDBBtn>
+                <h6 className="mb-4">¿Qué estas esperando para registrarte?</h6>
               </div>
               <MDBCol md="6" xl="5" className="mb-4">
                 <MDBCard id="classic-card">
