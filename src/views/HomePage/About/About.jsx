@@ -91,7 +91,7 @@ export const About = props => {
                 <div className="testimonial">
                   <div className="avatar mx-auto mb-4">
                     <img
-                      src="https://i.ibb.co/Zf19c4h/Most-Beautiful-Girls-Wallpapers.jpg"
+                      src="https://scontent-scl2-1.xx.fbcdn.net/v/t1.0-9/27867389_1860586153954028_8723907275257759178_n.jpg?_nc_cat=106&_nc_ohc=sZtyKVb-WcsAX9hXHzr&_nc_ht=scontent-scl2-1.xx&oh=50457c844e44ddaaced0ca24b4217f66&oe=5EB63004"
                       className="rounded-circle img-fluid"
                       alt="First sample avatar"
                     />
