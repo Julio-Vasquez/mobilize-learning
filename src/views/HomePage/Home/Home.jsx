@@ -9,10 +9,10 @@ export const Home = () => {
   useEffect(() => {
     const text = {
       strings: [
-        "¿No sabes nada acerca de señales de transito?",
-        "¿Mucho menos del comportamientos de movilidad?",
-        "Este es el lugar indicado!!",
-        "¿Qué estas esperando?"
+        "¿Conoces los tipos de señales de Tránsito?",
+        "¿sabes los comportamientos básicos en la Vía?",
+        "¡Mobilize-Learning Te Ayudará!",
+        "¿Qué esperas?"
       ],
       typeSpeed: 105,
       backSpeed: 45,

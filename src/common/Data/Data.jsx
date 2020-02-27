@@ -6,7 +6,7 @@ export const BehaviorsData = [
     url: "whatthis",
     title: "Comportamientos de movilidad vial",
     description:
-      "En este curso aprenderemos que son los comportamientos de movilidad vial."
+      "Conducir es de las cosas más apasionantes que hay sobre la faz de la tierra, y es mucho mejor si lo hacemos de la manera más responsable, bajo buenos habitos de comportamientos de movilidad"
   },
   {
     alt: "Title img alt",
@@ -14,14 +14,14 @@ export const BehaviorsData = [
     url: "preventive",
     title: "Prevenciones para accidentes",
     description:
-      "En este curso aprenderemos tics para evitar accidentes en las vias."
+      "ser un buen conductor no solo implica conocer el funcionamiento del vehiculo  sino también saber actuar frente a circunstancias en las que se pueda presentar un siniestro vial. En este curso aprenderas tips para la prevencion de los siniestros viales"
   },
   {
     alt: "Title img alt",
     urlImg: "https://conductavialqualitas.net/images/vista_conduccion_1.jpg",
     url: "distract",
     title: "No lleves elementos distractores",
-    description: "En este curso aprenderemos que son los elementos distractores"
+    description: "Existen reglas a la hora de conducir y la hora de cuidar nuestra integridad fisica y la de los demas, una de las mejores formas de cumplir esto, es estar concentrados mientras conducimos y evitando cualquier tipo de elementos distractores. En este curso aprenderas a evitar esos objetos distractores"
   },
   {
     alt: "Title img alt",
@@ -30,7 +30,7 @@ export const BehaviorsData = [
     url: "patience",
     title: "la paciencia es la mejor sabiduria",
     description:
-      "En este curso aprenderemos que son las señales de transito informativas"
+      "En este curso, aprenderás el significado y la aplicacion de las señales informativas, asi, como el comportamiento responsable de un buen conductor frente a situaciones que requieran de un conocimiento suficiente de las señales de transito"
   }
 ];
 
@@ -41,7 +41,7 @@ export const RoadData = [
       "https://www.pequeocio.com/wp-content/uploads/2017/07/que-son-las-preposiciones.jpg",
     url: "whatthis",
     title: "¿Qué son las señales de transito?",
-    description: "En este curso aprenderemos que son las señales de transito"
+    description: "En este Modulo aprenderás a reconocer y a clasificar todas las señales de transito, la importancia de estas en las vias y en la vida de un gran conductor"
   },
   {
     alt: "Title img alt",
@@ -50,7 +50,7 @@ export const RoadData = [
     url: "preventive",
     title: "Señales de transito Preventivas",
     description:
-      "En este curso aprenderemos que son las señales de transito preventivas"
+      "a traves de este curso desarrollaras competencias de reconocimiento de cada una de las señales de transito preventivas y estarás capacitado para conducir de la manera más responsable"
   },
   {
     alt: "Title img alt",
@@ -59,7 +59,7 @@ export const RoadData = [
     url: "regulatory",
     title: "Señales de transito Reglamentarias",
     description:
-      "En este curso aprenderemos que son las señales de transito reglamentarias"
+      "a traves de este curso desarrollaras competencias de reconocimiento de cada una de las señales de transito reglamentarias y estarás capacitado para conducir de la manera más responsable"
   },
   {
     alt: "Title img alt",
@@ -68,7 +68,7 @@ export const RoadData = [
     url: "informative",
     title: "Señales de transito Informativas",
     description:
-      "En este curso aprenderemos que son las señales de transito informativas"
+      "a traves de este curso desarrollaras competencias de reconocimiento de cada una de las señales de transito informativas y estarás capacitado para conducir de la manera más responsable"
   },
   {
     alt: "Title img alt",
@@ -77,7 +77,7 @@ export const RoadData = [
     url: "horizontal",
     title: "Señales de transito Horizontales",
     description:
-      "En este curso aprenderemos que son las señales de transito Horizontales"
+      "a traves de este curso desarrollaras competencias de reconocimiento de cada una de las señales de transito horizontales y estarás capacitado para conducir de la manera más responsable"
   }
 ];
 
