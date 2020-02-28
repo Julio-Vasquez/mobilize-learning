@@ -17,6 +17,7 @@ import Footer from "../../../components/admin/Footer";
 
 import SpecificRoad from "./../SpecificRoad";
 import SpecificBehaviors from "./../SpecificBehaviors";
+import Profile from "./../Profile";
 
 const switchRoutes = (
   <Switch>
@@ -43,6 +44,7 @@ const switchRoutes = (
       component={SpecificRoad}
       exact={true}
     />
+    <Route path="/admin/profile" component={Profile} exact={true} />
     <Redirect from="/admin" to="/admin/dashboard" />
   </Switch>
 );

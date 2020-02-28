@@ -1,8 +1,8 @@
-import React from "react";
+import React, { useEffect } from "react";
 
 import { Button, Icon, message, Row, Col, Card, Comment } from "antd";
 
-import certificate from "./../../../assets/pdf/certificate.png";
+import certificate from "./../../../assets/pdf/certificate.jpeg";
 import file from "./../../../assets/pdf/Certificate.pdf";
 
 import "./Certificate.scss";
@@ -14,11 +14,16 @@ export default function Certificate() {
     }, 300);
   };
 
+  useEffect(() => {
+    let t = document.getElementById("test");
+    t.oncontextmenu = () => false;
+  });
+
   const { Meta } = Card;
   return (
     <div>
       <Row gutter={16}>
-        <Col span={14} offset={1}>
+        <Col span={14} offset={1} id="test">
           <Card
             style={{
               width: "90%"
@@ -53,10 +58,21 @@ export default function Certificate() {
             href={file}
             download="Certificado.pdf"
             onClick={Success}
-            id="btndownload"
+            className="btndownload"
           >
             <Button size="large" shape="round" type="primary">
-              <Icon type="download" /> Click to Download
+              <Icon type="download" /> Descargar
+            </Button>
+          </a>
+
+          <a
+            href={file}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="btndownload"
+          >
+            <Button size="large" shape="round" type="primary" id="red">
+              <Icon type="eye" /> Vizualizar
             </Button>
           </a>
         </Col>
