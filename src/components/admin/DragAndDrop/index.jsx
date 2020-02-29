@@ -1,1 +1,1 @@
-export { RoadBox, Dustbin } from "./DragAndDrop";
+export { TargetRoad, SourceRoad, TargetRoadEmpty } from "./DragAndDrop";

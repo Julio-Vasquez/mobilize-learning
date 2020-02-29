@@ -2,5 +2,6 @@ export {
   SliderQuestion,
   RadioQuestion,
   CheckQuestion,
-  MultipleQuestion
+  MultipleQuestion,
+  RadioGroupQuestion
 } from "./Question";

@@ -1,5 +1,5 @@
 import React from "react";
-import { Form, Slider, Radio, Select } from "antd";
+import { Form, Slider, Radio, Select, Checkbox, Row, Col } from "antd";
 
 const SliderQuestion = props => {
   return (
@@ -30,6 +30,28 @@ const RadioQuestion = props => {
           </Radio>
         ))}
       </Radio.Group>
+    </Form.Item>
+  );
+};
+
+const RadioGroupQuestion = props => {
+  return (
+    <Form.Item name="checkbox-group" label={props.title}>
+      <Checkbox.Group
+        style={{
+          width: "100%"
+        }}
+      >
+        <Row>
+          {props.content.map((item, key) => (
+            <Col span={8} key={key}>
+              <Checkbox value={item} key={key}>
+                {item}
+              </Checkbox>
+            </Col>
+          ))}
+        </Row>
+      </Checkbox.Group>
     </Form.Item>
   );
 };
@@ -67,4 +89,10 @@ const MultipleQuestion = props => {
   );
 };
 
-export { SliderQuestion, RadioQuestion, CheckQuestion, MultipleQuestion };
+export {
+  SliderQuestion,
+  RadioQuestion,
+  CheckQuestion,
+  MultipleQuestion,
+  RadioGroupQuestion
+};

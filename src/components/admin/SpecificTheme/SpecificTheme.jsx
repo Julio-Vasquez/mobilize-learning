@@ -26,7 +26,6 @@ export default function SpecificTheme(props) {
             <div className="specific-theme__info-header">
               <h1>{props.title}</h1>
             </div>
-
             <div className="specific-theme__info-content">
               <h2>Informacion General</h2>
               <p>{props.description}</p>

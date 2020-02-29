@@ -21,7 +21,8 @@ export const BehaviorsData = [
     urlImg: "https://conductavialqualitas.net/images/vista_conduccion_1.jpg",
     url: "distract",
     title: "No lleves elementos distractores",
-    description: "Existen reglas a la hora de conducir y la hora de cuidar nuestra integridad fisica y la de los demas, una de las mejores formas de cumplir esto, es estar concentrados mientras conducimos y evitando cualquier tipo de elementos distractores. En este curso aprenderas a evitar esos objetos distractores"
+    description:
+      "Existen reglas a la hora de conducir y la hora de cuidar nuestra integridad fisica y la de los demas, una de las mejores formas de cumplir esto, es estar concentrados mientras conducimos y evitando cualquier tipo de elementos distractores. En este curso aprenderas a evitar esos objetos distractores"
   },
   {
     alt: "Title img alt",
@@ -41,7 +42,8 @@ export const RoadData = [
       "https://www.pequeocio.com/wp-content/uploads/2017/07/que-son-las-preposiciones.jpg",
     url: "whatthis",
     title: "¿Qué son las señales de transito?",
-    description: "En este Modulo aprenderás a reconocer y a clasificar todas las señales de transito, la importancia de estas en las vias y en la vida de un gran conductor"
+    description:
+      "En este Modulo aprenderás a reconocer y a clasificar todas las señales de transito, la importancia de estas en las vias y en la vida de un gran conductor"
   },
   {
     alt: "Title img alt",
