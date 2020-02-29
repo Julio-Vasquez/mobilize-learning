@@ -1,3 +1,5 @@
+import pdf from "./../../assets/pdf/Content/test.pdf";
+import img from "./../../assets/pdf/Content/test.png";
 export const BehaviorsData = [
   {
     alt: "Title img alt",
@@ -84,12 +86,12 @@ export const RoadData = [
 ];
 
 export const Titles = [
-  { title: "Titulo 1", link: "#" },
-  { title: "Titulo 2", link: "#" },
-  { title: "Titulo 3", link: "#" },
-  { title: "Titulo 4", link: "#" },
-  { title: "Titulo 5", link: "#" },
-  { title: "Titulo 6", link: "#" }
+  { title: "Titulo 1", link: "/admin/content" },
+  { title: "Titulo 2", link: "/admin/content" },
+  { title: "Titulo 3", link: "/admin/content" },
+  { title: "Titulo 4", link: "/admin/content" },
+  { title: "Titulo 5", link: "/admin/content" },
+  { title: "Titulo 6", link: "/admin/content" }
 ];
 
 export const DataTable = [
@@ -239,3 +241,27 @@ export const DataDnd = [
       "https://cdn11.bigcommerce.com/s-i8wz4ua4j4/images/stencil/500x659/products/141/431/senales_para_discapacitados__31984.1548874337.png"
   }
 ];
+
+export const SpecificContentImg = {
+  titulo: "Contenido con Imagen",
+  texto:
+    "Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequatur, quis? Deleniti tenetur tempora eum magnam atque quis iusto eius facilis, corrupti fuga natus odio quos! A sapiente doloribus illum sint. Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequatur, quis? Deleniti tenetur tempora eum magnam atque quis iusto eius facilis, corrupti fuga natus odio quos! A sapiente doloribus illum sint. Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequatur, quis? Deleniti tenetur tempora eum magnam atque quis iusto eius facilis, corrupti fuga natus odio quos! A sapiente doloribus illum sint. Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequatur, quis? Deleniti tenetur tempora eum magnam atque quis iusto eius facilis, corrupti fuga natus odio quos! A sapiente doloribus illum sint. Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequatur, quis? Deleniti tenetur tempora eum magnam atque quis iusto eius facilis, corrupti fuga natus odio quos! A sapiente doloribus illum sint. Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequatur, quis? Deleniti tenetur tempora eum magnam atque quis iusto eius facilis, corrupti fuga natus odio quos! A sapiente doloribus illum sint.",
+  urlmultimedia: `${img}`,
+  type: "img"
+};
+
+export const SpecificContentPdf = {
+  titulo: "Contenido con pdf",
+  texto:
+    "Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequatur, quis? Deleniti tenetur tempora eum magnam atque quis iusto eius facilis, corrupti fuga natus odio quos! A sapiente doloribus illum sint. Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequatur, quis? Deleniti tenetur tempora eum magnam atque quis iusto eius facilis, corrupti fuga natus odio quos! A sapiente doloribus illum sint. Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequatur, quis? Deleniti tenetur tempora eum magnam atque quis iusto eius facilis, corrupti fuga natus odio quos! A sapiente doloribus illum sint. Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequatur, quis? Deleniti tenetur tempora eum magnam atque quis iusto eius facilis, corrupti fuga natus odio quos! A sapiente doloribus illum sint. Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequatur, quis? Deleniti tenetur tempora eum magnam atque quis iusto eius facilis, corrupti fuga natus odio quos! A sapiente doloribus illum sint. Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequatur, quis? Deleniti tenetur tempora eum magnam atque quis iusto eius facilis, corrupti fuga natus odio quos! A sapiente doloribus illum sint.",
+  urlmultimedia: `${pdf}`,
+  type: "pdf"
+};
+
+export const SpecificContentVideo = {
+  titulo: "Contenido con pdf",
+  texto:
+    "Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequatur, quis? Deleniti tenetur tempora eum magnam atque quis iusto eius facilis, corrupti fuga natus odio quos! A sapiente doloribus illum sint. Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequatur, quis? Deleniti tenetur tempora eum magnam atque quis iusto eius facilis, corrupti fuga natus odio quos! A sapiente doloribus illum sint. Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequatur, quis? Deleniti tenetur tempora eum magnam atque quis iusto eius facilis, corrupti fuga natus odio quos! A sapiente doloribus illum sint. Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequatur, quis? Deleniti tenetur tempora eum magnam atque quis iusto eius facilis, corrupti fuga natus odio quos! A sapiente doloribus illum sint. Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequatur, quis? Deleniti tenetur tempora eum magnam atque quis iusto eius facilis, corrupti fuga natus odio quos! A sapiente doloribus illum sint. Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequatur, quis? Deleniti tenetur tempora eum magnam atque quis iusto eius facilis, corrupti fuga natus odio quos! A sapiente doloribus illum sint.",
+  urlmultimedia: "https://cldup.com/sttuQMwzsA.mp4",
+  type: "video"
+};

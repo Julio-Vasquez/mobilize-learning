@@ -1,1 +1,10 @@
-export { BehaviorsData, RoadData, Titles, DataTable, DataDnd } from "./Data";
+export {
+  BehaviorsData,
+  RoadData,
+  Titles,
+  DataTable,
+  DataDnd,
+  SpecificContentImg,
+  SpecificContentPdf,
+  SpecificContentVideo
+} from "./Data";

@@ -14,6 +14,7 @@ import Navbar from "./../../../components/admin/Navbar";
 
 import styles from "./../../../assets/jss/custom/adminStyle";
 import Footer from "../../../components/admin/Footer";
+import SpecificContent from "./../../../components/admin/SpecificContent";
 
 import SpecificRoad from "./../SpecificRoad";
 import SpecificBehaviors from "./../SpecificBehaviors";
@@ -44,6 +45,7 @@ const switchRoutes = (
       component={SpecificRoad}
       exact={true}
     />
+    <Route path="/admin/content" component={SpecificContent} exact={true} />
     <Route path="/admin/profile" component={Profile} exact={true} />
     <Redirect from="/admin" to="/admin/dashboard" />
   </Switch>
