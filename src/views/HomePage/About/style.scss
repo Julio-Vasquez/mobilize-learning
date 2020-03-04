@@ -1,27 +1,31 @@
-
 .contenido {
-  background-image: url(https://images.pexels.com/photos/1367192/pexels-photo-1367192.jpeg);
-  background-size: cover;
-  background-repeat: no-repeat;
-  background-attachment: fixed;
   min-height: 80vh;
   img {
     width: 250px;
     height: 250px;
   }
-  #testimonials{
+  #testimonials {
     margin-top: 60px;
     margin-bottom: 60.5px;
-    .texto-informativo{
+    .texto-informativo {
       padding-top: 15px;
       text-align: center;
     }
-    .texto-informativo, h2,h4,h6, .btn-floating{
-      color:white;
+    .texto-informativo,
+    h2,
+    h4,
+    .btn-floating {
+      color: white;
+    }
+    h6 {
+      color: red;
     }
   }
 }
-
+.fa.fa-chevron-right,
+.fa.fa-chevron-left {
+  color: red;
+}
 @media (max-width: 740px) {
   html,
   body,
@@ -33,21 +37,53 @@
 
 .rgba-gradient {
   background: rgba(35, 7, 77, 0.6);
-  background: -webkit-linear-gradient(to right, rgba(204, 83, 51, 0.6), rgba(35, 7, 77, 0.6));
-  background: linear-gradient(to right, rgba(204, 83, 51, 0.6), rgba(35, 7, 77, 0.6));
+  background: -webkit-linear-gradient(
+    to right,
+    rgba(204, 83, 51, 0.6),
+    rgba(35, 7, 77, 0.6)
+  );
+  background: linear-gradient(
+    to right,
+    rgba(204, 83, 51, 0.6),
+    rgba(35, 7, 77, 0.6)
+  );
 }
 
 .img-gradient:after {
-  content: '';
+  content: "";
   position: absolute;
   left: 0;
   top: 0;
   width: 100%;
   height: 100%;
   display: inline-block;
-  background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, rgba(220, 66, 37, 0.5)), color-stop(100%, rgba(0, 47, 75, 0.5)));
-  background: -webkit-linear-gradient(top, rgba(0, 47, 75, 0.5) 0%, rgba(220, 66, 37, 0.5) 100%);
-  background: -o-linear-gradient(top, rgba(0, 47, 75, 0.5) 0%, rgba(220, 66, 37, 0.5) 100%);
-  background: -webkit-gradient(linear, left top, left bottom, from(rgba(0, 47, 75, 0.5)), to(rgba(220, 66, 37, 0.5)));
-  background: linear-gradient(to bottom, rgba(0, 47, 75, 0.5) 0%, rgba(220, 66, 37, 0.5) 100%);
+  background: -webkit-gradient(
+    linear,
+    left top,
+    left bottom,
+    color-stop(0%, rgba(220, 66, 37, 0.5)),
+    color-stop(100%, rgba(0, 47, 75, 0.5))
+  );
+  background: -webkit-linear-gradient(
+    top,
+    rgba(0, 47, 75, 0.5) 0%,
+    rgba(220, 66, 37, 0.5) 100%
+  );
+  background: -o-linear-gradient(
+    top,
+    rgba(0, 47, 75, 0.5) 0%,
+    rgba(220, 66, 37, 0.5) 100%
+  );
+  background: -webkit-gradient(
+    linear,
+    left top,
+    left bottom,
+    from(rgba(0, 47, 75, 0.5)),
+    to(rgba(220, 66, 37, 0.5))
+  );
+  background: linear-gradient(
+    to bottom,
+    rgba(0, 47, 75, 0.5) 0%,
+    rgba(220, 66, 37, 0.5) 100%
+  );
 }

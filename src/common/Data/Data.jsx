@@ -6,9 +6,13 @@ import accidente from "./../../assets/images/content/comp/accidente.jpg";
 import distractor from "./../../assets/images/content/comp/distractor.jpg";
 import enojo from "./../../assets/images/content/comp/enojo.jpg";
 import what from "./../../assets/images/content/comp/quee.jpg";
-//se;ales
-import que from "./../../assets/images/content/signal/que.png";
 
+//se;ales
+import Qs from "./../../assets/images/content/signal/QueEs.jpg";
+import pre from "./../../assets/images/content/signal/Preventiva.jpg";
+import reg from "./../../assets/images/content/signal/Reglamentaria.jpg";
+import inf from "./../../assets/images/content/signal/Informativa.jpg";
+import hrz from "./../../assets/images/content/signal/Horizontal.jpg";
 //dnd
 import one from "./../../assets/images/content/dnd/left.png";
 import two from "./../../assets/images/content/dnd/stop.png";
@@ -55,7 +59,7 @@ export const BehaviorsData = [
 export const RoadData = [
   {
     alt: "Title img alt",
-    urlImg: `${que}`,
+    urlImg: `${Qs}`,
     url: "whatthis",
     title: "¿Qué son las señales de transito?.",
     description:
@@ -63,8 +67,7 @@ export const RoadData = [
   },
   {
     alt: "Title img alt",
-    urlImg:
-      "https://www.comparaonline.com.co/blog-statics/co/uploads/2018/06/Se%C3%B1ales-de-tr%C3%A1nsito-preventivas.png",
+    urlImg: `${pre}`,
     url: "preventive",
     title: "Señales de transito Preventivas",
     description:
@@ -72,8 +75,7 @@ export const RoadData = [
   },
   {
     alt: "Title img alt",
-    urlImg:
-      "https://www.pruebaderuta.com/wp-content/uploads/2015/06/senales-de-transito-reglamentarias-1.jpg",
+    urlImg: `${reg}`,
     url: "regulatory",
     title: "Señales de transito Reglamentarias",
     description:
@@ -81,8 +83,7 @@ export const RoadData = [
   },
   {
     alt: "Title img alt",
-    urlImg:
-      "https://www.pruebaderuta.com/wp-content/uploads/2015/06/senales-de-transito-informativas-1.jpg",
+    urlImg: `${inf}`,
     url: "informative",
     title: "Señales de transito Informativas",
     description:
@@ -90,8 +91,7 @@ export const RoadData = [
   },
   {
     alt: "Title img alt",
-    urlImg:
-      "https://www.pruebaderuta.com/wp-content/uploads/2015/06/senales-de-transito-horizontales-1.jpg",
+    urlImg: `${hrz}`,
     url: "horizontal",
     title: "Señales de transito Horizontales",
     description:

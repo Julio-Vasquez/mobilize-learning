@@ -13,12 +13,13 @@ import design from "./../../../assets/images/about/alejandro.jpg";
 import dev from "./../../../assets/images/about/julio.jpg";
 import exp from "./../../../assets/images/about/expert.jpg";
 
+import bg from "./../../../assets/images/content/signal/QueEs.jpg";
+
 import "./style.scss";
 
 export const About = props => {
   useEffect(() => {
-    document.body.style.backgroundImage =
-      "url('https://images.pexels.com/photos/1367192/pexels-photo-1367192.jpeg')";
+    document.body.style.backgroundImage = `url('${bg}')`;
     document.body.style.backgroundAttachment = "fixed";
     document.body.style.backgroundRepeat = "no-repeat";
     document.body.style.backgroundSize = "cover";
@@ -28,7 +29,12 @@ export const About = props => {
     <div className="contenido">
       <section id="testimonials" className="text-center py-5 wow fadeIn">
         <MDBContainer>
-          <h2 className="h1-responsive font-weight-bold mb-5">About Us</h2>
+          <h2
+            className="h1-responsive font-weight-bold mb-5"
+            style={{ color: "#000" }}
+          >
+            About Us
+          </h2>
           <MDBCarousel
             id="carousel-example-1"
             activeItem={1}

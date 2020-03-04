@@ -10,11 +10,11 @@ import {
 } from "mdbreact";
 
 import "./style.scss";
+import bg from "./../../../assets/images/content/signal/QueEs.jpg";
 
 export const Contact = () => {
   useEffect(() => {
-    document.body.style.backgroundImage =
-      "url('https://images.pexels.com/photos/1367192/pexels-photo-1367192.jpeg')";
+    document.body.style.backgroundImage = `url('${bg}')`;
     document.body.style.backgroundAttachment = "fixed";
     document.body.style.backgroundRepeat = "no-repeat";
     document.body.style.backgroundSize = "cover";

@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import Typed from "typed.js";
-import signal from "./../../../assets/images/signals/01.jpg";
+import signal from "./../../../assets/images/signals/001.jpg";
 
 import "./style.scss";
 
@@ -21,6 +21,9 @@ export const Home = () => {
     };
     new Typed("#dintext", text);
     document.body.style.backgroundImage = `url(${signal})`;
+    document.body.style.backgroundAttachment = "fixed";
+    document.body.style.backgroundRepeat = "no-repeat";
+    document.body.style.backgroundSize = "cover";
     return () => setLd(false);
   }, [ld]);
 
