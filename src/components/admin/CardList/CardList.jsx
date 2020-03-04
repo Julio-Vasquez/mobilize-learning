@@ -26,6 +26,7 @@ export default function CardList(props) {
               cover={<img alt={`${item.alt}`} src={`${item.urlImg}`} />}
             >
               <Card.Meta
+                style={{ textAlign: "justify" }}
                 title={`${item.title}`}
                 description={`${item.description}`}
               />

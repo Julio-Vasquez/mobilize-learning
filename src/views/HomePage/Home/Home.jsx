@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import Typed from "typed.js";
+import signal from "./../../../assets/images/signals/01.jpg";
 
 import "./style.scss";
 
@@ -10,7 +11,7 @@ export const Home = () => {
     const text = {
       strings: [
         "¿Conoces los tipos de señales de Tránsito?",
-        "¿sabes los comportamientos básicos en la Vía?",
+        "¿Sabes los comportamientos básicos en la Vía?",
         "¡Mobilize-Learning Te Ayudará!",
         "¿Qué esperas?"
       ],
@@ -19,8 +20,7 @@ export const Home = () => {
       loop: true
     };
     new Typed("#dintext", text);
-    document.body.style.backgroundImage =
-      "url(./../../../assets/images/signals/01.jpg)";
+    document.body.style.backgroundImage = `url(${signal})`;
     return () => setLd(false);
   }, [ld]);
 

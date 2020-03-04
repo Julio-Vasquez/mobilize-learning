@@ -1,6 +1,6 @@
 import React, { useState, createRef, useEffect } from "react";
 import { Switch, Route, Redirect } from "react-router-dom";
-import logo from "./../../../assets/images/reactlogo.png";
+import logo from "./../../../assets/images/logo192.png";
 import bgImage from "./../../../assets/images/sidebar-2.jpg";
 
 import { makeStyles } from "@material-ui/core/styles";

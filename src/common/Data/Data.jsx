@@ -1,37 +1,52 @@
 import pdf from "./../../assets/pdf/Content/test.pdf";
 import img from "./../../assets/pdf/Content/test.png";
+
+//comportamientos
+import accidente from "./../../assets/images/content/comp/accidente.jpg";
+import distractor from "./../../assets/images/content/comp/distractor.jpg";
+import enojo from "./../../assets/images/content/comp/enojo.jpg";
+import what from "./../../assets/images/content/comp/quee.jpg";
+//se;ales
+import que from "./../../assets/images/content/signal/que.png";
+
+//dnd
+import one from "./../../assets/images/content/dnd/left.png";
+import two from "./../../assets/images/content/dnd/stop.png";
+import cond from "./../../assets/images/content/dnd/condi.webp";
+
+//videos
+import video from "./../../assets/videos/test.mp4";
+
 export const BehaviorsData = [
   {
     alt: "Title img alt",
-    urlImg:
-      "https://www.pequeocio.com/wp-content/uploads/2017/07/que-son-las-preposiciones.jpg",
+    urlImg: `${what}`,
     url: "whatthis",
-    title: "Comportamientos de movilidad vial",
+    title: "Comportamientos de movilidad vial.",
     description:
-      "Conducir es de las cosas más apasionantes que hay sobre la faz de la tierra, y es mucho mejor si lo hacemos de la manera más responsable, bajo buenos habitos de comportamientos de movilidad"
+      "Conducir es de las cosas más apasionantes que hay sobre la faz de la tierra, y es mucho mejor si lo hacemos de la manera más responsable, bajo buenos habitos de comportamientos de movilidad, En este curso aprenderas comportamientos de movilidad"
   },
   {
-    alt: "Title img alt",
-    urlImg: "https://www.abogados.com/wp-content/uploads/accidente-de-auto.jpg",
+    alt: "Prevenciones para accidentes.",
+    urlImg: `${accidente}`,
     url: "preventive",
-    title: "Prevenciones para accidentes",
+    title: "Prevenciones para accidentes.",
     description:
-      "ser un buen conductor no solo implica conocer el funcionamiento del vehiculo  sino también saber actuar frente a circunstancias en las que se pueda presentar un siniestro vial. En este curso aprenderas tips para la prevencion de los siniestros viales"
+      "Ser un buen conductor no solo implica conocer el funcionamiento del vehiculo  sino también saber actuar frente a circunstancias en las que se pueda presentar un siniestro vial. En este curso aprenderas la prevención de los siniestros viales"
   },
   {
     alt: "Title img alt",
-    urlImg: "https://conductavialqualitas.net/images/vista_conduccion_1.jpg",
+    urlImg: `${distractor}`,
     url: "distract",
-    title: "No lleves elementos distractores",
+    title: "No lleves elementos distractores.",
     description:
-      "Existen reglas a la hora de conducir y la hora de cuidar nuestra integridad fisica y la de los demas, una de las mejores formas de cumplir esto, es estar concentrados mientras conducimos y evitando cualquier tipo de elementos distractores. En este curso aprenderas a evitar esos objetos distractores"
+      "Existen reglas a la hora de conducir y cuidar nuestra integridad fisica y de los demas, la mejor forma de cumplirlo, es estar concentrados mientras conducimos, evitando cualquier tipo de elementos distractores. En el curso aprenderas a evitar esos objetos distractores"
   },
   {
     alt: "Title img alt",
-    urlImg:
-      "https://www.lavanguardia.com/r/GODO/LV/p4/WebSite/2017/07/22/Recortada/img_eortiz_20170722-175728_imagenes_lv_terceros_volante_estres-kfoF-U4325871298ywH-992x558@LaVanguardia-Web.jpg",
+    urlImg: `${enojo}`,
     url: "patience",
-    title: "la paciencia es la mejor sabiduria",
+    title: "La paciencia es la mejor sabiduria.",
     description:
       "En este curso, aprenderás el significado y la aplicacion de las señales informativas, asi, como el comportamiento responsable de un buen conductor frente a situaciones que requieran de un conocimiento suficiente de las señales de transito"
   }
@@ -40,12 +55,11 @@ export const BehaviorsData = [
 export const RoadData = [
   {
     alt: "Title img alt",
-    urlImg:
-      "https://www.pequeocio.com/wp-content/uploads/2017/07/que-son-las-preposiciones.jpg",
+    urlImg: `${que}`,
     url: "whatthis",
-    title: "¿Qué son las señales de transito?",
+    title: "¿Qué son las señales de transito?.",
     description:
-      "En este Modulo aprenderás a reconocer y a clasificar todas las señales de transito, la importancia de estas en las vias y en la vida de un gran conductor"
+      "En este curso vas ha aprender a reconocer y a clasificar todas las señales de transito, la importancia de cada una de ellas en las vias y en la vida de un gran conductor"
   },
   {
     alt: "Title img alt",
@@ -54,7 +68,7 @@ export const RoadData = [
     url: "preventive",
     title: "Señales de transito Preventivas",
     description:
-      "a traves de este curso desarrollaras competencias de reconocimiento de cada una de las señales de transito preventivas y estarás capacitado para conducir de la manera más responsable"
+      "A traves de este curso desarrollaras competencias de reconocimiento de cada una de las señales de transito preventivas y estarás capacitado para conducir de la manera más responsable"
   },
   {
     alt: "Title img alt",
@@ -97,9 +111,9 @@ export const Titles = [
 export const DataTable = [
   {
     key: "1",
-    name: "Alejandro Peña Soto",
+    name: "Julio Alfredo Vasquez Lievano",
     age: 24,
-    address: "Alej.pena@udla.edu.co - 700alejandro007@gmail.com",
+    address: "jul.vasquez@udla.edu.co - jualvalitube@gmail.com",
     theme: "Comportamientos de mobilidad",
     tags: ["Aprobado"],
     cal: 10
@@ -107,18 +121,18 @@ export const DataTable = [
 
   {
     key: "15",
-    name: "Alejandro Peña Soto",
+    name: "Julio Alfredo Vasquez Lievano",
     age: 24,
-    address: "Alej.pena@udla.edu.co - 700alejandro007@gmail.com",
+    address: "jul.vasquez@udla.edu.co - jualvalitube@gmail.com",
     theme: "Tipos de señales de transito",
     tags: ["Reprobado"],
     cal: 2
   },
   {
     key: "2",
-    name: "Alejandro Peña Soto",
+    name: "Julio Alfredo Vasquez Lievano",
     age: 24,
-    address: "Alej.pena@udla.edu.co - 700alejandro007@gmail.com",
+    address: "jul.vasquez@udla.edu.co - jualvalitube@gmail.com",
     theme: "Reconocimiento de señales Preventivas",
     tags: ["Aceptable"],
     cal: 6
@@ -227,18 +241,15 @@ export const DataTable = [
 export const DataDnd = [
   {
     value: "preventiva",
-    url:
-      "https://images.vexels.com/media/users/3/162863/isolated/lists/b8744315bad08007b69ee6b1cf008cd1-flecha-girar-a-la-izquierda-rombo-advertencia-plana.png"
+    url: `${one}`
   },
   {
     value: "reglamentaria",
-    url:
-      "https://images.vexels.com/media/users/3/143471/isolated/lists/a86cfe30d189825f690610965275bd84-senal-de-stop.png"
+    url: `${two}`
   },
   {
     value: "informativa",
-    url:
-      "https://cdn11.bigcommerce.com/s-i8wz4ua4j4/images/stencil/500x659/products/141/431/senales_para_discapacitados__31984.1548874337.png"
+    url: `${cond}`
   }
 ];
 
@@ -262,6 +273,6 @@ export const SpecificContentVideo = {
   titulo: "Contenido con pdf",
   texto:
     "Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequatur, quis? Deleniti tenetur tempora eum magnam atque quis iusto eius facilis, corrupti fuga natus odio quos! A sapiente doloribus illum sint. Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequatur, quis? Deleniti tenetur tempora eum magnam atque quis iusto eius facilis, corrupti fuga natus odio quos! A sapiente doloribus illum sint. Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequatur, quis? Deleniti tenetur tempora eum magnam atque quis iusto eius facilis, corrupti fuga natus odio quos! A sapiente doloribus illum sint. Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequatur, quis? Deleniti tenetur tempora eum magnam atque quis iusto eius facilis, corrupti fuga natus odio quos! A sapiente doloribus illum sint. Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequatur, quis? Deleniti tenetur tempora eum magnam atque quis iusto eius facilis, corrupti fuga natus odio quos! A sapiente doloribus illum sint. Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequatur, quis? Deleniti tenetur tempora eum magnam atque quis iusto eius facilis, corrupti fuga natus odio quos! A sapiente doloribus illum sint.",
-  urlmultimedia: "https://cldup.com/sttuQMwzsA.mp4",
+  urlmultimedia: `${video}`,
   type: "video"
 };

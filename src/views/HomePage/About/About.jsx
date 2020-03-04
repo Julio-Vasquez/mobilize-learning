@@ -8,6 +8,11 @@ import {
   MDBMask
 } from "mdbreact";
 
+import pedagogo from "./../../../assets/images/about/pedagogo.jpg";
+import design from "./../../../assets/images/about/alejandro.jpg";
+import dev from "./../../../assets/images/about/julio.jpg";
+import exp from "./../../../assets/images/about/expert.jpg";
+
 import "./style.scss";
 
 export const About = props => {
@@ -39,7 +44,7 @@ export const About = props => {
                 <div className="testimonial">
                   <div className="avatar mx-auto mb-3">
                     <img
-                      src="https://scontent.feyp1-1.fna.fbcdn.net/v/t1.0-9/7706_10153282643007133_8565210206721975586_n.jpg?_nc_cat=109&_nc_oc=AQl_RvE2vzC4MB2Dl7e2jDh6roaEg1u9lICMqGPjs5Ml20JF9vDGDdniJRA8vt5DNY8&_nc_ht=scontent.feyp1-1.fna&oh=a7fb21877d6a8098b2bc08944f1c54e6&oe=5E6125CA"
+                      src={pedagogo}
                       className="rounded-circle img-fluid"
                       alt="First sample avatar"
                     />
@@ -66,7 +71,7 @@ export const About = props => {
                 <div className="testimonial">
                   <div className="avatar mx-auto mb-4">
                     <img
-                      src="https://mdbootstrap.com/img/Photos/Avatars/img%20(30).jpg"
+                      src={exp}
                       className="rounded-circle img-fluid"
                       alt="First sample avatar"
                     />
@@ -91,7 +96,7 @@ export const About = props => {
                 <div className="testimonial">
                   <div className="avatar mx-auto mb-4">
                     <img
-                      src="https://scontent-scl2-1.xx.fbcdn.net/v/t1.0-9/27867389_1860586153954028_8723907275257759178_n.jpg?_nc_cat=106&_nc_ohc=sZtyKVb-WcsAX9hXHzr&_nc_ht=scontent-scl2-1.xx&oh=50457c844e44ddaaced0ca24b4217f66&oe=5EB63004"
+                      src={design}
                       className="rounded-circle img-fluid"
                       alt="First sample avatar"
                     />
@@ -116,7 +121,7 @@ export const About = props => {
                 <div className="testimonial">
                   <div className="avatar mx-auto mb-4">
                     <img
-                      src="https://image.ibb.co/gbeBCx/julio.jpg"
+                      src={dev}
                       className="rounded-circle img-fluid"
                       alt="First sample avatar"
                     />
