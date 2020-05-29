@@ -1,4 +1,4 @@
 import React from "react";
-import { SignUpForm } from "./../../../components/redux-form/signup/index";
+import { SignUpForm } from "./../../../components/home/signup";
 
 export const SignUp = () => <SignUpForm />;

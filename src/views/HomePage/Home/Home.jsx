@@ -13,18 +13,22 @@ export const Home = () => {
         "¿Conoces los tipos de señales de Tránsito?",
         "¿Sabes los comportamientos básicos en la Vía?",
         "¡Mobilize-Learning Te Ayudará!",
-        "¿Qué esperas?"
+        "¿Qué esperas?",
       ],
       typeSpeed: 105,
       backSpeed: 45,
-      loop: true
+      loop: true,
     };
     new Typed("#dintext", text);
     document.body.style.backgroundImage = `url(${signal})`;
     document.body.style.backgroundAttachment = "fixed";
     document.body.style.backgroundRepeat = "no-repeat";
     document.body.style.backgroundSize = "cover";
-    return () => setLd(false);
+
+    return () => {
+      setLd(false);
+      document.body.style.backgroundImage = "";
+    };
   }, [ld]);
 
   return (

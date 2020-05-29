@@ -6,7 +6,7 @@ import {
   MDBCardBody,
   MDBIcon,
   MDBBtn,
-  MDBInput
+  MDBInput,
 } from "mdbreact";
 
 import "./style.scss";
@@ -18,6 +18,9 @@ export const Contact = () => {
     document.body.style.backgroundAttachment = "fixed";
     document.body.style.backgroundRepeat = "no-repeat";
     document.body.style.backgroundSize = "cover";
+    return () => {
+      document.body.style.backgroundImage = "";
+    };
   });
 
   return (

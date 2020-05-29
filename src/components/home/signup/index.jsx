@@ -10,19 +10,22 @@ import {
   MDBContainer,
   MDBCard,
   MDBCardBody,
-  MDBInput
+  MDBInput,
 } from "mdbreact";
 
 import "./style.scss";
 
 import bg from "./../../../assets/images/signup/signup.jpg";
 
-export const SignUpForm = props => {
+export const SignUpForm = (props) => {
   useEffect(() => {
     document.body.style.backgroundImage = `url(${bg})`;
     document.body.style.backgroundAttachment = "fixed";
     document.body.style.backgroundRepeat = "no-repeat";
     document.body.style.backgroundSize = "cover";
+    return () => {
+      document.body.style.backgroundImage = "";
+    };
   });
   return (
     <div id="classicformpage">

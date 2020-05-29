@@ -1,6 +1,6 @@
 import React, { useEffect } from "react";
 
-import { LoginForm } from "./../../../components/redux-form/login/index";
+import { LoginForm } from "./../../../components/home/login";
 import bg from "./../../../assets/images/login/Login.jpeg";
 
 export const Login = () => {
@@ -9,6 +9,9 @@ export const Login = () => {
     document.body.style.backgroundAttachment = "fixed";
     document.body.style.backgroundRepeat = "no-repeat";
     document.body.style.backgroundSize = "cover";
+    return () => {
+      document.body.style.backgroundImage = "";
+    };
   });
 
   return <LoginForm />;
