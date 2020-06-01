@@ -1,4 +1,5 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
+import { ToastContainer, toast } from "react-toastify";
 
 import "./style.scss";
 
@@ -11,6 +12,30 @@ export function LoginForm(props) {
     }
   });
 
+  const initToast = (sms) => toast.error(sms);
+
+  const [loginValues, setLoginValues] = useState({
+    userName: "",
+    password: "",
+  });
+
+  const onChange = (e) => {
+    setLoginValues({
+      ...loginValues,
+      [e.target.name]: e.target.value,
+    });
+  };
+
+  const onSubmit = (e) => {
+    e.preventDefault();
+    const { userName, password } = loginValues;
+    initToast("Debe llenar el formulario para continuar");
+    if (!userName && !password) {
+      console.log("no se que hago aqui");
+    }
+    // hacer una validacion, en caso de no cumplor utilizar un toast
+  };
+
   return (
     <div className="logincontainer">
       <div className="header">
@@ -19,11 +44,16 @@ export function LoginForm(props) {
       <div className="main-agileinfo">
         <div className="wthree-form">
           <h2>Rellene el siguiente formulario para iniciar sesión</h2>
-          <form action="/admin" method="get">
+          <form
+            action="/admin"
+            method="get"
+            onChange={onChange}
+            onSubmit={onSubmit}
+          >
             <div className="form-sub">
               <input
                 type="text"
-                name="Username"
+                name="userName"
                 placeholder="Username "
                 required=""
               />
@@ -34,7 +64,7 @@ export function LoginForm(props) {
             <div className="form-sub">
               <input
                 type="password"
-                name="Password"
+                name="password"
                 placeholder="Password"
                 required=""
               />
@@ -56,6 +86,15 @@ export function LoginForm(props) {
           </form>
         </div>
       </div>
+      <ToastContainer
+        position="top-left"
+        autoClose={5000}
+        newestOnTop
+        closeOnClick
+        rtl={false}
+        pauseOnVisibilityChange={false}
+        pauseOnHover={false}
+      />
     </div>
   );
 }
