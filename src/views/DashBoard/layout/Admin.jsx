@@ -13,12 +13,13 @@ import Sidebar from "./../../../components/admin/Sidebar";
 import Navbar from "./../../../components/admin/Navbar";
 
 import styles from "./../../../assets/jss/custom/adminStyle";
-import Footer from "../../../components/admin/Footer";
 import SpecificContent from "./../../../components/admin/SpecificContent";
 
 import SpecificRoad from "./../SpecificRoad";
 import SpecificBehaviors from "./../SpecificBehaviors";
 import Profile from "./../Profile";
+
+import { MenuOutlined } from "@ant-design/icons";
 
 const switchRoutes = (
   <Switch>
@@ -76,7 +77,7 @@ export default function Admin({ ...rest }) {
     if (navigator.platform.indexOf("Win") > -1) {
       ps = new PerfectScrollbar(mainPanel.current, {
         suppressScrollX: true,
-        suppressScrollY: false
+        suppressScrollY: false,
       });
       document.body.style.overflow = "hidden";
     }
@@ -98,7 +99,7 @@ export default function Admin({ ...rest }) {
         image={bgImage}
         handleDrawerToggle={handleDrawerToggle}
         open={mobileOpen}
-        color="orange"
+        color="blue"
         {...rest}
       />
       <div className={classes.mainPanel} ref={mainPanel}>
@@ -109,7 +110,6 @@ export default function Admin({ ...rest }) {
         />
         <div className={classes.map}>{switchRoutes}</div>
       </div>
-      <Footer />
     </div>
   );
 }

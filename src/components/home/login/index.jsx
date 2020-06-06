@@ -6,7 +6,6 @@ import "./style.scss";
 export function LoginForm(props) {
   useEffect(() => {
     setTimeout(hideURLbar, 0);
-
     function hideURLbar() {
       window.scrollTo(0, 1);
     }
@@ -27,7 +26,7 @@ export function LoginForm(props) {
   };
 
   const onSubmit = (e) => {
-    e.preventDefault();
+    //e.preventDefault();
     const { userName, password } = loginValues;
     initToast("Debe llenar el formulario para continuar");
     if (!userName && !password) {

@@ -5,7 +5,6 @@ import { Link } from "react-router-dom";
 import "./CardList.scss";
 
 export default function CardList(props) {
-  console.log(props.module);
   return (
     <List
       grid={{
@@ -15,10 +14,10 @@ export default function CardList(props) {
         md: 2,
         lg: 2,
         xl: 3,
-        xxl: 4
+        xxl: 4,
       }}
       dataSource={props.data}
-      renderItem={item => (
+      renderItem={(item) => (
         <List.Item className="car-cont">
           <Link to={`/admin/${props.module}/curse=${item.url}`}>
             <Card

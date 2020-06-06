@@ -1,10 +1,11 @@
 import React, { useEffect } from "react";
-import { Button, Icon, message, Row, Col, Card, Comment } from "antd";
+import { Button, message, Row, Col, Card, Comment } from "antd";
+import { CloudDownloadOutlined, EyeOutlined } from "@ant-design/icons";
 
 import {
   SpecificContentImg,
   SpecificContentPdf,
-  SpecificContentVideo
+  SpecificContentVideo,
 } from "./../../../common/Data";
 
 export default function SpecificContent() {
@@ -25,14 +26,14 @@ export default function SpecificContent() {
 
   const { Meta } = Card;
 
-  const RenderType = pro => {
+  const RenderType = (pro) => {
     switch (pro.type) {
       case "pdf":
         return (
           <Col span={12} offset={1} id="test">
             <Card
               style={{
-                width: "90%"
+                width: "90%",
               }}
               cover={
                 <object
@@ -52,7 +53,7 @@ export default function SpecificContent() {
           <Col span={12} offset={1} id="test">
             <Card
               style={{
-                width: "90%"
+                width: "90%",
               }}
               cover={
                 <img
@@ -71,7 +72,7 @@ export default function SpecificContent() {
           <Col span={12} offset={1} id="test">
             <Card
               style={{
-                width: "90%"
+                width: "90%",
               }}
               cover={
                 <video controls>
@@ -89,7 +90,7 @@ export default function SpecificContent() {
     }
   };
 
-  const RenderButtons = pro => {
+  const RenderButtons = (pro) => {
     return pro.type === "pdf" ? (
       <div>
         <a
@@ -99,7 +100,7 @@ export default function SpecificContent() {
           className="btndownload"
         >
           <Button size="large" shape="round" type="primary">
-            <Icon type="download" /> Descargar
+            <CloudDownloadOutlined /> Descargar
           </Button>
         </a>
 
@@ -110,7 +111,7 @@ export default function SpecificContent() {
           className="btndownload"
         >
           <Button size="large" shape="round" type="primary" id="red">
-            <Icon type="eye" /> Vizualizar
+            <EyeOutlined /> Vizualizar
           </Button>
         </a>
       </div>

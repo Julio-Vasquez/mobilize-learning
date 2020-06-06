@@ -6,11 +6,11 @@ import {
   MDBNavItem,
   MDBNavLink,
   MDBNavbarToggler,
-  MDBCollapse
+  MDBCollapse,
 } from "mdbreact";
 import "./style.scss";
 
-export const NavBar = props => {
+export const NavBar = (props) => {
   const [isOpen, setOpen] = useState(false);
 
   const toggleCollapse = () => {
@@ -56,8 +56,3 @@ export const NavBar = props => {
     </div>
   );
 };
-
-/*
-Iphone 5 no esta bien presentado,
-el modo tablet no funciona para nada bien!, mucho menos en el ipad
-*/
