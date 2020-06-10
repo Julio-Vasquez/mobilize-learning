@@ -11,7 +11,7 @@ export function LoginForm(props) {
     }
   });
 
-  const initToast = (sms) => toast.error(sms);
+  const initToast = (sms) => toast.error(sms, { position: "bottom-right" });
 
   const [loginValues, setLoginValues] = useState({
     userName: "",
@@ -26,11 +26,13 @@ export function LoginForm(props) {
   };
 
   const onSubmit = (e) => {
-    //e.preventDefault();
+    e.preventDefault();
     const { userName, password } = loginValues;
-    initToast("Debe llenar el formulario para continuar");
-    if (!userName && !password) {
-      console.log("no se que hago aqui");
+
+    if (!userName || !password) {
+      initToast("Debe llenar el formulario para continuar");
+    } else {
+      document.testform.submit();
     }
     // hacer una validacion, en caso de no cumplor utilizar un toast
   };
@@ -38,16 +40,17 @@ export function LoginForm(props) {
   return (
     <div className="logincontainer">
       <div className="header">
-        <h1>Login Form</h1>
+        <h1>Iniciar sesión</h1>
       </div>
       <div className="main-agileinfo">
         <div className="wthree-form">
           <h2>Rellene el siguiente formulario para iniciar sesión</h2>
           <form
             action="/admin"
-            method="get"
+            method="post"
             onChange={onChange}
             onSubmit={onSubmit}
+            name="testform"
           >
             <div className="form-sub">
               <input
