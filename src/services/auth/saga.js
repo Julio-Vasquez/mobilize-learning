@@ -1,32 +1,24 @@
 import { put, takeLatest, all } from "redux-saga/effects";
 import { stopSubmit } from "redux-form";
 
-import { GET, POST, DELETE, PUT } from "./../../common/Api";
+import { POST } from "./../../common/Api";
 import { FunctionToken } from "./../../common/token";
-import {
-  LOGIN_ACTION,
-  LOGIN_SUCCESS,
-  LOGIN_FAILED,
-  SIGNUP_ACTION,
-  SIGNUP_SUCCESS,
-  SIGNUP_FAILED,
-  LOGOUT,
-  FORGOT_PASSWORD,
-  FORGOT_PASSWORD_SUCCESS,
-  FORGOT_PASSWORD_FAILED,
-} from "./constans";
+import { LOGIN_ACTION, LOGIN_SUCCESS, LOGIN_FAILED, LOGOUT } from "./constans";
 
 function* FetchLogin(dataForm) {
-  const res = POST("/auth", { email: dataForm.email, pwd: dataForm.password });
+  const res = yield POST("auth/login", {
+    userName: dataForm.userName,
+    password: dataForm.password,
+  }).catch((err) => err);
 
-  if (res.success) {
+  if (res.payload.sucess) {
     localStorage.setItem("mltoken", res.payload);
     yield put({
       type: LOGIN_SUCCESS,
       token: res.payload,
       token_decode: FunctionToken.decode(),
     });
-  } else if (res.error === "USER_INVALID") {
+  } else if (res.payload.error === "USER_INVALID") {
     yield put({ type: LOGIN_FAILED });
     yield put(
       stopSubmit("login", { _error: "El usuario o contraseña no coinciden" })

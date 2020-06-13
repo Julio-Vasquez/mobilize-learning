@@ -13,7 +13,7 @@ export const PUT = async (url, body, header) => {
         : {
             Accept: formData ? "" : "application/json",
             "Content-type": formData ? "" : "application/json",
-            Authorization: `Bearer ${TokFunctionTokenen.getToken()}`,
+            Authorization: `Bearer ${FunctionToken.getToken()}`,
           },
       body: formData ? body : JSON.stringify(body),
     });
@@ -21,7 +21,7 @@ export const PUT = async (url, body, header) => {
       //cambiar el estado del store a false
       return res;
     }
-    res.payload = await response.json();
+    res.payload = await res.json();
     return res;
   } catch (err) {
     return err;

@@ -1,5 +1,8 @@
 import React, { useEffect, useState } from "react";
-import { ToastContainer, toast } from "react-toastify";
+import { ToastContainer } from "react-toastify";
+import Toast from "./../../../common/toast";
+import { useDispatch } from "react-redux";
+import { loginAction } from "./../../../services/auth/actions";
 
 import "./style.scss";
 
@@ -11,12 +14,12 @@ export function LoginForm(props) {
     }
   });
 
-  const initToast = (sms) => toast.error(sms, { position: "bottom-right" });
-
   const [loginValues, setLoginValues] = useState({
     userName: "",
     password: "",
   });
+
+  const dispatch = useDispatch();
 
   const onChange = (e) => {
     setLoginValues({
@@ -30,11 +33,10 @@ export function LoginForm(props) {
     const { userName, password } = loginValues;
 
     if (!userName || !password) {
-      initToast("Debe llenar el formulario para continuar");
+      Toast("Debe llenar el formulario para continuar", "warning");
     } else {
-      document.testform.submit();
+      dispatch(loginAction(userName, password));
     }
-    // hacer una validacion, en caso de no cumplor utilizar un toast
   };
 
   return (

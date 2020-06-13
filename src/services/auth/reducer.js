@@ -1,27 +1,16 @@
-import {
-  LOGIN_ACTION,
-  LOGIN_SUCCESS,
-  LOGIN_FAILED,
-  SIGNUP_ACTION,
-  SIGNUP_SUCCESS,
-  SIGNUP_FAILED,
-  LOGOUT,
-  FORGOT_PASSWORD,
-  FORGOT_PASSWORD_SUCCESS,
-  FORGOT_PASSWORD_FAILED,
-} from "./constans";
+import { LOGIN_ACTION, LOGIN_SUCCESS, LOGIN_FAILED, LOGOUT } from "./constans";
 
 import { FunctionToken } from "./../../common/token";
 
 const initState = {
-  authentication: FunctionToken.isToquenValid(),
-  rol: FunctionToken.isToquenValid()
+  authentication: FunctionToken.isTokenValid(),
+  rol: FunctionToken.isTokenValid()
     ? FunctionToken.decode().rol()
     : ["invitado"],
 };
 
 const reducerAuth = (state = initState, action) => {
-  switch (Action) {
+  switch (action) {
     case LOGIN_ACTION:
       return {
         ...state,
@@ -40,6 +29,14 @@ const reducerAuth = (state = initState, action) => {
       return {
         ...state,
         authentication: false,
+      };
+    case LOGOUT:
+      return {
+        ...state,
+        authentication: false,
+        rols: ["invited"],
+        token_decode: undefined,
+        token: undefined,
       };
 
     default:

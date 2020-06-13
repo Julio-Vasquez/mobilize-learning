@@ -1,15 +1,15 @@
 import React from "react";
+import { useSelector } from "react-redux";
 
 import Routes from "./HomePage/routes";
 
 import RoutesAdmin from "./DashBoard/routes";
 
-const auth = false;
-
 export default function App() {
+  const { authentication } = useSelector((state) => state.Auth);
   return (
     <div>
-      {auth ? (
+      {authentication ? (
         <React.Fragment>
           <RoutesAdmin />
         </React.Fragment>

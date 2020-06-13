@@ -11,9 +11,9 @@ import {
   FORGOT_PASSWORD_FAILED,
 } from "./constans";
 
-export const loginAction = (email, password) => ({
+export const loginAction = (userName, password) => ({
   type: LOGIN_ACTION,
-  email,
+  userName,
   password,
 });
 
