@@ -4,7 +4,7 @@ import signal from "./../../../assets/images/signals/001.jpg";
 
 import "./style.scss";
 
-export const Home = () => {
+const Home = () => {
   const [ld, setLd] = useState(true);
 
   useEffect(() => {
@@ -39,3 +39,5 @@ export const Home = () => {
     </div>
   );
 };
+
+export default Home;

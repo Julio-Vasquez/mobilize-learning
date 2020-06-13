@@ -1,5 +1,6 @@
 import React, { useState } from "react";
-import { Table, Tag, Input, Button, Icon } from "antd";
+import { Table, Tag, Input, Button } from "antd";
+import { SearchOutlined } from "@ant-design/icons";
 import Highlighter from "react-highlight-words";
 
 import { DataTable } from "./../../../common/Data";
@@ -17,7 +18,7 @@ export default function MyQualifications() {
     setSearchedColumn(dataIndex);
   };
 
-  const handleReset = clearFilters => {
+  const handleReset = (clearFilters) => {
     clearFilters();
     setSearchText("");
   };
@@ -27,16 +28,16 @@ export default function MyQualifications() {
       setSelectedKeys,
       selectedKeys,
       confirm,
-      clearFilters
+      clearFilters,
     }) => (
       <div style={{ padding: 8 }}>
         <Input
-          ref={node => {
+          ref={(node) => {
             searchInput = node;
           }}
           placeholder={`Buscar por ${title}`}
           value={selectedKeys[0]}
-          onChange={e =>
+          onChange={(e) =>
             setSelectedKeys(e.target.value ? [e.target.value] : [])
           }
           onPressEnter={() => handleSearch(selectedKeys, confirm, dataIndex)}
@@ -45,10 +46,10 @@ export default function MyQualifications() {
         <Button
           type="primary"
           onClick={() => handleSearch(selectedKeys, confirm, dataIndex)}
-          icon="search"
           size="small"
           style={{ width: 90, marginRight: 8 }}
         >
+          <SearchOutlined />
           Buscar
         </Button>
         <Button
@@ -60,20 +61,17 @@ export default function MyQualifications() {
         </Button>
       </div>
     ),
-    filterIcon: filtered => (
-      <Icon type="search" style={{ color: filtered ? "#1890ff" : undefined }} />
+    filterIcon: (filtered) => (
+      <SearchOutlined style={{ color: filtered ? "#1890ff" : undefined }} />
     ),
     onFilter: (value, record) =>
-      record[dataIndex]
-        .toString()
-        .toLowerCase()
-        .includes(value.toLowerCase()),
-    onFilterDropdownVisibleChange: visible => {
+      record[dataIndex].toString().toLowerCase().includes(value.toLowerCase()),
+    onFilterDropdownVisibleChange: (visible) => {
       if (visible) {
         setTimeout(() => searchInput.select());
       }
     },
-    render: text =>
+    render: (text) =>
       searchedColumn === dataIndex ? (
         <Highlighter
           highlightStyle={{ backgroundColor: "#ffc069", padding: 0 }}
@@ -83,7 +81,7 @@ export default function MyQualifications() {
         />
       ) : (
         text
-      )
+      ),
   });
 
   const columns = [
@@ -91,35 +89,35 @@ export default function MyQualifications() {
       title: "Nombre",
       dataIndex: "name",
       key: "name",
-      render: text => <p>{text}</p>,
-      ...getColumnSearchProps("name", "Nombre")
+      render: (text) => <p>{text}</p>,
+      ...getColumnSearchProps("name", "Nombre"),
     },
     {
       title: "Edad",
       dataIndex: "age",
       key: "age",
-      ...getColumnSearchProps("age", "Edad")
+      ...getColumnSearchProps("age", "Edad"),
     },
     {
       title: "Email",
       dataIndex: "address",
       key: "address",
-      ...getColumnSearchProps("address", "Email")
+      ...getColumnSearchProps("address", "Email"),
     },
     {
       title: "Tema",
       dataIndex: "theme",
       key: "theme",
-      ...getColumnSearchProps("theme", "Tema")
+      ...getColumnSearchProps("theme", "Tema"),
     },
     {
       title: "Tags",
       key: "tags",
       dataIndex: "tags",
       ...getColumnSearchProps("tags", "Tag"),
-      render: tags => (
+      render: (tags) => (
         <span>
-          {tags.map(tag => {
+          {tags.map((tag) => {
             let color = tag.length >= 9 ? "geekblue" : "green";
             if (tag === "Reprobado") {
               color = "volcano";
@@ -131,14 +129,14 @@ export default function MyQualifications() {
             );
           })}
         </span>
-      )
+      ),
     },
     {
       title: "Calificacion",
       key: "cal",
       dataIndex: "cal",
-      ...getColumnSearchProps("cal", "Calificacion")
-    }
+      ...getColumnSearchProps("cal", "Calificacion"),
+    },
   ];
 
   return (

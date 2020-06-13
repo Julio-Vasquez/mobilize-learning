@@ -1,4 +1,4 @@
-import React, { useState, createRef, useEffect } from "react";
+import React, { useState, createRef, useEffect, lazy, Suspense } from "react";
 import { Switch, Route, Redirect } from "react-router-dom";
 import logo from "./../../../assets/images/logo192.png";
 import bgImage from "./../../../assets/images/sidebar-2.jpg";
@@ -14,42 +14,44 @@ import Navbar from "./../../../components/admin/Navbar";
 
 import styles from "./../../../assets/jss/custom/adminStyle";
 import SpecificContent from "./../../../components/admin/SpecificContent";
+import Loading from "./../../../components/Loading";
+const SpecificRoad = lazy(() => import("./../SpecificRoad"));
+const SpecificBehaviors = lazy(() => import("./../SpecificBehaviors"));
+const Profile = lazy(() => import("./../Profile"));
 
-import SpecificRoad from "./../SpecificRoad";
-import SpecificBehaviors from "./../SpecificBehaviors";
-import Profile from "./../Profile";
-
-import { MenuOutlined } from "@ant-design/icons";
+//import { MenuOutlined } from "@ant-design/icons";
 
 const switchRoutes = (
-  <Switch>
-    {DashBoardRoutes.map((route, key) => {
-      if (route.layout === "/admin") {
-        return (
-          <Route
-            path={route.layout + route.path}
-            component={route.component}
-            key={key}
-          />
-        );
-      }
-      return null;
-    })}
+  <Suspense fallback={<Loading />}>
+    <Switch>
+      {DashBoardRoutes.map((route, key) => {
+        if (route.layout === "/admin") {
+          return (
+            <Route
+              path={route.layout + route.path}
+              component={route.component}
+              key={key}
+            />
+          );
+        }
+        return null;
+      })}
 
-    <Route
-      path="/admin/mobilitybehaviors/curse=:data"
-      component={SpecificBehaviors}
-      exact={true}
-    />
-    <Route
-      path="/admin/roadsigns/curse=:data"
-      component={SpecificRoad}
-      exact={true}
-    />
-    <Route path="/admin/content" component={SpecificContent} exact={true} />
-    <Route path="/admin/profile" component={Profile} exact={true} />
-    <Redirect from="/admin" to="/admin/dashboard" />
-  </Switch>
+      <Route
+        path="/admin/mobilitybehaviors/curse=:data"
+        component={SpecificBehaviors}
+        exact={true}
+      />
+      <Route
+        path="/admin/roadsigns/curse=:data"
+        component={SpecificRoad}
+        exact={true}
+      />
+      <Route path="/admin/content" component={SpecificContent} exact={true} />
+      <Route path="/admin/profile" component={Profile} exact={true} />
+      <Redirect from="/admin" to="/admin/dashboard" />
+    </Switch>
+  </Suspense>
 );
 
 const useStyles = makeStyles(styles);
@@ -58,17 +60,13 @@ let ps;
 
 export default function Admin({ ...rest }) {
   const classes = useStyles();
-
   const mainPanel = createRef();
-
   const [mobileOpen, setMobileOpen] = useState(false);
-
   const resizeFunction = () => {
     if (window.innerWidth >= 960) {
       setMobileOpen(false);
     }
   };
-
   const handleDrawerToggle = () => {
     setMobileOpen(!mobileOpen);
   };

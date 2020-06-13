@@ -18,43 +18,43 @@ const DashBoardRoutes = [
     name: "Dashboard",
     icon: Dashboard,
     component: DashBoard,
-    layout: "/admin"
+    layout: "/admin",
   },
   {
     path: "/roadsign",
     name: "Señales de transito",
     icon: CommuteOutlinedIcon,
     component: RoadSigns,
-    layout: "/admin"
+    layout: "/admin",
   },
   {
     path: "/mobilitybehavior",
     name: "Comp de movilidad",
     icon: ListAltOutlinedIcon,
     component: MobilityBehaviros,
-    layout: "/admin"
+    layout: "/admin",
   },
   {
     path: "/qualification",
     name: "Mis Notas",
     icon: LibraryBooksOutlinedIcon,
     component: MyQualifications,
-    layout: "/admin"
+    layout: "/admin",
   },
   {
     path: "/certificate",
     name: "Certificados",
     icon: CardMembershipOutlinedIcon,
     component: Certificate,
-    layout: "/admin"
+    layout: "/admin",
   },
   {
     path: "/test",
     name: "Test Evaluativos",
     icon: NotificationsOutlinedIcon,
     component: EvaluativeTest,
-    layout: "/admin"
-  }
+    layout: "/admin",
+  },
 ];
 
 export default DashBoardRoutes;

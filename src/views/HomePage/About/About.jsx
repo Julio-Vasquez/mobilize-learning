@@ -17,7 +17,7 @@ import bg from "./../../../assets/images/content/signal/QueEs.jpg";
 
 import "./style.scss";
 
-export const About = (props) => {
+const About = (props) => {
   useEffect(() => {
     document.body.style.backgroundImage = `url('${bg}')`;
     document.body.style.backgroundAttachment = "fixed";
@@ -159,3 +159,5 @@ export const About = (props) => {
     </div>
   );
 };
+
+export default About;

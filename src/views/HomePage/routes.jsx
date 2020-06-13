@@ -1,18 +1,18 @@
-import React from "react";
+import React, { lazy, Suspense } from "react";
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 
 import { createBrowserHistory } from "history";
 
-import { RouteAuth } from "./../../components/router/index";
 import { NavBar } from "./../../components/layout-home/NavBar";
 import { Footer } from "./../../components/layout-home/Footer";
 import { Page404 } from "./../../components/404";
+import Loading from "./../../components/Loading";
 
-import { Home } from "./Home";
-import { About } from "./About";
-import { Contact } from "./Contact";
-import { SignUp } from "./SignUp";
-import { Login } from "./Login";
+const Home = lazy(() => import("./Home"));
+const About = lazy(() => import("./About"));
+const Contact = lazy(() => import("./Contact"));
+const SignUp = lazy(() => import("./SignUp"));
+const Login = lazy(() => import("./Login"));
 
 const hist = createBrowserHistory();
 
@@ -21,37 +21,16 @@ const Routes = () => {
     <Router history={hist}>
       <div className="Container">
         <NavBar />
-        {
+        <Suspense fallback={<Loading />}>
           <Switch className="h-100">
             <Route exact path="/" component={Home} />
-            <RouteAuth
-              path="/about"
-              redirect="/"
-              component={About}
-              auth={true}
-            />
-            <RouteAuth
-              path="/contact"
-              redirect="/"
-              component={Contact}
-              auth={true}
-            />
-            <RouteAuth
-              path="/signup"
-              redirect="/"
-              component={SignUp}
-              auth={true}
-            />
-            <RouteAuth
-              path="/login"
-              redirect="/"
-              component={Login}
-              auth={true}
-            />
-
+            <Route path="/about" redirect="/" component={About} />
+            <Route path="/contact" redirect="/" component={Contact} />
+            <Route path="/signup" redirect="/" component={SignUp} />
+            <Route path="/login" redirect="/" component={Login} />
             <Route path="*" component={Page404} />
           </Switch>
-        }
+        </Suspense>
         <Footer />
       </div>
     </Router>

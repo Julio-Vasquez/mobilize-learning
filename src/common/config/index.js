@@ -1,1 +1,1 @@
-export { API_URL, ENV, PORT } from "./config";
+export { API_URL, ENV, PORT, GOOGLE_API } from "./config";

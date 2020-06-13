@@ -1,22 +1,22 @@
-import React from "react";
+import React, { lazy, Suspense } from "react";
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import { createBrowserHistory } from "history";
+import Loading from "./../../components/Loading";
 
-import Admin from "./../DashBoard/layout/Admin";
-import Routes from "./../HomePage/routes";
+const Admin = lazy(() => import("./../DashBoard/layout/Admin"));
 
 const hist = createBrowserHistory();
 
 const RoutesAdmin = () => {
   return (
     <Router history={hist}>
-      <Switch>
-        <Route path="/admin" component={Admin} />
-        <Route path="/" component={Routes} />
-      </Switch>
+      <Suspense fallback={Loading}>
+        <Switch>
+          <Route path="/admin" component={Admin} />
+        </Switch>
+      </Suspense>
     </Router>
   );
 };
-export default RoutesAdmin;
 
-/* */
+export default RoutesAdmin;

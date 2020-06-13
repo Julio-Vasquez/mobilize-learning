@@ -6,8 +6,6 @@ import "mdbreact/dist/css/mdb.css";
 import "antd/dist/antd.css";
 import "react-toastify/dist/ReactToastify.css";
 
-//import Routes from "./views/HomePage/routes";
-//import App from "./views";
-import RoutesAdmin from "./views/DashBoard/routes";
+import App from "./views";
 
-ReactDOM.render(<RoutesAdmin />, document.getElementById("root"));
+ReactDOM.render(<App />, document.getElementById("root"));

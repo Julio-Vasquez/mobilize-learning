@@ -1,6 +1,7 @@
 import React, { useEffect } from "react";
 
-import { Button, Icon, message, Row, Col, Card, Comment } from "antd";
+import { Button, message, Row, Col, Card, Comment } from "antd";
+import { DownloadOutlined, EyeOutlined } from "@ant-design/icons";
 
 import certificate from "./../../../assets/pdf/certificate.jpeg";
 import file from "./../../../assets/pdf/Certificate.pdf";
@@ -26,7 +27,7 @@ export default function Certificate() {
         <Col span={14} offset={1} id="test">
           <Card
             style={{
-              width: "90%"
+              width: "90%",
             }}
             cover={<img alt="example" src={certificate} />}
           >
@@ -61,7 +62,7 @@ export default function Certificate() {
             className="btndownload"
           >
             <Button size="large" shape="round" type="primary">
-              <Icon type="download" /> Descargar
+              <DownloadOutlined /> Descargar
             </Button>
           </a>
 
@@ -72,7 +73,7 @@ export default function Certificate() {
             className="btndownload"
           >
             <Button size="large" shape="round" type="primary" id="red">
-              <Icon type="eye" /> Vizualizar
+              <EyeOutlined /> Vizualizar
             </Button>
           </a>
         </Col>
