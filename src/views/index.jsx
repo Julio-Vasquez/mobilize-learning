@@ -14,10 +14,10 @@ export default function App() {
           <RoutesAdmin />
         </React.Fragment>
       ) : (
-        <React.Fragment>
-          <Routes />
-        </React.Fragment>
-      )}
+          <React.Fragment>
+            <Routes />
+          </React.Fragment>
+        )}
     </div>
   );
 }

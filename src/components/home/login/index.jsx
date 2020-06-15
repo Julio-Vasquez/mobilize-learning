@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { ToastContainer } from "react-toastify";
 import Toast from "./../../../common/toast";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { loginAction } from "./../../../services/auth/actions";
 
 import "./style.scss";
@@ -21,6 +21,8 @@ export function LoginForm(props) {
 
   const dispatch = useDispatch();
 
+  const { authentication } = useSelector(state => state.Auth)
+
   const onChange = (e) => {
     setLoginValues({
       ...loginValues,
@@ -36,6 +38,7 @@ export function LoginForm(props) {
       Toast("Debe llenar el formulario para continuar", "warning");
     } else {
       dispatch(loginAction(userName, password));
+      console.log(authentication)
     }
   };
 
@@ -48,7 +51,6 @@ export function LoginForm(props) {
         <div className="wthree-form">
           <h2>Rellene el siguiente formulario para iniciar sesión</h2>
           <form
-            action="/admin"
             method="post"
             onChange={onChange}
             onSubmit={onSubmit}

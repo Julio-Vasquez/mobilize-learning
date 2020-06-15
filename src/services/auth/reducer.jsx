@@ -3,9 +3,9 @@ import { LOGIN_ACTION, LOGIN_SUCCESS, LOGIN_FAILED, LOGOUT } from "./constans";
 import { FunctionToken } from "./../../common/token";
 
 const initState = {
-  authentication: FunctionToken.isTokenValid(),
-  rol: FunctionToken.isTokenValid()
-    ? FunctionToken.decode().rol()
+  authentication: FunctionToken.IsTokenValid(),
+  rol: FunctionToken.IsTokenValid()
+    ? FunctionToken.Decode().rol()
     : ["invitado"],
 };
 

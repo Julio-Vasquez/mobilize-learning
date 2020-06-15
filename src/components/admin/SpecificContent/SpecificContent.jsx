@@ -116,8 +116,8 @@ export default function SpecificContent() {
         </a>
       </div>
     ) : (
-      ""
-    );
+        ""
+      );
   };
   //titulo, texto, url-externa, urlmultimedia, type-multimedia=[pdf, img, video]
 

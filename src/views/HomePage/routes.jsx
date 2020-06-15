@@ -1,7 +1,6 @@
 import React, { lazy, Suspense } from "react";
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 
-import { createBrowserHistory } from "history";
 
 import { NavBar } from "./../../components/layout-home/NavBar";
 import { Footer } from "./../../components/layout-home/Footer";
@@ -14,11 +13,9 @@ const Contact = lazy(() => import("./Contact"));
 const SignUp = lazy(() => import("./SignUp"));
 const Login = lazy(() => import("./Login"));
 
-const hist = createBrowserHistory();
-
 const Routes = () => {
   return (
-    <Router history={hist}>
+    <Router>
       <div className="Container">
         <NavBar />
         <Suspense fallback={<Loading />}>

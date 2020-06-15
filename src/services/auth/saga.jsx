@@ -1,24 +1,24 @@
 import { put, takeLatest, all } from "redux-saga/effects";
 import { stopSubmit } from "redux-form";
 
-import { POST } from "./../../common/Api";
+import Api from "./../../common/Api/Api";
 import { FunctionToken } from "./../../common/token";
 import { LOGIN_ACTION, LOGIN_SUCCESS, LOGIN_FAILED, LOGOUT } from "./constans";
 
 function* FetchLogin(dataForm) {
-  const res = yield POST("auth/login", {
+  const res = yield Api.POST("auth/login", {
     userName: dataForm.userName,
     password: dataForm.password,
   }).catch((err) => err);
 
   if (res.payload.sucess) {
-    localStorage.setItem("mltoken", res.payload);
+    localStorage.setItem("mltoken", res.payload.token);
+    console.log(FunctionToken.Decode(res.payload.token))
     yield put({
       type: LOGIN_SUCCESS,
       token: res.payload,
-      token_decode: FunctionToken.decode(),
     });
-  } else if (res.payload.error === "USER_INVALID") {
+  } else if (res.payload.error === "USER_INVALID" || res.payload.error === 'NO_EQUALS_PASSWORD') {
     yield put({ type: LOGIN_FAILED });
     yield put(
       stopSubmit("login", { _error: "El usuario o contraseña no coinciden" })
@@ -31,11 +31,12 @@ function* FetchLogin(dataForm) {
       })
     );
   }
+
 }
 
-function* FetchSignup(dataForm) {}
+function* FetchSignup(dataForm) { }
 
-function* FetchForgotPassword(dataForm) {}
+function* FetchForgotPassword(dataForm) { }
 
 const FetchLogout = () => localStorage.clear();
 

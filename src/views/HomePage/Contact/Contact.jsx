@@ -29,9 +29,9 @@ const Contact = () => {
       <h2 className="h1-responsive font-weight-bold text-center my-5">
         Contactenos
       </h2>
-      <p className="text-center w-responsive mx-auto pb-5">
-        Sus preguntas y opiniónes son muy importantes para nosotros, completa el
-        formulario para poder atenderte lo más pronto posible
+      <p className="text-center w-responsive mx-auto pb-5" style={{ fontSize: 16, fontWeight: 500, color: 'black' }}>
+        <p className="text-center w-responsive mx-auto">Sus preguntas y opiniónes son muy importantes para nosotros,</p>
+        completa el formulario para poder atenderte lo más pronto posible
       </p>
       <MDBRow>
         <MDBCol lg="4" className="lg-0 mb-4 offset-1">
