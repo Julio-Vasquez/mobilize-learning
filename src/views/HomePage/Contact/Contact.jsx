@@ -30,9 +30,8 @@ const Contact = () => {
         Contactenos
       </h2>
       <p className="text-center w-responsive mx-auto pb-5">
-        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Fugit, error
-        amet numquam iure provident voluptate esse quasi, veritatis totam
-        voluptas nostrum quisquam eum porro a pariatur veniam.
+        Sus preguntas y opiniónes son muy importantes para nosotros, completa el
+        formulario para poder atenderte lo más pronto posible
       </p>
       <MDBRow>
         <MDBCol lg="4" className="lg-0 mb-4 offset-1">
