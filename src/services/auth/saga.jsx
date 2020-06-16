@@ -18,10 +18,10 @@ function* FetchLogin(dataForm) {
       type: LOGIN_SUCCESS,
       token: res.payload,
     });
-  } else if (res.payload.error === "USER_INVALID" || res.payload.error === 'NO_EQUALS_PASSWORD') {
+  } else if (res.payload.error) {
     yield put({ type: LOGIN_FAILED });
     yield put(
-      stopSubmit("login", { _error: "El usuario o contraseña no coinciden" })
+      stopSubmit("login", { _error: `${res.payload.detail}` })
     );
   } else {
     yield put({ type: LOGIN_FAILED });
