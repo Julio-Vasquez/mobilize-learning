@@ -1,47 +1,41 @@
-import { LOGIN_ACTION, LOGIN_SUCCESS, LOGIN_FAILED, LOGOUT } from "./constans";
+import { handleActions } from "redux-actions";
 
 import { FunctionToken } from "./../../common/token";
 
-const initState = {
+export const INITIAL_STATE = {
   authentication: FunctionToken.IsTokenValid(),
-  rol: FunctionToken.IsTokenValid()
-    ? FunctionToken.Decode().rol()
-    : ["invitado"],
+  loading: false,
+  errorLogin: false,
 };
 
-const reducerAuth = (state = initState, action) => {
-  switch (action) {
-    case LOGIN_ACTION:
-      return {
+const reducerAuth = handleActions(
+  {
+    AUTH: {
+      LOGIN: (state, { payload }) => ({
         ...state,
         loading: true,
-      };
-
-    case LOGIN_SUCCESS:
-      return {
+        errorLogin: false,
+      }),
+      LOGIN_SUCCESS: {
+        next(state, { payload: { token } }) {
+          console.log(token);
+          return {
+            ...state,
+            authentication: true,
+            token: token,
+            loading: false,
+          };
+        },
+      },
+      LOGIN_FAILED: (state, action) => ({
         ...state,
-        token: action.token,
-        authentication: true,
+        errorLogin: true,
         loading: false,
-      };
-
-    case LOGIN_FAILED:
-      return {
-        ...state,
-        authentication: false,
-      };
-    case LOGOUT:
-      return {
-        ...state,
-        authentication: false,
-        rols: ["invited"],
-        token_decode: undefined,
-        token: undefined,
-      };
-
-    default:
-      return state;
-  }
-};
+      }),
+      LOGOUT: (state, { payload }) => ({ ...state, authentication: false }),
+    },
+  },
+  INITIAL_STATE
+);
 
 export default reducerAuth;

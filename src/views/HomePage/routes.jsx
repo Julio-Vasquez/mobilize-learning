@@ -1,11 +1,11 @@
 import React, { lazy, Suspense } from "react";
-import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
-
+import { Router, Route, Switch } from "react-router-dom";
 
 import { NavBar } from "./../../components/layout-home/NavBar";
 import { Footer } from "./../../components/layout-home/Footer";
 import { Page404 } from "./../../components/404";
 import Loading from "./../../components/Loading";
+import History from "./../../common/history";
 
 const Home = lazy(() => import("./Home"));
 const About = lazy(() => import("./About"));
@@ -15,7 +15,7 @@ const Login = lazy(() => import("./Login"));
 
 const Routes = () => {
   return (
-    <Router>
+    <Router history={History}>
       <div className="Container">
         <NavBar />
         <Suspense fallback={<Loading />}>

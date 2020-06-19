@@ -15,6 +15,7 @@ import Navbar from "./../../../components/admin/Navbar";
 import styles from "./../../../assets/jss/custom/adminStyle";
 import SpecificContent from "./../../../components/admin/SpecificContent";
 import Loading from "./../../../components/Loading";
+
 const SpecificRoad = lazy(() => import("./../SpecificRoad"));
 const SpecificBehaviors = lazy(() => import("./../SpecificBehaviors"));
 const Profile = lazy(() => import("./../Profile"));
@@ -49,6 +50,7 @@ const switchRoutes = (
       />
       <Route path="/admin/content" component={SpecificContent} exact={true} />
       <Route path="/admin/profile" component={Profile} exact={true} />
+
       <Redirect from="/admin" to="/admin/dashboard" />
     </Switch>
   </Suspense>

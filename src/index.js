@@ -6,13 +6,9 @@ import "mdbreact/dist/css/mdb.css";
 import "antd/dist/antd.css";
 import "react-toastify/dist/ReactToastify.css";
 
-import { createBrowserHistory } from "history";
 import { Provider } from "react-redux";
-import initStore from "./store/store";
+import { store } from "./store";
 import App from "./views";
-
-const history = createBrowserHistory();
-export const store = initStore(history);
 
 ReactDOM.render(
   <Provider store={store}>

@@ -1,18 +1,15 @@
 import { combineReducers } from "redux";
-import { connectRouter } from "connected-react-router";
 
 import reducerAuth from "./../services/auth/reducer";
-import { LOGOUT } from "./../services/auth/constans";
+import { auth } from "./../services/auth/actions";
 
-const appReducer = (history) =>
-  combineReducers({
-    router: connectRouter(history),
-    Auth: reducerAuth,
-  });
+const appReducer = combineReducers({
+  Auth: reducerAuth,
+});
 
-const rootReducer = (history) => (state, action) => {
-  if (action.type === LOGOUT) state = undefined;
-  return appReducer(history)(state, action);
+const rootReducer = (state, action) => {
+  if (action.type === auth.logout()) state = undefined;
+  return appReducer(state, action);
 };
 
 export default rootReducer;

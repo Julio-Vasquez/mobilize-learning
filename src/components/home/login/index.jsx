@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import { ToastContainer } from "react-toastify";
 import Toast from "./../../../common/toast";
 import { useDispatch, useSelector } from "react-redux";
-import { loginAction } from "./../../../services/auth/actions";
+import { auth } from "./../../../services/auth/actions";
 
 import "./style.scss";
 
@@ -21,7 +21,7 @@ export function LoginForm(props) {
 
   const dispatch = useDispatch();
 
-  const { authentication } = useSelector(state => state.Auth)
+  const { authentication } = useSelector((state) => state.Auth);
 
   const onChange = (e) => {
     setLoginValues({
@@ -33,13 +33,12 @@ export function LoginForm(props) {
   const onSubmit = (e) => {
     e.preventDefault();
     const { userName, password } = loginValues;
-
     if (!userName || !password) {
       Toast("Debe llenar el formulario para continuar", "warning");
     } else {
-      dispatch(loginAction(userName, password));
-      console.log(authentication)
+      dispatch(auth.login(userName, password));
     }
+    console.log(authentication);
   };
 
   return (
