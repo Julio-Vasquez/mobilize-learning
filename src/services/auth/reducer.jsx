@@ -18,7 +18,7 @@ const reducerAuth = handleActions(
       }),
       LOGIN_SUCCESS: {
         next(state, { payload: { token } }) {
-          console.log(token);
+          console.log(`hola amigo : ${token}`);
           return {
             ...state,
             authentication: true,

@@ -1,7 +1,7 @@
 import { API_URL } from "./../config";
 import { FunctionToken } from "./../token/tokens";
 import { auth } from "./../../services/auth/actions";
-import { store } from "./../../store";
+import store from "./../../store";
 
 class Api {
   GET(url, params) {

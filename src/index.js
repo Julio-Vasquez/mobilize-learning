@@ -7,7 +7,7 @@ import "antd/dist/antd.css";
 import "react-toastify/dist/ReactToastify.css";
 
 import { Provider } from "react-redux";
-import { store } from "./store";
+import store from "./store";
 import App from "./views";
 
 ReactDOM.render(

@@ -8,9 +8,9 @@ import "./style.scss";
 export const Page404 = (props) => {
   return (
     <div className="container404">
-      <MDBBtn color="purple">
-        <Link to={props.path}>{props.text}</Link>
-      </MDBBtn>
+      <Link to={props.path}>
+        <MDBBtn color="purple">{props.text}</MDBBtn>
+      </Link>
     </div>
   );
 };

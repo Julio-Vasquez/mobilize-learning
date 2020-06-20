@@ -24,7 +24,7 @@ const Routes = () => {
             <Route path="/about" redirect="/" component={About} />
             <Route path="/contact" redirect="/" component={Contact} />
             <Route path="/signup" redirect="/" component={SignUp} />
-            <Route path="/login" redirect="/" component={Login} />
+            <Route path="/login" component={Login} exact={true} />
             <Route path="*" component={Page404} />
           </Switch>
         </Suspense>
