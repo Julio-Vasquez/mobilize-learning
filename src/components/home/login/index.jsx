@@ -3,6 +3,7 @@ import { ToastContainer } from "react-toastify";
 import Toast from "./../../../common/toast";
 import { useDispatch, useSelector } from "react-redux";
 import { auth } from "./../../../services/auth/actions";
+import { Link } from "react-router-dom";
 
 import "./style.scss";
 
@@ -80,9 +81,9 @@ export function LoginForm(props) {
             <label className="anim">
               <input type="checkbox" className="checkbox" />
               <span>Remember Me</span>
-              <a href="#!" id="forgotPassword">
+              <Link to="request-password-reset" id="forgotPassword">
                 Forgot Password
-              </a>
+              </Link>
             </label>
             <div className="clear"></div>
             <div className="submit-agileits">

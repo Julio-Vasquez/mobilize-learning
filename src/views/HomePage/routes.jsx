@@ -12,6 +12,7 @@ const About = lazy(() => import("./About"));
 const Contact = lazy(() => import("./Contact"));
 const SignUp = lazy(() => import("./SignUp"));
 const Login = lazy(() => import("./Login"));
+const ResetPassword = lazy(() => import("./ResetPassword"));
 
 const Routes = () => {
   return (
@@ -25,6 +26,11 @@ const Routes = () => {
             <Route path="/contact" redirect="/" component={Contact} />
             <Route path="/signup" redirect="/" component={SignUp} />
             <Route path="/login" component={Login} exact={true} />
+            <Route
+              path="/request-password-reset"
+              component={ResetPassword}
+              exact={true}
+            />
             <Route path="*" component={Page404} />
           </Switch>
         </Suspense>
