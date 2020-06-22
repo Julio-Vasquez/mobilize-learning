@@ -1,6 +1,7 @@
 import React from "react";
-import { Form, Input, Button, Row, Col, Avatar } from "antd";
+import { Form, Input, Button, Row, Col } from "antd";
 import { UserOutlined } from "@ant-design/icons";
+import Lock from "./../../../assets/icons/lock.svg";
 
 import "./ResetPassword.scss";
 
@@ -11,10 +12,10 @@ const ResetPassword = () => {
   const { Item } = Form;
   return (
     <div className="forgot-password">
-      <Col className="forgot-password__border" span={8} offset={8}>
+      <Col className="forgot-password__border" span={6} offset={9}>
         <Row className="forgot-password__avatar">
           <Col span={6} offset={9}>
-            <Avatar shape="square" size={150} icon={<UserOutlined />} />
+            <img src={Lock} alt="Reiniciar contrase;a" />
           </Col>
         </Row>
         <Row>
@@ -30,7 +31,7 @@ const ResetPassword = () => {
 
         <Form name="normal_login" className="login-form" onFinish={onFinish}>
           <Row>
-            <Col span={14} offset={5}>
+            <Col span={16} offset={4}>
               <Item
                 name="username"
                 rules={[
@@ -49,7 +50,7 @@ const ResetPassword = () => {
           </Row>
 
           <Row>
-            <Col span={6} offset={9}>
+            <Col span={8} offset={8}>
               <Item>
                 <Button
                   type="primary"
