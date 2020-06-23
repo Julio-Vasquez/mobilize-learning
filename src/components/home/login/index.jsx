@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { ToastContainer } from "react-toastify";
 import Toast from "./../../../common/toast";
-import { useDispatch, useSelector } from "react-redux";
+import { useDispatch } from "react-redux";
 import { auth } from "./../../../services/auth/actions";
 import { Link } from "react-router-dom";
 
@@ -22,8 +22,6 @@ export function LoginForm(props) {
 
   const dispatch = useDispatch();
 
-  const { authentication } = useSelector((state) => state.Auth);
-
   const onChange = (e) => {
     setLoginValues({
       ...loginValues,
@@ -39,7 +37,6 @@ export function LoginForm(props) {
     } else {
       dispatch(auth.login(userName, password));
     }
-    console.log(authentication);
   };
 
   return (
