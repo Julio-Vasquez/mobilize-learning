@@ -1,41 +1,43 @@
-import React from "react";
-import { Form, Input, Button, Row, Col, Avatar } from "antd";
+import React, { useEffect } from "react";
+import { Form, Input, Button, Row, Col, Card } from "antd";
 import { UserOutlined } from "@ant-design/icons";
-import Lock from "./../../../assets/icons/lock.svg";
+import { Link } from "react-router-dom";
+import Lock from "./../../../assets/images/lock.png";
+import BG from "./../../../assets/images/bg3.jpg";
 
 import "./ResetPassword.scss";
 
 const ResetPassword = () => {
+  useEffect(() => {
+    document.body.style.backgroundImage = `url(http://html.codedthemes.com/datta-able/bootstrap/assets/images/bg-images/bg4.jpg)`;
+    document.body.style.backgroundAttachment = "fixed";
+    document.body.style.backgroundRepeat = "no-repeat";
+    document.body.style.backgroundSize = "cover";
+    document.body.style.backgroundPosition = "center";
+    return () => {
+      document.body.style.backgroundImage = "";
+      document.body.style.backgroundColor = "";
+    };
+  });
+
+  const { Item } = Form;
   const onFinish = (values) => {
     console.log("Received values of form: ", values);
   };
-  const { Item } = Form;
-  return (
-    <div className="forgot-password">
-      <Col className="forgot-password__border" span={6} offset={9}>
-        <Row className="forgot-password__avatar">
-          <Col span={8} offset={8}>
-            <Avatar
-              size={120}
-              icon={<img src={Lock} alt="Reiniciar contrase;a" />}
-              shape="square"
-            />
-          </Col>
-        </Row>
-        <Row>
-          <Col span={20} offset={2}>
-            <h2 className="text-center">¿Se te olvidó tu contraseña?</h2>
-          </Col>
-        </Row>
-        <Row>
-          <Col span={20} offset={2}>
-            <p className="text-center">Aquí puedes restablecer tu contraseña</p>
-          </Col>
-        </Row>
 
-        <Form name="normal_login" className="login-form" onFinish={onFinish}>
-          <Row>
-            <Col span={16} offset={4}>
+  return (
+    <Col
+      xs={{ span: 22, offset: 1 }}
+      sm={{ span: 18, offset: 3 }}
+      lg={{ span: 14, offset: 5 }}
+      xl={{ span: 10, offset: 7 }}
+    >
+      <Card className="forgot-password">
+        <Row>
+          <Col span={12} push={12} className="forgot-password__R">
+            <h2 className="text-center">¿Olvidó su contraseña?</h2>
+            <p className="text-center">Aquí puedes restablecer tu contraseña</p>
+            <Form>
               <Item
                 name="username"
                 rules={[
@@ -50,25 +52,24 @@ const ResetPassword = () => {
                   placeholder="Username"
                 />
               </Item>
-            </Col>
-          </Row>
 
-          <Row>
-            <Col span={12} offset={6}>
-              <Item>
-                <Button
-                  type="primary"
-                  htmlType="submit"
-                  className="login-form-button"
-                >
+              <div className="forgot-password__R__btn">
+                <Button type="primary" htmlType="submit">
                   Restaurar contraseña
                 </Button>
-              </Item>
-            </Col>
-          </Row>
-        </Form>
-      </Col>
-    </div>
+              </div>
+            </Form>
+            <p className="forgot-password__R__endP">
+              ¿No tienes una cuenta? <Link to="/signup">Regístrate</Link>
+            </p>
+          </Col>
+
+          <Col span={12} pull={12} className="forgot-password__theme-bg">
+            <img src={Lock} alt="Restaurar contraseña" />
+          </Col>
+        </Row>
+      </Card>
+    </Col>
   );
 };
 
