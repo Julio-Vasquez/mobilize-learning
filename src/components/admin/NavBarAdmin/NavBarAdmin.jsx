@@ -16,11 +16,11 @@ import Divider from "@material-ui/core/Divider";
 // @material-ui/icons
 import Person from "@material-ui/icons/Person";
 import Notifications from "@material-ui/icons/Notifications";
-import Dashboard from "@material-ui/icons/Dashboard";
 
 import Button from "./../CustomButtons";
 
 import styles from "./../../../assets/jss/custom/headerLinksStyle";
+import { FunctionToken } from "./../../../common/token";
 import "./style.scss";
 
 const useStyles = makeStyles(styles);
@@ -55,20 +55,9 @@ export default function AdminNavbarLinks() {
   const logout = () => {
     dispatch(auth.logout());
   };
+
   return (
     <div style={{ zIndex: "1 !important" }}>
-      <Button
-        color={window.innerWidth > 959 ? "transparent" : "white"}
-        justIcon={window.innerWidth > 959}
-        simple={!(window.innerWidth > 959)}
-        aria-label="Dashboard"
-        className={classes.buttonLink}
-      >
-        <Dashboard className={classes.icons} />
-        <Hidden mdUp implementation="css">
-          <p className={classes.linkText}>Dashboard</p>
-        </Hidden>
-      </Button>
       <div className={classes.manager}>
         <Button
           color={window.innerWidth > 959 ? "transparent" : "white"}
@@ -185,6 +174,15 @@ export default function AdminNavbarLinks() {
               <Paper>
                 <ClickAwayListener onClickAway={handleCloseProfile}>
                   <MenuList role="menu">
+                    <MenuItem
+                      onClick={handleCloseProfile}
+                      className={classes.dropdownItem}
+                    >
+                      <Link to="/admin/profile" className="link-navbar-icon">
+                        {FunctionToken.Decode().userName}
+                      </Link>
+                    </MenuItem>
+                    <Divider light />
                     <MenuItem
                       onClick={handleCloseProfile}
                       className={classes.dropdownItem}

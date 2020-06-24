@@ -58,6 +58,7 @@ const ResetPassword = () => {
       lg={{ span: 14, offset: 5 }}
       xl={{ span: 12, offset: 6 }}
       xxl={{ span: 10, offset: 7 }}
+      className="forgot"
     >
       <Card className="forgot-password">
         <Row justify="center">
