@@ -7,7 +7,7 @@ const Toast = (sms, type) => {
   switch (type) {
     case "error":
       return toast.error(sms, config);
-    case "sucess":
+    case "success":
       return toast.sucess(sms, config);
     case "info":
       return toast.info(sms, config);

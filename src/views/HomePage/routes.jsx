@@ -13,6 +13,7 @@ const Contact = lazy(() => import("./Contact"));
 const SignUp = lazy(() => import("./SignUp"));
 const Login = lazy(() => import("./Login"));
 const ResetPassword = lazy(() => import("./ResetPassword"));
+const NewPassword = lazy(() => import("./NewPassword"));
 
 const Routes = () => {
   return (
@@ -31,6 +32,7 @@ const Routes = () => {
               component={ResetPassword}
               exact={true}
             />
+            <Route path="/setnewpassword/:token" component={NewPassword} />
             <Route path="*" component={Page404} />
           </Switch>
         </Suspense>

@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { ToastContainer } from "react-toastify";
 import Toast from "./../../../common/toast";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { auth } from "./../../../services/auth/actions";
 import { Link } from "react-router-dom";
 
@@ -38,7 +38,11 @@ export function LoginForm(props) {
       dispatch(auth.login(userName, password));
     }
   };
+  const {
+    success: { newPassword },
+  } = useSelector((state) => state.Auth);
 
+  if (newPassword) Toast("Contraseña cambiada correctamente", "success");
   return (
     <div className="logincontainer">
       <div className="header">

@@ -28,6 +28,7 @@ class Api {
   }
 
   POST(url, body, header) {
+    console.log(url);
     let dataBody = JSON.stringify(body);
     console.log(dataBody);
     return fetch(`${API_URL}/${url}`, {
@@ -53,19 +54,18 @@ class Api {
   }
 
   PUT(url, body, header) {
-    let formData = body instanceof FormData;
+    console.log(url);
+    console.log(body);
     return fetch(`${API_URL}/${url}`, {
       method: "PUT",
       headers: header
         ? header
-        : formData
-        ? { Authorization: `Bearer ${FunctionToken.getToken()}` }
         : {
-            Accept: formData ? "" : "application/json",
-            "Content-type": formData ? "" : "application/json",
-            Authorization: `Bearer ${FunctionToken.getToken()}`,
+            Accept: "application/json",
+            "Content-type": "application/json",
+            Authorization: `Bearer ${FunctionToken.GetToken()}`,
           },
-      body: formData ? body : JSON.stringify(body),
+      body: JSON.stringify(body),
     })
       .then(async (res) => {
         if (res.status === 401) {

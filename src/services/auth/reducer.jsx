@@ -5,10 +5,10 @@ import { FunctionToken } from "./../../common/token";
 export const INITIAL_STATE = {
   authentication: FunctionToken.IsTokenValid(),
   loading: false,
-  errorLogin: undefined,
   error: { login: undefined, signup: undefined, ResetPassword: undefined },
   success: {
     ResetPassword: undefined,
+    newPassword: undefined,
   },
 };
 
@@ -18,8 +18,9 @@ const reducerAuth = handleActions(
       LOGIN: (state, { payload }) => ({
         ...state,
         loading: true,
-        errorLogin: false,
+        error: { ...state.error, login: false },
       }),
+
       LOGIN_SUCCESS: {
         next(state, { payload: { token } }) {
           console.log(`hola amigo : ${token}`);
@@ -31,18 +32,22 @@ const reducerAuth = handleActions(
           };
         },
       },
+
       LOGIN_FAILED: (state, { payload: { error } }) => ({
         ...state,
-        errorLogin: error,
+        error: { ...state.error, login: true },
         loading: false,
       }),
+
       LOGOUT: (state, { payload }) => ({ ...state, authentication: false }),
+
       RESET_PASSWORD: (state) => ({
         ...state,
         loading: true,
         success: { ...state.success, ResetPassword: false },
         error: { ...state.error, ResetPassword: false },
       }),
+
       RESET_PASSWORD_SUCCESS: {
         next(state, { payload }) {
           return {
@@ -52,10 +57,34 @@ const reducerAuth = handleActions(
           };
         },
       },
+
       RESET_PASSWORD_FAILED: (state, { payload: { message } }) => ({
         ...state,
         loading: false,
         error: { ...state.error, ResetPassword: message },
+      }),
+
+      NEW_PASSWORD: (state, { payload }) => ({
+        ...state,
+        loading: true,
+        success: { ...state.success, newPassword: false },
+        error: { ...state.error, newPassword: false },
+      }),
+
+      NEW_PASSWORD_SUCCESS: {
+        next(state, { payload }) {
+          return {
+            ...state,
+            loading: false,
+            success: { ...state.success, newPassword: true },
+          };
+        },
+      },
+
+      NEW_PASSWORD_FAILED: (state, { payload: { message } }) => ({
+        ...state,
+        loading: false,
+        error: { ...state.error, newPassword: message },
       }),
     },
   },

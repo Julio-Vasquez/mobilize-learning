@@ -1,11 +1,16 @@
 import React, { useEffect, useState } from "react";
+import { useSelector } from "react-redux";
 import Typed from "typed.js";
 import signal from "./../../../assets/images/signals/001.jpg";
 
 import "./style.scss";
+import { message } from "antd";
 
 const Home = () => {
   const [ld, setLd] = useState(true);
+  const {
+    success: { ResetPassword },
+  } = useSelector((state) => state.Auth);
 
   useEffect(() => {
     const text = {
@@ -31,6 +36,11 @@ const Home = () => {
     };
   }, [ld]);
 
+  if (ResetPassword)
+    message.success(
+      "Se ha enviado la informacion de cambio de contraseña al correo electronico, ",
+      5
+    );
   return (
     <div id="conthome">
       <div className="content">

@@ -9,7 +9,11 @@ export const { auth } = createActions({
     LOGOUT: () => ({}),
 
     RESET_PASSWORD: (userName) => ({ userName }),
-    RESET_PASSWORD_SUCCESS: (status) => ({ status }),
+    RESET_PASSWORD_SUCCESS: (success) => ({ success }),
     RESET_PASSWORD_FAILED: (error) => ({ error }),
+
+    NEW_PASSWORD: (token, password) => ({ token, password }),
+    NEW_PASSWORD_SUCCESS: (success) => ({ success }),
+    NEW_PASSWORD_FAILED: (error) => ({ error }),
   },
 });

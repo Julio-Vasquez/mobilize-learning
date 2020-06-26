@@ -9,8 +9,6 @@ const appReducer = combineReducers({
 
 const rootReducer = (state, action) => {
   if (action.type === auth.logout) state = undefined;
-  console.log("Reducer raiz");
-  console.log(state);
   return appReducer(state, action);
 };
 

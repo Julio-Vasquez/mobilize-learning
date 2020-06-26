@@ -1,14 +1,22 @@
-const jwtDecode = require('jwt-decode');
+const jwtDecode = require("jwt-decode");
 
 class Token {
   Decode = (token) => jwtDecode(token || this.GetToken());
 
-  IsTokenValid = () => {
+  IsTokenValid = (token) => {
     try {
       return jwtDecode(this.getToken()) !== undefined;
-    } catch (e) { return false; }
+    } catch (e) {
+      return false;
+    }
   };
-
+  CheckToken = (token) => {
+    try {
+      return jwtDecode(token) !== undefined;
+    } catch (e) {
+      return false;
+    }
+  };
   GetToken = () => localStorage.getItem("mltoken");
 
   SetToken = (token, type) => {
