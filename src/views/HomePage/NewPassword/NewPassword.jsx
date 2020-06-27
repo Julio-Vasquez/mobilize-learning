@@ -4,18 +4,16 @@ import { Col, Card, Row, Form, Button, Input } from "antd";
 import { ToastContainer } from "react-toastify";
 import { useDispatch } from "react-redux";
 import { AlipayOutlined } from "@ant-design/icons";
-import { auth } from "./../../../services/auth/actions";
 
+import { auth } from "./../../../services/auth/actions";
 import { FunctionToken } from "./../../../common/token";
 import Toast from "./../../../common/toast";
-import bg3 from "./../../../assets/images/bg3.jpg";
 
+import bg3 from "./../../../assets/images/bg3.jpg";
 import "./NewPassword.scss";
 
 export default function NewPassword() {
   const { token } = useParams();
-
-  //console.log(FunctionToken.Decode(token));
   return FunctionToken.CheckToken(token) ? (
     <SetNewPassword token={token} />
   ) : (
@@ -30,7 +28,9 @@ const ErrorToken = () => {
 const SetNewPassword = ({ token }) => {
   const { Item } = Form;
 
-  const [passwordForm, setPasswordForm] = useState({
+  const dispatch = useDispatch();
+
+  const [form, setForm] = useState({
     password: "",
     confirmPassword: "",
   });
@@ -41,40 +41,30 @@ const SetNewPassword = ({ token }) => {
     document.body.style.backgroundRepeat = "no-repeat";
     document.body.style.backgroundSize = "cover";
     document.body.style.backgroundPosition = "center";
-    return () => {
-      document.body.style.backgroundImage = "none";
-      document.body.style.backgroundColor = "";
-    };
-  });
-
-  const dispatch = useDispatch();
+    return () => (document.body.style.backgroundImage = "none");
+  }, []);
 
   const onChange = (e) => {
-    setPasswordForm({
-      ...passwordForm,
+    setForm({
+      ...form,
       [e.target.name]: e.target.value,
     });
   };
 
-  const equalsPassword = (pwd) => {
-    if (pwd.password !== pwd.confirmPassword) {
-      Toast("las contraseñas no coinciden");
-    } else {
-      dispatch(auth.newPassword(token, pwd.password));
-    }
+  const equalsPassword = ({ password, confirmPassword }) => {
+    if (password !== confirmPassword) Toast("las contraseñas no coinciden");
+    else dispatch(auth.newPassword(token, password));
   };
 
   const onSubmit = (e) => {
     if (
-      passwordForm.password &&
-      passwordForm.password.length > 6 &&
-      passwordForm.confirmPassword &&
-      passwordForm.confirmPassword.length > 6
-    ) {
-      equalsPassword(passwordForm);
-    } else {
-      Toast("la contraseña debe contener al menos 6 caracteres", "error");
-    }
+      form.password &&
+      form.password.length > 6 &&
+      form.confirmPassword &&
+      form.confirmPassword.length > 6
+    )
+      equalsPassword(form);
+    else Toast("la contraseña debe contener al menos 6 caracteres", "error");
   };
 
   return (
@@ -108,7 +98,6 @@ const SetNewPassword = ({ token }) => {
                   name="password"
                 />
               </Item>
-
               <Item
                 name="confirmPasswordI"
                 rules={[
@@ -125,7 +114,6 @@ const SetNewPassword = ({ token }) => {
                   name="confirmPassword"
                 />
               </Item>
-
               <div className="new-password__R__btn">
                 <Button type="primary" htmlType="submit">
                   Cambiar contraseña

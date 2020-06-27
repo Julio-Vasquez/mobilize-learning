@@ -3,13 +3,13 @@ import { MDBBtn } from "mdbreact";
 import { Link } from "react-router-dom";
 import PropTypes from "prop-types";
 
-import "./style.scss";
+import "./404.scss";
 
-export const Page404 = (props) => {
+export const Page404 = ({ path, text }) => {
   return (
     <div className="container404">
-      <Link to={props.path}>
-        <MDBBtn color="purple">{props.text}</MDBBtn>
+      <Link to={path}>
+        <MDBBtn color="purple">{text}</MDBBtn>
       </Link>
     </div>
   );

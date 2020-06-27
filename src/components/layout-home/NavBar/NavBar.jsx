@@ -8,9 +8,10 @@ import {
   MDBNavbarToggler,
   MDBCollapse,
 } from "mdbreact";
-import "./style.scss";
 
-export const NavBar = (props) => {
+import "./NavBar.scss";
+
+export const NavBar = () => {
   const [isOpen, setOpen] = useState(false);
 
   const toggleCollapse = () => {
@@ -41,7 +42,6 @@ export const NavBar = (props) => {
             </MDBNavItem>
             <MDBNavItem active>
               <MDBNavLink to="/signup">
-                {" "}
                 <b className="titlemain">S</b>ign<b className="titlemain">U</b>p
               </MDBNavLink>
             </MDBNavItem>

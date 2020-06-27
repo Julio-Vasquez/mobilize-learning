@@ -109,49 +109,6 @@ form {
       color: #00c6d7;
     }
   }
-  input.checkbox:checked:after {
-    transform: rotate(-45deg);
-    height: 0.5rem;
-    border-color: transparent;
-    border-right-color: transparent;
-    animation: 0.4s rippling 0.4s ease;
-    animation-fill-mode: forwards;
-  }
-}
-
-input.checkbox {
-  background: #fff;
-  cursor: pointer;
-  width: 0.8em;
-  height: 1em;
-  margin: 0 6px 0 0 !important;
-  &:before {
-    content: "";
-    position: absolute;
-    width: 1.3em;
-    height: 1.2em;
-    background: inherit;
-    cursor: pointer;
-  }
-  &:after {
-    content: "";
-    transition: 0.4s ease-in-out;
-    position: absolute;
-    top: 4px;
-    left: 0px;
-    z-index: 1;
-    width: 1.2em;
-    height: 1.2em;
-    margin-top: -2.5px;
-    border: 1px solid #00c6d7;
-  }
-  &:checked:after {
-    transform: rotate(-45deg);
-    height: 0.5rem;
-    border-color: #00c6d7;
-    border-top-color: transparent;
-    border-right-color: transparent;
-  }
 }
 
 .submit-agileits {
@@ -520,9 +477,7 @@ input.checkbox {
       float: none;
     }
   }
-  input.checkbox:after {
-    left: 40.6px;
-  }
+
   .submit-agileits {
     margin-top: 1.3em;
     input[type="submit"] {

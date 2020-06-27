@@ -1,10 +1,11 @@
 import React from "react";
 import { List, Card } from "antd";
 import { Link } from "react-router-dom";
+import PropTypes from "prop-types";
 
 import "./CardList.scss";
 
-export default function CardList(props) {
+const CardList = ({ data, module }) => {
   return (
     <List
       grid={{
@@ -16,10 +17,10 @@ export default function CardList(props) {
         xl: 3,
         xxl: 4,
       }}
-      dataSource={props.data}
+      dataSource={data}
       renderItem={(item) => (
         <List.Item className="car-cont">
-          <Link to={`/admin/${props.module}/curse=${item.url}`}>
+          <Link to={`/admin/${module}/curse=${item.url}`}>
             <Card
               hoverable
               cover={<img alt={`${item.alt}`} src={`${item.urlImg}`} />}
@@ -35,4 +36,11 @@ export default function CardList(props) {
       )}
     />
   );
-}
+};
+
+CardList.propTypes = {
+  module: PropTypes.string.isRequired,
+  data: PropTypes.array.isRequired,
+};
+
+export default CardList;

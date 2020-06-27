@@ -1,0 +1,13 @@
+body {
+  height: auto !important;
+}
+.container404 {
+  background-image: url(./../../assets/images/404/404.jpg);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+
+  button {
+    margin: 53vh 25vw 29vh 65vw;
+  }
+}

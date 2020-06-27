@@ -1,13 +1,14 @@
 import React from "react";
 import { MDBContainer, MDBFooter } from "mdbreact";
-import "./style.scss";
+
+import "./Footer.scss";
 
 export const Footer = () => {
   return (
     <MDBFooter className="footercolor">
       <div className="footer-copyright text-center py-3 bgfooter">
         <MDBContainer fluid>
-          Copyright &copy; {new Date().getFullYear()} All Rights Reserved :{" "}
+          Copyright &copy; {new Date().getFullYear()} All Rights Reserved :
           <a href="/" className="footer-title">
             <b>Mobilize</b> Learning
           </a>

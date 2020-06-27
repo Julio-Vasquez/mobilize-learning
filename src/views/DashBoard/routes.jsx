@@ -8,10 +8,10 @@ import logo from "./../../assets/images/logo192.png";
 import bgImage from "./../../assets/images/sidebar-2.jpg";
 import DashBoardRoutes from "./layout/routes";
 
-import Loading from "./../../components/Loading";
+import { Loading } from "./../../components/Loading";
 import History from "./../../common/history";
-import Sidebar from "./../../components/admin/Sidebar";
-import Navbar from "./../../components/admin/Navbar";
+import { Sidebar } from "./../../components/admin/Sidebar";
+import { NavBar } from "./../../components/admin/Navbar";
 
 import styles from "./../../assets/jss/custom/adminStyle";
 import SpecificContent from "./../../components/admin/SpecificContent";
@@ -73,7 +73,7 @@ const RoutesAdmin = () => {
           color="blue"
         />
         <div className={classes.mainPanel} ref={mainPanel}>
-          <Navbar
+          <NavBar
             routes={DashBoardRoutes}
             handleDrawerToggle={handleDrawerToggle}
           />

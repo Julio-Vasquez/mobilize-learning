@@ -1,1 +1,0 @@
-export { RouteAuth } from "./Router";

@@ -8,10 +8,10 @@ import {
   MDBBtn,
   MDBInput,
 } from "mdbreact";
-import { MapContainer } from "./../../../components/map-container/map-container";
+import { MapContainer } from "./../../../components/map-container";
 
-import "./style.scss";
 import bg from "./../../../assets/images/content/signal/QueEs.jpg";
+import "./Contact.scss";
 
 const Contact = () => {
   useEffect(() => {
@@ -29,8 +29,13 @@ const Contact = () => {
       <h2 className="h1-responsive font-weight-bold text-center my-5">
         Contactenos
       </h2>
-      <p className="text-center w-responsive mx-auto pb-5" style={{ fontSize: 16, fontWeight: 500, color: 'black' }}>
-        <p className="text-center w-responsive mx-auto">Sus preguntas y opiniónes son muy importantes para nosotros,</p>
+      <p
+        className="text-center w-responsive mx-auto pb-5"
+        style={{ fontSize: 16, fontWeight: 500, color: "black" }}
+      >
+        <p className="text-center w-responsive mx-auto">
+          Sus preguntas y opiniónes son muy importantes para nosotros,
+        </p>
         completa el formulario para poder atenderte lo más pronto posible
       </p>
       <MDBRow>

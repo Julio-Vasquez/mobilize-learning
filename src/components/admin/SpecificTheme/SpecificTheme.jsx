@@ -1,15 +1,16 @@
 import React, { Fragment } from "react";
 import { Row, Col } from "antd";
 import { Link } from "react-router-dom";
+import PropTypes from "prop-types";
+
 import "./SpecificTheme.scss";
 
-export default function SpecificTheme(props) {
-  //in props content background
+const SpecificTheme = ({ bg, cover, title, description, content }) => {
   return (
     <div
       className="specific-theme"
       style={{
-        backgroundImage: `url(${props.bg})`
+        backgroundImage: `url(${bg})`,
       }}
     >
       <div className="specific-theme__dark" />
@@ -17,21 +18,21 @@ export default function SpecificTheme(props) {
         <Col span={8} offset={3} className="specific-theme__poster">
           <div
             style={{
-              backgroundImage: `url(${props.cover})`
+              backgroundImage: `url(${cover})`,
             }}
           />
         </Col>
         <Col className="specific-theme__info" span={10}>
           <Fragment>
             <div className="specific-theme__info-header">
-              <h1>{props.title}</h1>
+              <h1>{title}</h1>
             </div>
             <div className="specific-theme__info-content">
               <h2>Informacion General</h2>
-              <p>{props.description}</p>
+              <p>{description}</p>
               <h3>Contenido</h3>
               <ul>
-                {props.content.map((cont, key) => (
+                {content.map((cont, key) => (
                   <li key={key}>
                     <Link to={`${cont.link}`}>{cont.title}</Link>
                   </li>
@@ -43,4 +44,14 @@ export default function SpecificTheme(props) {
       </Row>
     </div>
   );
-}
+};
+
+SpecificTheme.propTypes = {
+  bg: PropTypes.string.isRequired,
+  cover: PropTypes.string.isRequired,
+  title: PropTypes.string.isRequired,
+  description: PropTypes.string.isRequired,
+  content: PropTypes.array.isRequired,
+};
+
+export default SpecificTheme;

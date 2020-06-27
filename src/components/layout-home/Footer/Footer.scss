@@ -1,0 +1,19 @@
+.footercolor {
+  height: 30px;
+  bottom: 0px;
+  width: 100%;
+  position: flex;
+  margin: 0;
+  .footer-copyright {
+    width: 100%;
+    background-color: rgba(0, 0, 0, 0.41);
+    .container-fluid {
+      a {
+        color: gold;
+        b {
+          color: red;
+        }
+      }
+    }
+  }
+}

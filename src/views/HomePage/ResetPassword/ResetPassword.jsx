@@ -27,28 +27,26 @@ const ResetPassword = () => {
   const onChange = (e) => setUserName(e.target.value);
 
   const onSubmit = (e) => {
-    console.log(userName);
-    if (userName && userName.length > 4) {
-      dispatch(auth.resetPassword(userName));
-    } else {
+    if (userName && userName.length > 4) dispatch(auth.resetPassword(userName));
+    else
       Toast(
         "El nombre de usuario debe contener al menos 4 caracteres",
         "warning"
       );
-    }
   };
+
   useEffect(() => {
     window.addEventListener("resize", handleResize);
+    return () => window.removeEventListener("resize", handleResize);
+  });
+
+  useEffect(() => {
     document.body.style.backgroundImage = `url('${bg4}')`;
     document.body.style.backgroundAttachment = "fixed";
     document.body.style.backgroundRepeat = "no-repeat";
     document.body.style.backgroundSize = "cover";
     document.body.style.backgroundPosition = "center";
-    return () => {
-      document.body.style.backgroundImage = "none";
-      document.body.style.backgroundColor = "";
-      window.removeEventListener("resize", handleResize);
-    };
+    return () => (document.body.style.backgroundImage = "none");
   });
 
   return (
@@ -84,7 +82,6 @@ const ResetPassword = () => {
                   placeholder="Username"
                 />
               </Item>
-
               <div className="forgot-password__R__btn">
                 <Button type="primary" htmlType="submit">
                   Restaurar contraseña
@@ -95,7 +92,6 @@ const ResetPassword = () => {
               ¿No tienes una cuenta? <Link to="/signup">Regístrate</Link>
             </p>
           </Col>
-
           <Col
             span={lock ? 0 : 12}
             pull={lock ? 0 : 12}

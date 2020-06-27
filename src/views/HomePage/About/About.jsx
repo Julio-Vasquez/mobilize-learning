@@ -12,12 +12,11 @@ import pedagogo from "./../../../assets/images/about/pedagogo.jpg";
 import design from "./../../../assets/images/about/alejandro.jpg";
 import dev from "./../../../assets/images/about/julio.jpg";
 import exp from "./../../../assets/images/about/expert.jpg";
-
 import bg from "./../../../assets/images/content/signal/QueEs.jpg";
 
-import "./style.scss";
+import "./About.scss";
 
-const About = (props) => {
+const About = () => {
   useEffect(() => {
     document.body.style.backgroundImage = `url('${bg}')`;
     document.body.style.backgroundAttachment = "fixed";
@@ -36,7 +35,7 @@ const About = (props) => {
             className="h1-responsive font-weight-bold mb-5"
             style={{ color: "#000" }}
           >
-            About Us
+            Acerca De
           </h2>
           <MDBCarousel
             id="carousel-example-1"

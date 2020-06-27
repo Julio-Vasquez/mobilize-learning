@@ -13,11 +13,11 @@ import styles from "./../../../assets/jss/custom/headerStyle";
 
 const useStyles = makeStyles(styles);
 
-export default function Header(props) {
+export const NavBar = (props) => {
   const classes = useStyles();
   const { color } = props;
   const appBarClasses = classNames({
-    [" " + classes[color]]: color
+    [" " + classes[color]]: color,
   });
   return (
     <AppBar className={classes.appBar + appBarClasses}>
@@ -38,11 +38,11 @@ export default function Header(props) {
       </Toolbar>
     </AppBar>
   );
-}
+};
 
-Header.propTypes = {
+NavBar.propTypes = {
   color: PropTypes.oneOf(["primary", "info", "success", "warning", "danger"]),
   rtlActive: PropTypes.bool,
   handleDrawerToggle: PropTypes.func,
-  routes: PropTypes.arrayOf(PropTypes.object)
+  routes: PropTypes.arrayOf(PropTypes.object),
 };

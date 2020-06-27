@@ -2,7 +2,6 @@ import React from "react";
 import { GOOGLE_API } from "./../../common/config";
 
 export const MapContainer = () => {
-  console.log(process.env);
   return (
     <div
       id="map-container"

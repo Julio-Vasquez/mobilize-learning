@@ -1,10 +1,10 @@
 import React, { useEffect, useState } from "react";
 import { useSelector } from "react-redux";
-import Typed from "typed.js";
-import signal from "./../../../assets/images/signals/001.jpg";
-
-import "./style.scss";
 import { message } from "antd";
+import Typed from "typed.js";
+
+import signal from "./../../../assets/images/signals/001.jpg";
+import "./Home.scss";
 
 const Home = () => {
   const [ld, setLd] = useState(true);
@@ -25,16 +25,16 @@ const Home = () => {
       loop: true,
     };
     new Typed("#dintext", text);
+    return () => setLd(false);
+  }, [ld]);
+
+  useEffect(() => {
     document.body.style.backgroundImage = `url(${signal})`;
     document.body.style.backgroundAttachment = "fixed";
     document.body.style.backgroundRepeat = "no-repeat";
     document.body.style.backgroundSize = "cover";
-
-    return () => {
-      setLd(false);
-      document.body.style.backgroundImage = "";
-    };
-  }, [ld]);
+    return () => (document.body.style.backgroundImage = "");
+  });
 
   if (ResetPassword)
     message.success(

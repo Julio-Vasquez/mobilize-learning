@@ -11,7 +11,7 @@ function* FetchLogin(dataForm) {
     const res = yield Api.POST("auth/login", dataForm.payload);
 
     console.log(res.payload);
-    if (res.payload.sucess) {
+    if (res.payload.success) {
       FunctionToken.SetToken(res.payload.token, "");
 
       console.log(FunctionToken.Decode(res.payload.token));
