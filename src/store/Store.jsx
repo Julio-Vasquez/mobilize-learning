@@ -9,15 +9,14 @@ import rootSaga from "./Sagas";
 import rootReducers from "./Reducers";
 
 const sagaMiddleware = createSagaMiddleware();
+
 let middleware = [sagaMiddleware];
 
 if (ENV === "development") middleware = [...middleware, logger];
 
-const store = createStore(
+export const store = createStore(
   rootReducers,
   composeWithDevTools(applyMiddleware(...middleware))
 );
 
 sagaMiddleware.run(rootSaga);
-
-export default store;

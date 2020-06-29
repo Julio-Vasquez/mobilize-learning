@@ -16,23 +16,28 @@ const ResetPassword = lazy(() => import("./ResetPassword"));
 const NewPassword = lazy(() => import("./NewPassword"));
 
 const Routes = () => {
+  console.log(History);
   return (
     <Router history={History}>
       <div className="Container">
         <NavBar />
         <Suspense fallback={<Loading />}>
           <Switch className="h-100">
-            <Route exact path="/" component={Home} />
-            <Route path="/about" redirect="/" component={About} />
-            <Route path="/contact" redirect="/" component={Contact} />
-            <Route path="/signup" redirect="/" component={SignUp} />
+            <Route path="/about" component={About} exact={true} />
+            <Route path="/contact" component={Contact} exact={true} />
+            <Route path="/signup" component={SignUp} exact={true} />
             <Route path="/login" component={Login} exact={true} />
             <Route
               path="/request-password-reset"
               component={ResetPassword}
               exact={true}
             />
-            <Route path="/setnewpassword/:token" component={NewPassword} />
+            <Route
+              path="/setnewpassword/:token"
+              component={NewPassword}
+              exact={true}
+            />
+            <Route path="/" component={Home} exact={true} />
             <Route path="*" component={Page404} />
           </Switch>
         </Suspense>

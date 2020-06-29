@@ -10,11 +10,8 @@ function* FetchLogin(dataForm) {
   try {
     const res = yield Api.POST("auth/login", dataForm.payload);
 
-    console.log(res.payload);
     if (res.payload.success) {
       FunctionToken.SetToken(res.payload.token, "");
-
-      console.log(FunctionToken.Decode(res.payload.token));
       yield put(auth.loginSuccess(res.payload.token));
       History.push("/admin/dashboard");
     } else if (res.payload.error) {

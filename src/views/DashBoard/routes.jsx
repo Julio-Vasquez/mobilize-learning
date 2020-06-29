@@ -31,6 +31,7 @@ const useStyles = makeStyles(styles);
 let ps;
 
 const RoutesAdmin = () => {
+  console.log(History);
   const classes = useStyles();
   const mainPanel = createRef();
   const [mobileOpen, setMobileOpen] = useState(false);
@@ -59,7 +60,6 @@ const RoutesAdmin = () => {
       window.removeEventListener("resize", resizeFunction);
     };
   }, [mainPanel]);
-
   return (
     <Router history={History}>
       <div className={classes.wrapper}>
@@ -99,6 +99,7 @@ const RoutesAdmin = () => {
                 <Route
                   path="/admin/mobilitybehavior"
                   component={MobilityBehaviros}
+                  exact={true}
                 />
                 <Route
                   path="/admin/mobilitybehaviors/curse=:data"
@@ -109,8 +110,16 @@ const RoutesAdmin = () => {
                   path="/admin/qualification"
                   component={MyQualifications}
                 />
-                <Route path="/admin/certificate" component={Certificate} />
-                <Route path="/admin/test" component={EvaluativeTest} />
+                <Route
+                  path="/admin/certificate"
+                  component={Certificate}
+                  exact={true}
+                />
+                <Route
+                  path="/admin/test"
+                  component={EvaluativeTest}
+                  exact={true}
+                />
                 <Route
                   path="/admin/content"
                   component={SpecificContent}

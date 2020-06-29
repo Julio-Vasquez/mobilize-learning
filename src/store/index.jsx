@@ -1,1 +1,1 @@
-export { default } from "./Store";
+export { store } from "./Store";

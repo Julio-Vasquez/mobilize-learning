@@ -9,6 +9,7 @@ export const INITIAL_STATE = {
   success: {
     ResetPassword: undefined,
     newPassword: undefined,
+    login: undefined,
   },
 };
 
@@ -23,12 +24,13 @@ const reducerAuth = handleActions(
 
       LOGIN_SUCCESS: {
         next(state, { payload: { token } }) {
-          console.log(`hola amigo : ${token}`);
           return {
             ...state,
             authentication: true,
             token: token,
             loading: false,
+            success: { ...state.success, login: true },
+            error: { ...state.error, login: false },
           };
         },
       },
