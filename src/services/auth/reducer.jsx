@@ -5,11 +5,17 @@ console.log(FunctionToken.IsTokenValid());
 export const INITIAL_STATE = {
   authentication: FunctionToken.IsTokenValid(),
   loading: false,
-  error: { login: undefined, signup: undefined, ResetPassword: undefined },
+  error: {
+    login: undefined,
+    signup: undefined,
+    ResetPassword: undefined,
+    signup: undefined,
+  },
   success: {
     ResetPassword: undefined,
     newPassword: undefined,
     login: undefined,
+    signup: undefined,
   },
 };
 
@@ -38,6 +44,7 @@ const reducerAuth = handleActions(
       LOGIN_FAILED: (state, { payload: { error } }) => ({
         ...state,
         error: { ...state.error, login: true },
+        success: { ...state.success, login: false },
         loading: false,
       }),
 
@@ -55,6 +62,7 @@ const reducerAuth = handleActions(
           return {
             ...state,
             success: { ...state.success, ResetPassword: true },
+            error: { ...state.error, ResetPassword: false },
             loading: false,
           };
         },
@@ -63,6 +71,7 @@ const reducerAuth = handleActions(
       RESET_PASSWORD_FAILED: (state, { payload: { message } }) => ({
         ...state,
         loading: false,
+        success: { ...state.success, ResetPassword: false },
         error: { ...state.error, ResetPassword: message },
       }),
 
@@ -87,6 +96,31 @@ const reducerAuth = handleActions(
         ...state,
         loading: false,
         error: { ...state.error, newPassword: message },
+      }),
+
+      SIGNUP: (state, { payload }) => ({
+        ...state,
+        loading: true,
+        success: { ...state.success, signup: false },
+        error: { ...state.error, signup: false },
+      }),
+
+      SIGNUP_SUCCESS: {
+        next(state, { payload }) {
+          return {
+            ...state,
+            loading: false,
+            success: { ...state.success, signup: true },
+            error: { ...state.error, signup: false },
+          };
+        },
+      },
+
+      SIGNUP_FAILED: (state, { payload: { message } }) => ({
+        ...state,
+        loading: false,
+        error: { ...state.error, signup: message },
+        success: { ...state.success, signup: false },
       }),
     },
   },

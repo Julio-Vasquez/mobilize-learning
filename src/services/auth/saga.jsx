@@ -28,17 +28,21 @@ function* FetchLogin(dataForm) {
     yield put(auth.loginFailed({ error: err }));
   }
 }
-/*
-function* FetchSignup(dataForm) {}
-*/
+
+function* FetchSignup(dataForm) {
+  try {
+    console.log(dataForm);
+  } catch (e) {
+    message.error(`Error Desconocido`);
+    const err = new TypeError("ERROR_SIGNUP");
+    yield put(auth.signupFailed({ error: err }));
+  }
+}
+
 function* FetchNewPassword({ payload }) {
   try {
     const res = yield Api.PUT("auth/forgot-password", payload);
-
-    console.log(res.payload);
-
     if (res.payload.success) {
-      console.log(res.payload.success);
       yield put(auth.newPasswordSuccess("ok"));
       History.push("/login");
     } else if (res.payload.error) {
@@ -61,9 +65,7 @@ const FetchLogout = () => localStorage.clear();
 function* FetchForgotPassword({ payload }) {
   try {
     const res = yield Api.POST("auth/request-forgot-password", payload);
-    console.log(res.payload);
     if (res.payload.success) {
-      console.log(res.payload.success);
       yield put(auth.resetPasswordSuccess("ok"));
       History.push("/");
     } else if (res.payload.error) {
@@ -80,11 +82,13 @@ function* FetchForgotPassword({ payload }) {
     yield put(auth.resetPasswordFailed({ error: err }));
   }
 }
+
 function* ActionWatcher() {
   yield takeLatest(auth.login, FetchLogin);
   yield takeLatest(auth.logout, FetchLogout);
   yield takeLatest(auth.resetPassword, FetchForgotPassword);
   yield takeLatest(auth.newPassword, FetchNewPassword);
+  yield takeLatest(auth.signup, FetchSignup);
 }
 
 export default function* AuthSaga() {

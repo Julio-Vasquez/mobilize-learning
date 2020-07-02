@@ -16,7 +16,6 @@ const ResetPassword = lazy(() => import("./ResetPassword"));
 const NewPassword = lazy(() => import("./NewPassword"));
 
 const Routes = () => {
-  console.log(History);
   return (
     <Router history={History}>
       <div className="Container">
