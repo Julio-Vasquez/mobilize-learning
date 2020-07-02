@@ -1,14 +1,15 @@
 import React, { useEffect, useState } from "react";
-import { ToastContainer } from "react-toastify";
 import { Form, Input, Button, Row, Col, Card } from "antd";
 import { UserOutlined } from "@ant-design/icons";
 import { Link } from "react-router-dom";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { auth } from "./../../../services/auth/actions";
 
 import Lock from "./../../../assets/images/lock.png";
 import bg4 from "./../../../assets/images/bg4.jpg";
 import Toast from "./../../../common/toast";
+
+import { Loading } from "./../../../components/Loading";
 
 import "./ResetPassword.scss";
 
@@ -21,14 +22,16 @@ const ResetPassword = () => {
   const [userName, setUserName] = useState("");
 
   const dispatch = useDispatch();
+  const { loading } = useSelector((state) => state.Auth);
 
   const handleResize = () => setLock(getSize());
 
   const onChange = (e) => setUserName(e.target.value);
 
   const onSubmit = (e) => {
-    if (userName && userName.length > 4) dispatch(auth.resetPassword(userName));
-    else
+    if (userName && userName.length >= 4) {
+      dispatch(auth.resetPassword(userName));
+    } else
       Toast(
         "El nombre de usuario debe contener al menos 4 caracteres",
         "warning"
@@ -49,7 +52,9 @@ const ResetPassword = () => {
     return () => (document.body.style.backgroundImage = "none");
   });
 
-  return (
+  return loading ? (
+    <Loading />
+  ) : (
     <Col
       xs={{ span: 22, offset: 1 }}
       sm={{ span: 18, offset: 3 }}
@@ -102,15 +107,7 @@ const ResetPassword = () => {
           </Col>
         </Row>
       </Card>
-      <ToastContainer
-        position="top-left"
-        autoClose={5000}
-        newestOnTop
-        closeOnClick
-        rtl={false}
-        pauseOnVisibilityChange={false}
-        pauseOnHover={false}
-      />
+      <div id="loading"></div>
     </Col>
   );
 };

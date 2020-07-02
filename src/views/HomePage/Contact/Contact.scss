@@ -21,6 +21,7 @@
   margin: 10px;
   overflow: hidden;
   vertical-align: middle;
+
   cursor: pointer;
   border-radius: 50%;
   box-shadow: 0 5px 11px 0 rgba(0, 0, 0, 0.18), 0 4px 15px 0 rgba(0, 0, 0, 0.15);
@@ -36,4 +37,9 @@
     justify-content: center;
     margin-top: 12px;
   }
+}
+
+#center-p {
+  margin-left: 20%;
+  margin-right: 20%;
 }

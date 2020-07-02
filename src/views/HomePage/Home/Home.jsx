@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { useSelector } from "react-redux";
-import { message } from "antd";
+import Toast from "./../../../common/toast";
 import Typed from "typed.js";
 
 import signal from "./../../../assets/images/signals/001.jpg";
@@ -25,6 +25,7 @@ const Home = () => {
       loop: true,
     };
     new Typed("#dintext", text);
+
     return () => setLd(false);
   }, [ld]);
 
@@ -36,11 +37,14 @@ const Home = () => {
     return () => (document.body.style.backgroundImage = "");
   });
 
-  if (ResetPassword)
-    message.success(
-      "Se ha enviado la informacion de cambio de contraseña al correo electronico, ",
-      5
-    );
+  useEffect(() => {
+    if (ResetPassword)
+      Toast(
+        "Se ha enviado la informacion de cambio de contraseña al correo electronico, ",
+        "success"
+      );
+  });
+
   return (
     <div id="conthome">
       <div className="content">

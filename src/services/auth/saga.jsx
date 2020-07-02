@@ -67,7 +67,7 @@ function* FetchForgotPassword({ payload }) {
       yield put(auth.resetPasswordSuccess("ok"));
       History.push("/");
     } else if (res.payload.error) {
-      message.error(`${res.payload.detail}`, 3000);
+      message.error(`${res.payload.detail}`, 3);
       yield put(auth.resetPasswordFailed(`${res.payload.detail}`));
     } else {
       message.error(`Error Desconocido`);

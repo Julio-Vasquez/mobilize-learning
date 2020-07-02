@@ -1,5 +1,6 @@
 import React from "react";
 import { useSelector } from "react-redux";
+import { ToastContainer } from "react-toastify";
 
 import Routes from "./HomePage/routes";
 
@@ -10,12 +11,19 @@ export default function App() {
 
   console.log("====================");
   console.log(authentication);
-
   console.log("====================");
   return (
     <div>
-      {!authentication && <Routes />}
-      {authentication && <RoutesAdmin />}
+      {!authentication ? <Routes /> : <RoutesAdmin />}
+      <ToastContainer
+        position="top-left"
+        autoClose={5000}
+        newestOnTop
+        closeOnClick
+        rtl={false}
+        pauseOnVisibilityChange={false}
+        pauseOnHover={false}
+      />
     </div>
   );
 }

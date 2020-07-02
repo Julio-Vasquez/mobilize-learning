@@ -1,5 +1,4 @@
 import React, { useEffect, useState } from "react";
-import { ToastContainer } from "react-toastify";
 import Toast from "./../../../common/toast";
 import { useDispatch, useSelector } from "react-redux";
 import { auth } from "./../../../services/auth/actions";
@@ -15,16 +14,20 @@ export function LoginForm() {
     }
   });
 
+  const {
+    success: { newPassword },
+  } = useSelector((state) => state.Auth);
+
+  useEffect(() => {
+    if (newPassword) Toast("Contraseña cambiada correctamente", "success");
+  });
+
   const [loginValues, setLoginValues] = useState({
     userName: "",
     password: "",
   });
 
   const dispatch = useDispatch();
-
-  const {
-    success: { newPassword },
-  } = useSelector((state) => state.Auth);
 
   const onChange = (e) => {
     setLoginValues({
@@ -38,10 +41,13 @@ export function LoginForm() {
     const { userName, password } = loginValues;
     if (!userName || !password)
       Toast("Debe llenar el formulario para continuar", "warning");
-    else dispatch(auth.login(userName, password));
+    else if (userName.length <= 4 || password.length <= 4) {
+      Toast("Los campos son de minimo 4 caracteres", "error");
+    } else {
+      dispatch(auth.login(userName, password));
+    }
   };
 
-  if (newPassword) Toast("Contraseña cambiada correctamente", "success");
   return (
     <div className="logincontainer">
       <div className="header">
@@ -90,15 +96,6 @@ export function LoginForm() {
           </form>
         </div>
       </div>
-      <ToastContainer
-        position="top-left"
-        autoClose={5000}
-        newestOnTop
-        closeOnClick
-        rtl={false}
-        pauseOnVisibilityChange={false}
-        pauseOnHover={false}
-      />
     </div>
   );
 }

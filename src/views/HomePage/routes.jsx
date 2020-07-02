@@ -23,6 +23,7 @@ const Routes = () => {
         <NavBar />
         <Suspense fallback={<Loading />}>
           <Switch className="h-100">
+            <Route path="/" component={Home} exact />
             <Route path="/about" component={About} exact={true} />
             <Route path="/contact" component={Contact} exact={true} />
             <Route path="/signup" component={SignUp} exact={true} />
@@ -37,7 +38,7 @@ const Routes = () => {
               component={NewPassword}
               exact={true}
             />
-            <Route path="/" component={Home} exact={true} />
+
             <Route path="*" component={Page404} />
           </Switch>
         </Suspense>

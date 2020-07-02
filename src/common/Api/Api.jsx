@@ -28,7 +28,6 @@ class Api {
   }
 
   POST(url, body, header) {
-    console.log(url);
     let dataBody = JSON.stringify(body);
     console.log(dataBody);
     return fetch(`${API_URL}/${url}`, {

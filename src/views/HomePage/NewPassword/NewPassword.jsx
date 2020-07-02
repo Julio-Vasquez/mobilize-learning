@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
 import { Col, Card, Row, Form, Button, Input } from "antd";
-import { ToastContainer } from "react-toastify";
 import { useDispatch } from "react-redux";
 import { AlipayOutlined } from "@ant-design/icons";
 
@@ -123,15 +122,6 @@ const SetNewPassword = ({ token }) => {
           </Col>
         </Row>
       </Card>
-      <ToastContainer
-        position="top-left"
-        autoClose={5000}
-        newestOnTop
-        closeOnClick
-        rtl={false}
-        pauseOnVisibilityChange={false}
-        pauseOnHover={false}
-      />
     </Col>
   );
 };

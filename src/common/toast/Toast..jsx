@@ -8,7 +8,7 @@ const Toast = (sms, type) => {
     case "error":
       return toast.error(sms, config);
     case "success":
-      return toast.sucess(sms, config);
+      return toast.success(sms, config);
     case "info":
       return toast.info(sms, config);
     case "warning":
