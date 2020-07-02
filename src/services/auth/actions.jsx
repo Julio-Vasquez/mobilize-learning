@@ -15,5 +15,9 @@ export const { auth } = createActions({
     NEW_PASSWORD: (token, password) => ({ token, password }),
     NEW_PASSWORD_SUCCESS: (success) => ({ success }),
     NEW_PASSWORD_FAILED: (error) => ({ error }),
+
+    SIGNUP: (payload) => ({ payload }),
+    SIGNUP_SUCCESS: (success) => ({ success }),
+    SIGNUP_FAILED: (error) => ({ error }),
   },
 });

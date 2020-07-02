@@ -5,11 +5,12 @@ class Token {
 
   IsTokenValid = (token) => {
     try {
-      return jwtDecode(this.getToken()) !== undefined;
+      return jwtDecode(localStorage.getItem("mltoken")) !== undefined;
     } catch (e) {
       return false;
     }
   };
+
   CheckToken = (token) => {
     try {
       return jwtDecode(token) !== undefined;
@@ -17,7 +18,10 @@ class Token {
       return false;
     }
   };
-  GetToken = () => localStorage.getItem("mltoken");
+
+  GetToken = () => {
+    return localStorage.getItem("mltoken");
+  };
 
   SetToken = (token, type) => {
     if (type === "session") return sessionStorage.setItem("mltoken", token);
