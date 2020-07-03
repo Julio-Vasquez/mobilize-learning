@@ -3,7 +3,7 @@ import Toast from "./../../../common/toast";
 import { useDispatch, useSelector } from "react-redux";
 import { auth } from "./../../../services/auth/actions";
 import { Link } from "react-router-dom";
-
+import { Loading } from "./../../Loading";
 import "./login.scss";
 
 export function LoginForm() {
@@ -15,6 +15,7 @@ export function LoginForm() {
   });
 
   const {
+    loading,
     success: { newPassword },
   } = useSelector((state) => state.Auth);
 
@@ -48,7 +49,9 @@ export function LoginForm() {
     }
   };
 
-  return (
+  return loading ? (
+    <Loading />
+  ) : (
     <div className="logincontainer">
       <div className="header">
         <h1>Iniciar sesión</h1>

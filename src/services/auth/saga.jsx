@@ -23,7 +23,7 @@ function* FetchLogin(dataForm) {
       yield put(auth.loginFailed({ error: err }));
     }
   } catch (e) {
-    message.error(`Error Desconocido`);
+    message.error(`Conexion con el servidor fallida`);
     const err = new TypeError("ERROR_LOGIN");
     yield put(auth.loginFailed({ error: err }));
   }
@@ -46,7 +46,7 @@ function* FetchSignup({ payload }) {
       yield put(auth.signupFailed({ error: err }));
     }
   } catch (e) {
-    message.error(`Error Desconocido`);
+    message.error(`Conexion con el servidor fallida`);
     const err = new TypeError("ERROR_SIGNUP");
     yield put(auth.signupFailed({ error: err }));
   }
@@ -67,7 +67,7 @@ function* FetchNewPassword({ payload }) {
       yield put(auth.newPasswordFailed({ error: err }));
     }
   } catch (e) {
-    message.error(`Error Desconocido`);
+    message.error(`Conexion con el servidor fallida`);
     const err = new TypeError("ERROR_RESET_PASSWORD");
     yield put(auth.newPasswordFailed({ error: err }));
   }
@@ -90,7 +90,7 @@ function* FetchForgotPassword({ payload }) {
       yield put(auth.resetPasswordFailed({ error: err }));
     }
   } catch (e) {
-    message.error(`Error Desconocido`);
+    message.error(`Conexion con el servidor fallida`);
     const err = new TypeError("ERROR_RESET_PASSWORD");
     yield put(auth.resetPasswordFailed({ error: err }));
   }

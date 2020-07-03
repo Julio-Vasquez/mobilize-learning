@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import {
   Form,
   Input,
@@ -9,9 +9,7 @@ import {
   Divider,
   Select,
   DatePicker,
-  Upload,
 } from "antd";
-import { UploadOutlined } from "@ant-design/icons";
 import { useDispatch } from "react-redux";
 import { auth } from "./../../../services/auth/actions";
 import "./signup.scss";
@@ -21,21 +19,27 @@ export const SignUpForm = () => {
   const { Option } = Select;
   const dispatch = useDispatch();
 
-  function onChange(value) {
+  const [select, setSelect] = useState();
+  const [fileUpload, setFileUpload] = useState([]);
+
+  const onSelect = (e) => {
+    setSelect(e);
+  };
+
+  const onChange = (value) => {
     console.log(`selected ${value}`);
-  }
-
-  function onBlur() {
-    console.log("blur");
-  }
-
-  function onSearch(val) {
+  };
+  const onSearch = (val) => {
     console.log("search:", val);
-  }
+  };
 
-  function finishForm() {
+  const finishForm = () => {
     dispatch(auth.signup({ j: "hola", v: "world" }));
-  }
+  };
+
+  const handleChange = (e) => {
+    setFileUpload([...fileUpload, e.target.files[0]]);
+  };
 
   return (
     <Col
@@ -95,8 +99,10 @@ export const SignUpForm = () => {
                     showSearch
                     placeholder="Seleccione Tipo Documento"
                     onChange={onChange}
-                    onBlur={onBlur}
                     onSearch={onSearch}
+                    onSelect={onSelect}
+                    name="typeidentification"
+                    value={select}
                   >
                     <Option value="CC">CC</Option>
                     <Option value="TI">TI</Option>
@@ -130,40 +136,18 @@ export const SignUpForm = () => {
                     },
                   ]}
                 >
-                  <DatePicker name="datebirth" size="middle" />
+                  <DatePicker
+                    name="datebirth"
+                    placeholder="Fecha de Nacimiento"
+                  />
                 </Item>
               </Col>
               <Col xs={{ span: 10, offset: 2 }}>
-                <Item
-                  name="genderI"
-                  rules={[
-                    {
-                      required: true,
-                      message: "Por favor Seleccione su genero",
-                    },
-                  ]}
-                >
-                  <label className="radio-label">Genero : </label>
-                  <Radio.Group name="gender">
-                    <Radio value="Masculino">Masculino</Radio>
-                    <Radio value="Femenino">Femenino</Radio>
-                  </Radio.Group>
-                </Item>
-              </Col>
-            </Row>
-            <Row>
-              <Col xs={{ span: 10, offset: 1 }}>
-                <Item
-                  name="telephoneI"
-                  rules={[
-                    {
-                      required: true,
-                      message: "Por favor ingresa su Telefono",
-                    },
-                  ]}
-                >
-                  <Input placeholder="Telefono" name="telephone" />
-                </Item>
+                <label className="radio-label">Genero : </label>
+                <Radio.Group name="gender">
+                  <Radio value="Masculino">Masculino</Radio>
+                  <Radio value="Femenino">Femenino</Radio>
+                </Radio.Group>
               </Col>
             </Row>
             <Divider orientation="left">Datos de cuenta</Divider>
@@ -224,11 +208,18 @@ export const SignUpForm = () => {
                     },
                   ]}
                 >
-                  <Upload name="avatar" accept=".png, .jpg, .bmp">
-                    <Button>
-                      <UploadOutlined /> Click to Upload
-                    </Button>
-                  </Upload>
+                  <Item noStyle>
+                    <input
+                      type="file"
+                      id="file"
+                      name="file"
+                      accept="image/png, image/jpeg"
+                      onChange={handleChange}
+                    />
+                    <label htmlFor="file" className="btn-3">
+                      <span>avatar!</span>
+                    </label>
+                  </Item>
                 </Item>
               </Col>
             </Row>
@@ -236,7 +227,7 @@ export const SignUpForm = () => {
             <Row>
               <Col xs={{ span: 6, offset: 9 }}>
                 <Button type="primary" onClick={finishForm}>
-                  Registrarse
+                  Registrarse ahora
                 </Button>
               </Col>
             </Row>

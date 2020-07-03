@@ -2,11 +2,8 @@
   margin-top: 50px;
   margin-bottom: 50px;
   background-color: white;
-  opacity: 0.9;
   &-content {
-    opacity: 1 !important;
-
-    height: 75.6vh;
+    height: 75.5vh;
 
     &-form form {
       padding-top: 20px;
@@ -15,17 +12,19 @@
         color: black;
         font-weight: 500;
         padding-bottom: 10px;
+        padding-left: 20px;
+        user-select: none;
       }
-      .ant-divider {
+      .ant-divider,
+      h2 {
         color: goldenrod;
       }
-
       .ant-form-item {
         height: 40px !important;
       }
-
       input:active,
       input:focus,
+      input:target,
       input:target,
       .ant-input:hover,
       .ant-input:active,
@@ -40,4 +39,64 @@
       }
     }
   }
+}
+
+[type="file"] {
+  height: 0;
+  overflow: hidden;
+  width: 0;
+}
+
+[type="file"] + label {
+  background: #f15d22;
+  border: none;
+  border-radius: 5px !important;
+  color: #fff;
+  cursor: pointer;
+  display: inline-block;
+  font-family: "Poppins", sans-serif;
+  font-size: inherit;
+  font-weight: 600;
+  outline: none;
+  padding: 0.4rem 40px;
+  position: relative;
+  transition: all 0.3s;
+  vertical-align: middle;
+  &.btn-3 {
+    background-color: #dd3374;
+    overflow: hidden;
+    span {
+      display: inline-block;
+      height: 100%;
+      transition: all 0.3s;
+      width: 100%;
+    }
+
+    &::before {
+      content: url(../../../assets/images/signup/subir.png);
+      font-size: 10%;
+      height: 28px;
+      left: 33%;
+      line-height: 1.6;
+      position: absolute;
+      padding-top: 2px;
+      top: -33px;
+      transition: all 0.3s;
+      width: 30px;
+    }
+    &:hover {
+      border: 1px solid red !important;
+      background-color: #fff;
+      color: white;
+      span {
+        transform: translateY(300%);
+      }
+      &::before {
+        top: 0;
+      }
+    }
+  }
+}
+#dbdate {
+  width: 100%;
 }
