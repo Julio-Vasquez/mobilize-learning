@@ -5,7 +5,7 @@ class Token {
 
   IsTokenValid = (token) => {
     try {
-      const currentToken = jwtDecode(localStorage.getItem("mltoken"));
+      const currentToken = jwtDecode(this.GetToken());
       return (
         currentToken !== undefined &&
         currentToken.exp >= Math.round(new Date().getTime() / 1000)

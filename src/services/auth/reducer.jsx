@@ -9,7 +9,6 @@ export const INITIAL_STATE = {
     login: undefined,
     signup: undefined,
     ResetPassword: undefined,
-    signup: undefined,
   },
   success: {
     ResetPassword: undefined,

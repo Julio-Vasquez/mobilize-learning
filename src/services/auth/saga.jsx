@@ -29,9 +29,22 @@ function* FetchLogin(dataForm) {
   }
 }
 
-function* FetchSignup(dataForm) {
+function* FetchSignup({ payload }) {
   try {
-    console.log(dataForm);
+    console.log(payload);
+    const res = yield Api.POST("auth/signup", payload);
+    console.log(res);
+    if (res.payload.success) {
+      yield put(auth.signupSuccess("ok"));
+      History.push("/login");
+    } else if (res.payload.error) {
+      message.error(`${res.payload.detail}`, 5);
+      yield put(auth.signupFailed(`${res.payload.detail}`));
+    } else {
+      message.error(`Error Desconocido`);
+      const err = new TypeError("ERROR_RESET_PASSWORD");
+      yield put(auth.signupFailed({ error: err }));
+    }
   } catch (e) {
     message.error(`Error Desconocido`);
     const err = new TypeError("ERROR_SIGNUP");

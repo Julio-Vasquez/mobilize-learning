@@ -1,5 +1,6 @@
 import React, { useEffect } from "react";
 import { SignUpForm } from "./../../../components/home/signup";
+
 import bg from "./../../../assets/images/signup/signup.jpg";
 
 const SignUp = () => {
