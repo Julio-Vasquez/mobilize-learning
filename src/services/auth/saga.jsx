@@ -5,11 +5,11 @@ import Api from "./../../common/Api/Api";
 import { FunctionToken } from "./../../common/token";
 import { auth } from "./actions";
 import History from "./../../common/history";
+import { FailedConnectionServer } from './../Util/FailedConnectionServer'
 
 function* FetchLogin(dataForm) {
   try {
     const res = yield Api.POST("auth/login", dataForm.payload);
-
     if (res.payload.success) {
       FunctionToken.SetToken(res.payload.token, "");
       yield put(auth.loginSuccess(res.payload.token));
@@ -23,9 +23,7 @@ function* FetchLogin(dataForm) {
       yield put(auth.loginFailed({ error: err }));
     }
   } catch (e) {
-    message.error(`Conexion con el servidor fallida`);
-    const err = new TypeError("ERROR_LOGIN");
-    yield put(auth.loginFailed({ error: err }));
+    yield put(auth.loginFailed({ error: FailedConnectionServer() }));
   }
 }
 
@@ -46,9 +44,7 @@ function* FetchSignup({ payload }) {
       yield put(auth.signupFailed({ error: err }));
     }
   } catch (e) {
-    message.error(`Conexion con el servidor fallida`);
-    const err = new TypeError("ERROR_SIGNUP");
-    yield put(auth.signupFailed({ error: err }));
+    yield put(auth.signupFailed({ error: FailedConnectionServer() }));
   }
 }
 
@@ -67,9 +63,7 @@ function* FetchNewPassword({ payload }) {
       yield put(auth.newPasswordFailed({ error: err }));
     }
   } catch (e) {
-    message.error(`Conexion con el servidor fallida`);
-    const err = new TypeError("ERROR_RESET_PASSWORD");
-    yield put(auth.newPasswordFailed({ error: err }));
+    yield put(auth.newPasswordFailed({ error: FailedConnectionServer() }));
   }
 }
 
@@ -90,9 +84,7 @@ function* FetchForgotPassword({ payload }) {
       yield put(auth.resetPasswordFailed({ error: err }));
     }
   } catch (e) {
-    message.error(`Conexion con el servidor fallida`);
-    const err = new TypeError("ERROR_RESET_PASSWORD");
-    yield put(auth.resetPasswordFailed({ error: err }));
+    yield put(auth.resetPasswordFailed({ error: FailedConnectionServer() }));
   }
 }
 
