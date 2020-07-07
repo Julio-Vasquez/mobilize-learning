@@ -13,6 +13,7 @@ import {
 import { useDispatch } from "react-redux";
 
 import { auth } from "./../../../services/auth/actions";
+import { TermsAndConditions } from './components/TermsAndConditions';
 
 import bg from "./../../../assets/images/signup/signup.jpg";
 import './SignUp.scss';
@@ -251,6 +252,9 @@ const SignUp = () => {
             <Row>
               <Col xs={{ span: 6, offset: 9 }}>
                 <Button type="primary" onClick={checkState}>
+                  Registrarse ahora
+                </Button>
+                <Button type="primary" onClick={() => <TermsAndConditions open={true} accept={false} />}>
                   Registrarse ahora
                 </Button>
               </Col>

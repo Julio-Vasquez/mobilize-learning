@@ -7,9 +7,9 @@ import { FailedConnectionServer } from './../Util/FailedConnectionServer';
 
 function* FetchGetCertificate() {
   try {
-    const res = yield Api.GET();
+    const res = yield Api.GET('');
     if (res) {
-      yield put();
+      //yield put();
       History.push('');
     }
   } catch (e) {
