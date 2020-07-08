@@ -19,17 +19,18 @@ import bg from "./../../../assets/images/signup/signup.jpg";
 import './SignUp.scss';
 
 const SignUp = () => {
+  const { Item } = Form;
+  const { Option } = Select;
+  const dispatch = useDispatch();
+
   useEffect(() => {
     document.body.style.backgroundImage = `url(${bg})`;
     document.body.style.backgroundAttachment = "fixed";
     document.body.style.backgroundRepeat = "no-repeat";
     document.body.style.backgroundSize = "cover";
+    console.log(accept)
     return () => (document.body.style.backgroundImage = "");
   });
-
-  const { Item } = Form;
-  const { Option } = Select;
-  const dispatch = useDispatch();
 
   const [select, setSelect] = useState();
   const [fileUpload, setFileUpload] = useState([]);
@@ -45,26 +46,35 @@ const SignUp = () => {
     email: '',
     avatar: ''
   });
+  //modal
+  const [open, setOpen] = useState(false);
+  //terms
+  const [accept, setAccept] = useState(false);
+  //modal
+  const openModal = () => setOpen(!open);
+  //term
+  const termsAccept = () => {
+    setAccept(true);
+    openModal(false);
+  };
 
   const onSelect = (e) => { setSelect(e); };
-
   const onChange = (value) => console.log(`selected ${value}`);
-
   const onSearch = (val) => console.log("search:", val);
-
   const onFinish = (e) => {
     console.log(e)
     dispatch(auth.signup({ j: "hola", v: "world" }));
   };
-
   const onChangeForm = e => {
-    console.log(e.target.name + ':' + e.target.value)
+    console.log(e.target.name + ':' + e.target.value);
     setForm({ ...form, [e.target.name]: [e.target.value] });
   }
-  const checkState = () => form;
   const handleChange = (e) => {
     setFileUpload([...fileUpload, e.target.files[0]]);
   };
+  const stringValid = (v, min, max) => {
+    return (v !== undefined && v.length >= min && v.length <= max);
+  }
 
   return (
     <Col
@@ -145,7 +155,7 @@ const SignUp = () => {
                     },
                   ]}
                 >
-                  <Input placeholder="Identificacion" name="identification" />
+                  <Input placeholder="Identificacion" name="identification" type="number" />
                 </Item>
               </Col>
             </Row>
@@ -251,10 +261,10 @@ const SignUp = () => {
             <Divider></Divider>
             <Row>
               <Col xs={{ span: 6, offset: 9 }}>
-                <Button type="primary" onClick={checkState}>
+                <Button type="primary">
                   Registrarse ahora
                 </Button>
-                <Button type="primary" onClick={() => <TermsAndConditions open={true} accept={false} />}>
+                <Button type="primary" onClick={() => openModal()}>
                   Registrarse ahora
                 </Button>
               </Col>
@@ -262,6 +272,12 @@ const SignUp = () => {
           </Form>
         </Col>
       </Row>
+      <TermsAndConditions
+        open={open}
+        close={openModal}
+        accept={accept}
+        setAccept={termsAccept}
+      />
     </Col>
   );
 };
