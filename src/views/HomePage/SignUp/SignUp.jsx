@@ -261,9 +261,6 @@ const SignUp = () => {
             <Divider></Divider>
             <Row>
               <Col xs={{ span: 6, offset: 9 }}>
-                <Button type="primary">
-                  Registrarse ahora
-                </Button>
                 <Button type="primary" onClick={() => openModal()}>
                   Registrarse ahora
                 </Button>

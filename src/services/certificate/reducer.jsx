@@ -8,7 +8,7 @@ export const INITIAL_STATE = {
 
 const reducerCertificate = handleActions(
   {
-    COURSES: {
+    CERTIFICATE: {
       GET_CERTIFICATE: () => ({}),
       GET_CERTIFICATE_SUCCESS: () => ({}),
       GET_CERTIFICATE_FAILED: () => ({})
