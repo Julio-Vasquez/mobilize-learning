@@ -1,15 +1,14 @@
 import React from "react";
 import { useParams } from "react-router-dom";
+import { useSelector } from "react-redux";
 
 import SpecificTheme from "./../../../components/admin/SpecificTheme";
+import { Titles } from "./../../../common/Data";
 
-import { BehaviorsData, Titles } from "./../../../common/Data";
-
-export default function SpecificBehaviors() {
+export default function Specific() {
   const { data } = useParams();
-
-  const Data = BehaviorsData.find(item => item.url === data);
-
+  const { content } = useSelector(state => state.Courses);
+  const Data = content.find(item => item.url === data);
   return (
     <SpecificTheme
       bg={Data.urlImg}

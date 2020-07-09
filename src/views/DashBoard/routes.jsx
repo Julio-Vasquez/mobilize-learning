@@ -1,5 +1,5 @@
 import React, { lazy, Suspense, useState, createRef, useEffect } from "react";
-import { Router, Route, Switch } from "react-router-dom";
+import { Router, Route, Switch, Redirect } from "react-router-dom";
 import { makeStyles } from "@material-ui/core/styles";
 import PerfectScrollbar from "perfect-scrollbar";
 import "perfect-scrollbar/css/perfect-scrollbar.css";
@@ -16,8 +16,7 @@ import { NavBar } from "./../../components/admin/Navbar";
 import styles from "./../../assets/jss/custom/adminStyle";
 import SpecificContent from "./../../components/admin/SpecificContent";
 
-const SpecificRoad = lazy(() => import("./SpecificRoad"));
-const SpecificBehaviors = lazy(() => import("./SpecificBehaviors"));
+const Specific = lazy(() => import("./Specific"));
 const Profile = lazy(() => import("./Profile"));
 const DashBoard = lazy(() => import("./DashBoard"));
 const RoadSigns = lazy(() => import("./RoadSigns"));
@@ -31,7 +30,6 @@ const useStyles = makeStyles(styles);
 let ps;
 
 const RoutesAdmin = () => {
-  console.log(History);
   const classes = useStyles();
   const mainPanel = createRef();
   const [mobileOpen, setMobileOpen] = useState(false);
@@ -93,7 +91,7 @@ const RoutesAdmin = () => {
                 />
                 <Route
                   path="/admin/roadsigns/curse=:data"
-                  component={SpecificRoad}
+                  component={Specific}
                   exact={true}
                 />
                 <Route
@@ -103,7 +101,7 @@ const RoutesAdmin = () => {
                 />
                 <Route
                   path="/admin/mobilitybehaviors/curse=:data"
-                  component={SpecificBehaviors}
+                  component={Specific}
                   exact={true}
                 />
                 <Route
@@ -126,6 +124,8 @@ const RoutesAdmin = () => {
                   exact={true}
                 />
                 <Route path="/admin/profile" component={Profile} exact={true} />
+                <Redirect from="/*" to="/admin" />
+
               </Switch>
             </Suspense>
           </div>

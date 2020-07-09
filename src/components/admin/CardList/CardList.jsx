@@ -6,6 +6,7 @@ import PropTypes from "prop-types";
 import "./CardList.scss";
 
 const CardList = ({ data, module }) => {
+  console.log(data)
   return (
     <List
       grid={{

@@ -10,7 +10,7 @@ import {
 } from "mdbreact";
 import { MapContainer } from "./../../../components/map-container";
 
-import bg from "./../../../assets/images/content/signal/QueEs.jpg";
+import bg from "./../../../assets/images/QueEs.jpg";
 import "./Contact.scss";
 
 const Contact = () => {

@@ -12,7 +12,7 @@ import pedagogo from "./../../../assets/images/about/pedagogo.jpg";
 import design from "./../../../assets/images/about/alejandro.jpg";
 import dev from "./../../../assets/images/about/julio.jpg";
 import exp from "./../../../assets/images/about/expert.jpg";
-import bg from "./../../../assets/images/content/signal/QueEs.jpg";
+import bg from "./../../../assets/images/QueEs.jpg";
 
 import "./About.scss";
 

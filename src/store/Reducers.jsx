@@ -13,9 +13,9 @@ const appReducer = combineReducers({
 const rootReducer = (state, action) => {
   if (action.type === "AUTH/LOGOUT")
     state = {
-      auth: initialAuth,
-      course: initialCourses,
-      certificate: initialCertificate
+      Auth: initialAuth,
+      Courses: initialCourses,
+      Certificate: initialCertificate
     };
   return appReducer(state, action);
 };

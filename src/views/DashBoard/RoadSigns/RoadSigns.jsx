@@ -1,14 +1,24 @@
-import React from "react";
-import CardList from "./../../../components/admin/CardList";
+import React, { useEffect } from "react";
+import { useSelector, useDispatch } from 'react-redux';
 
-import { RoadData } from "./../../../common/Data";
+import { Loading } from './../../../components/Loading';
+import { courses } from './../../../services/course/actions';
+import CardList from "./../../../components/admin/CardList";
 
 import "./RoadSigns.scss";
 
 export default function RoadSigns() {
-  return (
+  const { loading, content } = useSelector(state => state.Courses);
+
+  const dispatch = useDispatch();
+
+  useEffect(() => {
+    dispatch(courses.getCourses('roadsignaldata'));
+  }, [dispatch])
+
+  return loading ? <Loading /> : (
     <div className="card-list-rs">
-      <CardList data={RoadData} module="roadsigns" />
+      <CardList data={content} module="roadsigns" />
     </div>
   );
 }

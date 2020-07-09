@@ -4,16 +4,12 @@ import { auth } from "./../../services/auth/actions";
 import { store } from "./../../store";
 
 class Api {
-  GET(url, params) {
+  GET(url) {
     url = new URL(`${API_URL}/${url}`);
-    if (params)
-      Object.keys(params).forEach((key) =>
-        url.searchParams.append(key, params[key])
-      );
     return fetch(url, {
       method: "GET",
       headers: {
-        Authorization: `Bearer ${FunctionToken.getToken()}`,
+        Authorization: `Bearer ${FunctionToken.GetToken()}`,
       },
     })
       .then(async (res) => {
@@ -35,10 +31,10 @@ class Api {
       headers: header
         ? header
         : {
-            Accept: "application/json",
-            "Content-type": "application/json",
-            Authorization: `Bearer ${FunctionToken.GetToken()}`,
-          },
+          Accept: "application/json",
+          "Content-type": "application/json",
+          Authorization: `Bearer ${FunctionToken.GetToken()}`,
+        },
       body: dataBody,
     })
       .then(async (res) => {
@@ -60,10 +56,10 @@ class Api {
       headers: header
         ? header
         : {
-            Accept: "application/json",
-            "Content-type": "application/json",
-            Authorization: `Bearer ${FunctionToken.GetToken()}`,
-          },
+          Accept: "application/json",
+          "Content-type": "application/json",
+          Authorization: `Bearer ${FunctionToken.GetToken()}`,
+        },
       body: JSON.stringify(body),
     })
       .then(async (res) => {
@@ -83,10 +79,10 @@ class Api {
       headers: header
         ? header
         : {
-            Accept: "application/json",
-            "Content-type": "application/json",
-            Authorization: `Bearer ${FunctionToken.getToken()}`,
-          },
+          Accept: "application/json",
+          "Content-type": "application/json",
+          Authorization: `Bearer ${FunctionToken.GetToken()}`,
+        },
       body: body ? body : "",
     })
       .then(async (res) => {
