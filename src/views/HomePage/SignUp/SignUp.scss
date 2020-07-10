@@ -1,9 +1,9 @@
 .signup {
-  margin-top: 10vh;
-  margin-bottom: 9.5vh;
+  margin-top: 13vh;
+  margin-bottom: 12.5vh;
   background-color: white;
   &-content {
-    height: 67vh;
+    height: 61vh;
     &-form form {
       padding-top: 20px;
       h2 {
@@ -40,6 +40,9 @@
   }
 }
 
+.ant-row{
+  margin-bottom: 7px;
+}
 [type="file"] {
   height: 0;
   overflow: hidden;

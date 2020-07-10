@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from "react";
+import { useDispatch } from "react-redux";
 import {
   Form,
   Input,
@@ -8,10 +9,10 @@ import {
   Radio,
   Divider,
   Select,
-  DatePicker
+  DatePicker,
+  Upload
 } from "antd";
-import { useDispatch } from "react-redux";
-
+import { UploadOutlined } from '@ant-design/icons';
 
 import { auth } from "./../../../services/auth/actions";
 import { TermsAndConditions } from './components/TermsAndConditions';
@@ -47,14 +48,21 @@ const SignUp = () => {
     email: '',
     avatar: ''
   });
-  //modal
-  const [open, setOpen] = useState(false);
-  //terms
-  const [accept, setAccept] = useState(false);
-  //modal
-  const openModal = () => setOpen(!open);
-  //term
-  const termsAccept = () => {
+  const [open, setOpen] = useState(false); //modal
+  const [accept, setAccept] = useState(false);//terms
+
+  const onRemove = file => {
+    setFileUpload([]);
+    return true;
+  }
+
+  const beforeUpload = file => {
+    setFileUpload(...fileUpload, file);
+    return false;
+  }
+
+  const openModal = () => setOpen(!open);//modal
+  const termsAccept = () => {//term
     setAccept(true);
     openModal(false);
   };
@@ -63,21 +71,15 @@ const SignUp = () => {
   const onChange = (value) => console.log(`selected ${value}`);
   const onSearch = (val) => console.log("search:", val);
 
-  const onFinishForm = (e) => {
-    console.log(e)
+  const onFinishForm = () => {
+    openModal();
     dispatch(auth.signup({ j: "hola", v: "world" }));
   };
+
   const onChangeForm = e => {
     console.log(e.target.name + ':' + e.target.value);
     setForm({ ...form, [e.target.name]: [e.target.value] });
   }
-  const handleChange = (e) => {
-    setFileUpload([...fileUpload, e.target.files[0]]);
-  };
-  const stringValid = (v, min, max) => {
-    return (v !== undefined && v.length >= min && v.length <= max);
-  }
-
   return (
     <Col
       xs={{ span: 22, offset: 1 }}
@@ -88,9 +90,9 @@ const SignUp = () => {
       className="signup"
     >
       <Row className="signup-content">
-        <Col className="signup-content-form" xl={{ span: 24 }}>
-          <Form onFinish={onFinishForm} onChange={onChangeForm}>
-            <h2>Formulario de registro de estudiante</h2>
+        <Col className="signup-content-form" xs={{ span: 24 }}>
+          <Form onChange={onChangeForm} onFinish={onFinishForm}>
+            <h2>Registro de estudiante</h2>
             <Divider orientation="left">Datos Personales</Divider>
             <Row>
               <Col xs={{ span: 10, offset: 1 }}>
@@ -100,6 +102,8 @@ const SignUp = () => {
                     {
                       required: true,
                       message: "Por favor ingresa su nombre",
+                      min: 4,
+                      max: 45
                     }
                   ]}
                 >
@@ -113,6 +117,8 @@ const SignUp = () => {
                     {
                       required: true,
                       message: "Por favor ingresa su Apellido",
+                      min: 3,
+                      max: 50
                     }
                   ]}
                 >
@@ -153,7 +159,9 @@ const SignUp = () => {
                   rules={[
                     {
                       required: true,
-                      message: "Por favor ingresa su identificacion",
+                      message: "Por favor ingresa una identificacion correcta",
+                      min: 6,
+                      max: 12
                     },
                   ]}
                 >
@@ -170,6 +178,12 @@ const SignUp = () => {
                       required: true,
                       message: "Por favor ingresa su Fecha de nacimiento",
                     },
+                    () => ({
+                      validator(rule, value) {
+                        if (value.year() <= 2004) return Promise.resolve()
+                        return Promise.reject('Usted debe tener al menos 16 años')
+                      }
+                    })
                   ]}
                 >
                   <DatePicker
@@ -179,12 +193,22 @@ const SignUp = () => {
                 </Item>
               </Col>
               <Col xs={{ span: 10, offset: 2 }}>
-                <Item>
-                  <label className="radio-label">Genero : </label>
-                  <Radio.Group name="gender">
-                    <Radio value="Masculino">Masculino</Radio>
-                    <Radio value="Femenino">Femenino</Radio>
-                  </Radio.Group>
+                <Item
+                  name="genderI"
+                  rules={[
+                    {
+                      required: true,
+                      message: "Por favor seleccione su genero",
+                    },
+                  ]}
+                >
+                  <Item noStyle>
+                    <label className="radio-label">Genero : </label>
+                    <Radio.Group name="gender">
+                      <Radio value="Masculino">Masculino</Radio>
+                      <Radio value="Femenino">Femenino</Radio>
+                    </Radio.Group>
+                  </Item>
                 </Item>
               </Col>
             </Row>
@@ -197,6 +221,8 @@ const SignUp = () => {
                     {
                       required: true,
                       message: "Por favor ingresa su nombre de usuario",
+                      min: 8,
+                      max: 45
                     },
                   ]}
                 >
@@ -209,14 +235,15 @@ const SignUp = () => {
                   rules={[
                     {
                       required: true,
-                      message: "Por favor ingresa su constraseña",
+                      message: "Por favor ingresa su constraseña, (8)",
+                      min: 8,
+                      max: 45
                     },
                   ]}
                 >
-                  <Input
+                  <Input.Password
                     placeholder="Contraseña"
                     name="password"
-                    type="password"
                   />
                 </Item>
               </Col>
@@ -228,7 +255,8 @@ const SignUp = () => {
                   rules={[
                     {
                       required: true,
-                      message: "Por favor ingresa su email",
+                      message: "Por favor ingresa un email correcto",
+                      pattern: /^([a-z]+[a-z1-9._-]*)@{1}([a-z1-9]{2,})\.([a-z]{2,3})$/
                     },
                   ]}
                 >
@@ -245,28 +273,29 @@ const SignUp = () => {
                     },
                   ]}
                 >
-                  <Item noStyle>
-                    <input
-                      type="file"
-                      id="file"
-                      name="file"
-                      accept="image/png, image/jpeg"
-                      onChange={handleChange}
-                    />
-                    <label htmlFor="file" className="btn-3">
-                      <span>avatar!</span>
-                    </label>
-                  </Item>
+                  <Upload
+                    onRemove={onRemove}
+                    beforeUpload={beforeUpload}
+                  >
+                    <Button>
+                      <UploadOutlined /> Select File
+                    </Button>
+                  </Upload>
                 </Item>
               </Col>
             </Row>
             <Divider></Divider>
             <Row>
-              <Col xs={{ span: 6, offset: 9 }}>
-                <Button type="primary" onClick={() => openModal()}>
-                  Registrarse ahora
+              <Col
+                xs={{ span: 10, offset: 7 }}
+                sm={{ span: 8, offset: 8 }}
+                lg={{ span: 6, offset: 9 }}
+              >
+                <Button type="primary" htmlType="submit" onClick={() => openModal()}>
+                  Registrarse ahora!!
                 </Button>
               </Col>
+
             </Row>
           </Form>
         </Col>
