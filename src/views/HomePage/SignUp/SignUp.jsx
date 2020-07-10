@@ -12,6 +12,7 @@ import {
 } from "antd";
 import { useDispatch } from "react-redux";
 
+
 import { auth } from "./../../../services/auth/actions";
 import { TermsAndConditions } from './components/TermsAndConditions';
 
@@ -61,7 +62,8 @@ const SignUp = () => {
   const onSelect = (e) => { setSelect(e); };
   const onChange = (value) => console.log(`selected ${value}`);
   const onSearch = (val) => console.log("search:", val);
-  const onFinish = (e) => {
+
+  const onFinishForm = (e) => {
     console.log(e)
     dispatch(auth.signup({ j: "hola", v: "world" }));
   };
@@ -87,7 +89,7 @@ const SignUp = () => {
     >
       <Row className="signup-content">
         <Col className="signup-content-form" xl={{ span: 24 }}>
-          <Form onFinish={onFinish} onChange={onChangeForm}>
+          <Form onFinish={onFinishForm} onChange={onChangeForm}>
             <h2>Formulario de registro de estudiante</h2>
             <Divider orientation="left">Datos Personales</Divider>
             <Row>
