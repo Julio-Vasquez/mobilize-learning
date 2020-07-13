@@ -11,6 +11,13 @@ function* FetchGetCourses({ payload: type }) {
     if (res.payload.success) {
       console.log(res.payload.payload)
       yield put(courses.getCoursesSuccess(res.payload.payload))
+    } else if (res, payload.error) {
+      message.error(`${res.payload.detail}`, 5);
+      yield put(courses.getCoursesFailed(`${res.payload.detail}`))
+    } else {
+      message.error(`Error Desconocido`);
+      const err = new TypeError("ERROR_GET_COURSES");
+      yield put(auth.signupFailed({ error: err }));
     }
     console.log(res.payload.payload)
   } catch (e) {
