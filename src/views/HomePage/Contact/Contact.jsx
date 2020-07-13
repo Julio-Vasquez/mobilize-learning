@@ -32,8 +32,8 @@ const Contact = () => {
           className="text-center w-responsive mx-auto pb-5"
           style={{ fontSize: 16, fontWeight: 500, color: "black" }}
         >
-          Sus preguntas y opiniónes son muy importantes para nosotros, completa
-          el formulario para poder atenderte lo más pronto posible
+          Sus preguntas y opiniónes son muy importantes, completa
+          el formulario para atenderte lo más pronto posible
         </p>
       </div>
 

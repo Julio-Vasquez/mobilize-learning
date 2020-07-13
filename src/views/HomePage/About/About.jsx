@@ -12,7 +12,7 @@ import pedagogo from "./../../../assets/images/about/pedagogo.jpg";
 import design from "./../../../assets/images/about/alejandro.jpg";
 import dev from "./../../../assets/images/about/julio.jpg";
 import exp from "./../../../assets/images/about/expert.jpg";
-import bg from "./../../../assets/images/QueEs.jpg";
+import bg from "./../../../assets/images/about/b14a75cb-0a5f-4a00-9e63-754fc9249c28.jpeg";
 
 import "./About.scss";
 
@@ -33,7 +33,7 @@ const About = () => {
         <MDBContainer>
           <h2
             className="h1-responsive font-weight-bold mb-5"
-            style={{ color: "#000" }}
+            style={{ color: "#fff" }}
           >
             Acerca De
           </h2>
