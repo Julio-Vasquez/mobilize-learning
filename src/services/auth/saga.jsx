@@ -10,7 +10,7 @@ import { FailedConnectionServer } from './../Util/FailedConnectionServer'
 function* FetchLogin(dataForm) {
   try {
     const res = yield Api.POST("auth/login", dataForm.payload);
-    if (res.payload.success) {
+    if (res && res.payload.success) {
       FunctionToken.SetToken(res.payload.token, "");
       yield put(auth.loginSuccess(res.payload.token));
       History.push("/admin/dashboard");
@@ -20,10 +20,10 @@ function* FetchLogin(dataForm) {
     } else {
       message.error(`Error Desconocido`);
       const err = new TypeError("ERROR_LOGIN");
-      yield put(auth.loginFailed({ error: err }));
+      yield put(auth.loginFailed(err));
     }
   } catch (e) {
-    yield put(auth.loginFailed({ error: FailedConnectionServer() }));
+    yield put(auth.loginFailed(FailedConnectionServer()));
   }
 }
 
@@ -32,7 +32,7 @@ function* FetchSignup({ payload }) {
     console.log(payload);
     const res = yield Api.POST("auth/signup", payload);
     console.log(res);
-    if (res.payload.success) {
+    if (res && res.payload.success) {
       yield put(auth.signupSuccess("ok"));
       History.push("/login");
     } else if (res.payload.error) {
@@ -41,17 +41,17 @@ function* FetchSignup({ payload }) {
     } else {
       message.error(`Error Desconocido`);
       const err = new TypeError("ERROR_RESET_PASSWORD");
-      yield put(auth.signupFailed({ error: err }));
+      yield put(auth.signupFailed(err));
     }
   } catch (e) {
-    yield put(auth.signupFailed({ error: FailedConnectionServer() }));
+    yield put(auth.signupFailed(FailedConnectionServer()));
   }
 }
 
 function* FetchNewPassword({ payload }) {
   try {
     const res = yield Api.PUT("auth/forgot-password", payload);
-    if (res.payload.success) {
+    if (res && res.payload.success) {
       yield put(auth.newPasswordSuccess("ok"));
       History.push("/login");
     } else if (res.payload.error) {
@@ -60,10 +60,10 @@ function* FetchNewPassword({ payload }) {
     } else {
       message.error(`Error Desconocido`);
       const err = new TypeError("ERROR_RESET_PASSWORD");
-      yield put(auth.newPasswordFailed({ error: err }));
+      yield put(auth.newPasswordFailed(err));
     }
   } catch (e) {
-    yield put(auth.newPasswordFailed({ error: FailedConnectionServer() }));
+    yield put(auth.newPasswordFailed(FailedConnectionServer()));
   }
 }
 
@@ -72,7 +72,7 @@ const FetchLogout = () => localStorage.clear();
 function* FetchForgotPassword({ payload }) {
   try {
     const res = yield Api.POST("auth/request-forgot-password", payload);
-    if (res.payload.success) {
+    if (res && res.payload.success) {
       yield put(auth.resetPasswordSuccess("ok"));
       History.push("/");
     } else if (res.payload.error) {
@@ -81,10 +81,10 @@ function* FetchForgotPassword({ payload }) {
     } else {
       message.error(`Error Desconocido`);
       const err = new TypeError("ERROR_RESET_PASSWORD");
-      yield put(auth.resetPasswordFailed({ error: err }));
+      yield put(auth.resetPasswordFailed(err));
     }
   } catch (e) {
-    yield put(auth.resetPasswordFailed({ error: FailedConnectionServer() }));
+    yield put(auth.resetPasswordFailed(FailedConnectionServer()));
   }
 }
 

@@ -7,32 +7,33 @@ export const INITIAL_STATE = {
     type: undefined
   },
   success: undefined,
-  content: []
-}
+  scoreData: []
+};
 
-const reducerCourses = handleActions(
+
+const reducerScore = handleActions(
   {
-    COURSES: {
-      GET_COURSES: (state, { payload }) => ({
+    SCORE: {
+      GET_SCORE: (state, { payload }) => ({
         ...state,
         loading: true,
         error: { ...state.error, error: false, type: undefined },
-        success: false
+        success: undefined
       }),
 
-      GET_COURSES_SUCCESS: {
+      GET_SCORE_SUCCESS: {
         next(state, { payload: { data } }) {
           return {
             ...state,
             loading: false,
-            error: { ...state.error, error: false, type: undefined },
+            error: { ...state, error: false, type: undefined },
             success: true,
-            content: data
+            scoreData: data
           }
         }
       },
 
-      GET_COURSES_FAILED: (state, { payload: { error } }) => ({
+      GET_SCORE_FAILED: (state, { error }) => ({
         ...state,
         loading: false,
         error: { ...state.error, error: true, type: error },
@@ -43,5 +44,4 @@ const reducerCourses = handleActions(
   INITIAL_STATE
 );
 
-
-export default reducerCourses;
+export default reducerScore;

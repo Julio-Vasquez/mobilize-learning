@@ -5,6 +5,7 @@ console.log(FunctionToken.IsTokenValid());
 export const INITIAL_STATE = {
   authentication: FunctionToken.IsTokenValid(),
   loading: false,
+  token: FunctionToken.GetToken(),
   error: {
     login: undefined,
     signup: undefined,

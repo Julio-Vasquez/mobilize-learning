@@ -1,6 +1,5 @@
 export {
   Titles,
-  DataTable,
   DataDnd,
   SpecificContentImg,
   SpecificContentPdf,
