@@ -16,7 +16,7 @@ function* FetchGetScore({ payload: userName }) {
       yield put(score.getScoreFailed(`${res.payload.detail}`))
     } else {
       message.error(`Error Desconocido`);
-      const err = new TypeError("ERROR_GET_COURSES");
+      const err = new TypeError("ERROR_GET_SCORE");
       yield put(score.getScoreFailed(err));
     }
   } catch (e) {

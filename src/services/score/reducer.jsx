@@ -33,7 +33,7 @@ const reducerScore = handleActions(
         }
       },
 
-      GET_SCORE_FAILED: (state, { error }) => ({
+      GET_SCORE_FAILED: (state, { payload: { error } }) => ({
         ...state,
         loading: false,
         error: { ...state.error, error: true, type: error },

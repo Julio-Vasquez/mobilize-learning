@@ -2,8 +2,8 @@ import { createActions } from 'redux-actions';
 
 export const { certificate } = createActions({
   CERTIFICATE: {
-    GET_CERTIFICATE: () => ({}),
-    GET_CERTIFICATE_SUCCESS: () => ({}),
-    GET_CERTIFICATE_FAILED: () => ({})
+    GET_CERTIFICATE: (userName) => ({ userName }),
+    GET_CERTIFICATE_SUCCESS: (data) => ({ data }),
+    GET_CERTIFICATE_FAILED: (error) => ({ error })
   }
 });

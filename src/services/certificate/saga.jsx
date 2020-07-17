@@ -1,16 +1,22 @@
 import { put, takeLatest, all } from "redux-saga/effects";
+import { message } from 'antd';
 
 import Api from './../../common/Api/Api';
 import { certificate } from './actions';
-import History from './../../common/history';
 import { FailedConnectionServer } from './../Util/FailedConnectionServer';
 
-function* FetchGetCertificate() {
+function* FetchGetCertificate({ payload: userName }) {
   try {
-    const res = yield Api.GET('');
-    if (res) {
-      //yield put();
-      History.push('');
+    const res = yield Api.POST('certificate/generate', userName);
+    if (res && res.payload.success) {
+      console.log(res.payload)
+      yield put(certificate.getCertificateSuccess(res.payload.payload));
+    } else if (res.payload.error) {
+      yield put(certificate.getCertificateFailed(`${res.payload.detail}`))
+    } else {
+      message.error(`Error Desconocido`);
+      const err = new TypeError("ERROR_GET_CERTIFICATE");
+      yield put(certificate.getCertificateFailed(err));
     }
   } catch (e) {
     yield put(certificate.getCertificateFailed({ error: FailedConnectionServer() }));
