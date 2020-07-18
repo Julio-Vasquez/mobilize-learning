@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import { useSelector, useDispatch } from 'react-redux';
 import { Button, message, Row, Col, Card, Comment, Modal, Space } from "antd";
 import { DownloadOutlined, EyeOutlined } from "@ant-design/icons";
@@ -12,7 +12,6 @@ import "./Certificate.scss";
 export default function Certificate() {
   const { Meta } = Card;
   const { token } = useSelector(state => state.Auth);
-  const { loading, certificateData, error } = useSelector(state => state.Certificate);
 
   const dispatch = useDispatch();
 
@@ -21,11 +20,22 @@ export default function Certificate() {
     dispatch(certificate.getCertificate(userName));
   }, [dispatch, token]);
 
+  const { certificateData, error } = useSelector(state => state.Certificate);
+
   const Success = () => {
     setTimeout(() => {
       message.success("Se ha iniciado la descarga de tu certificado", 10);
     }, 300);
   };
+
+  const [loading, setLoading] = useState(true);
+
+  useEffect(() => {
+    const interval = setTimeout(() => {
+      setLoading(false);
+    }, 4000);
+    return () => clearTimeout(interval)
+  }, [loading]);
 
   const ErrorModal = () => <Modal
     title='Contenido tematico no finalizado'
@@ -36,13 +46,13 @@ export default function Certificate() {
     <h2>{error.type}</h2>
   </Modal>;
 
-  if (loading) return <Loading />;
-
   if (certificateData.length < 1) return (
-    <Space><ErrorModal /></Space>
+    <Space>
+      <ErrorModal />
+    </Space>
   );
 
-  return (
+  return loading ? <Loading /> : (
     <div>
       <Row gutter={16}>
         <Col span={14} offset={1} id="test" onContextMenu={(e) => e.preventDefault()}>

@@ -179,7 +179,7 @@ export default function AdminNavbarLinks() {
                       className={classes.dropdownItem}
                     >
                       <Link to="/admin/profile" className="link-navbar-icon">
-                        {FunctionToken.Decode().userName}
+                        {FunctionToken.Decode().result.userName}
                       </Link>
                     </MenuItem>
                     <Divider light />

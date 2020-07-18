@@ -1,0 +1,19 @@
+[
+  {
+    "home": {
+      "signup": "Terminar la carga de archivo,"
+    }
+  },
+  {
+    "evaluation": "Crear los test evaluativos reutilizables"
+  },
+  {
+    "courses": "Implementar el contenido especifico de cada uno, con el progreso"
+  },
+  {
+    "profile": "Crear toda la template"
+  },
+  {
+    "dashboard": "Crear toda la estadistica"
+  }
+]
