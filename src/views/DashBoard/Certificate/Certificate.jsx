@@ -13,6 +13,8 @@ export default function Certificate() {
   const { Meta } = Card;
   const { token } = useSelector(state => state.Auth);
 
+  const [loading, setLoading] = useState(true);
+
   const dispatch = useDispatch();
 
   useEffect(() => {
@@ -21,21 +23,15 @@ export default function Certificate() {
   }, [dispatch, token]);
 
   const { certificateData, error } = useSelector(state => state.Certificate);
-
-  const Success = () => {
-    setTimeout(() => {
-      message.success("Se ha iniciado la descarga de tu certificado", 10);
-    }, 300);
-  };
-
-  const [loading, setLoading] = useState(true);
+  const { generate } = certificateData;
 
   useEffect(() => {
-    const interval = setTimeout(() => {
-      setLoading(false);
-    }, 4000);
-    return () => clearTimeout(interval)
-  }, [loading]);
+    if (generate || generate === undefined) {
+      setTimeout(() => {
+        setLoading(false);
+      }, 4000)
+    } else setLoading(false);
+  }, [generate]);
 
   const ErrorModal = () => <Modal
     title='Contenido tematico no finalizado'
@@ -45,6 +41,12 @@ export default function Certificate() {
   >
     <h2>{error.type}</h2>
   </Modal>;
+
+  const Success = () => {
+    setTimeout(() => {
+      message.success("Se ha iniciado la descarga de tu certificado", 10);
+    }, 300);
+  };
 
   if (certificateData.length < 1) return (
     <Space>
