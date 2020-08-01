@@ -1,7 +1,7 @@
 import { handleActions } from "redux-actions";
 
 import { FunctionToken } from "./../../common/token";
-console.log(FunctionToken.IsTokenValid());
+
 export const INITIAL_STATE = {
   authentication: FunctionToken.IsTokenValid(),
   loading: false,

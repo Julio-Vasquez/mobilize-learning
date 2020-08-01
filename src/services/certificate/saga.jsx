@@ -5,11 +5,10 @@ import Api from './../../common/Api/Api';
 import { certificate } from './actions';
 import { FailedConnectionServer } from './../Util/FailedConnectionServer';
 
-function* FetchGetCertificate({ payload: userName }) {
+function* FetchGetCertificate({ payload }) {
   try {
-    const res = yield Api.POST('certificate/generate', userName);
+    const res = yield Api.POST('certificate/generate', payload);
     if (res && res.payload.success) {
-      console.log(res.payload)
       yield put(certificate.getCertificateSuccess(res.payload.payload));
     } else if (res.payload.error) {
       yield put(certificate.getCertificateFailed(`${res.payload.detail}`))

@@ -25,6 +25,7 @@ export const NavBar = (props) => {
         <div className={classes.flex}></div>
         <Hidden smDown implementation="css">
           <NavBarAdmin />
+
         </Hidden>
         <Hidden mdUp implementation="css">
           <IconButton
@@ -35,7 +36,9 @@ export const NavBar = (props) => {
             <Menu />
           </IconButton>
         </Hidden>
+
       </Toolbar>
+
     </AppBar>
   );
 };

@@ -1,0 +1,96 @@
+.ps{
+  background-color: #f4f3ef;
+}
+#main-content{
+  margin-top: 50px;
+  min-height: 92vh;
+  .card-user.card{
+    border-radius: 12px;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    background-clip: initial;
+    box-shadow: 0 6px 10px -4px rgba(0,0,0,.15);
+    margin-bottom: 2px;
+    .image{
+      height: 130px;
+      overflow: hidden;
+      position: relative;
+      img{
+        border-radius: 12px;
+        max-width: 100%;
+        vertical-align: middle;
+        border-style: none;
+      }
+    }
+    .card-body{
+      min-height: 200px;
+      padding: 15px 15px 10px;
+      .author{
+        text-align: center;
+        text-transform: none;
+        margin-top: -78px;
+        .a-simulator,h5{
+         color: #51cbce;
+          &:hover{
+            color: #45b9bb;
+            cursor: pointer;
+            text-decoration: underline;
+          }
+          .avatar{
+            width: 130px;
+            height: 130px;
+            border: 1px solid #fff;
+            border-radius: 50%;
+            margin-bottom: 23px;
+            overflow: hidden;
+            position: relative;
+          }
+          .full-name{
+            user-select: none;
+            font-weight: 700;
+            font-size: 1.57em;
+            line-height: 1.4em;
+            margin-bottom: 15px;
+          }
+        }
+        .description{
+          user-select: none;
+          margin-top: -7px;
+          font-size: 1.14em;
+          font-weight: 300;
+          color:red
+        }
+      }
+      form{
+        .update-btn{
+          border-width: 1px;
+          border-radius: 30px;
+          padding-right: 23px;
+          padding-left: 23px;
+          background-color: #51cbce;
+          color: #fff;
+          &:hover{
+            border-color: transparent;
+          }
+        }
+      }
+    }
+    .card-footer{
+      padding: .75rem 1.25rem;
+      border: 0;
+      &:last-child {
+        border-radius: 0 0 calc(.25rem - 1px) calc(.25rem - 1px);
+      }
+    }
+    .card-header {
+      border-radius: 12px 12px 0 0 ;
+      h4{
+        text-align: center;
+        font-weight: 600;
+        color: #51cbce;
+        user-select: none;
+      }
+    }
+  }
+}
