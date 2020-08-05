@@ -6,7 +6,6 @@ import { UserOutlined } from "@ant-design/icons";
 
 import { auth } from "./../../../services/auth/actions";
 import Lock from "./../../../assets/images/lock.png";
-import bg4 from "./../../../assets/images/bg4.jpg";
 import Toast from "./../../../common/toast";
 import { Loading } from "./../../../components/Loading";
 
@@ -19,15 +18,6 @@ const ResetPassword = () => {
 
   const [lock, setLock] = useState(getSize);
   const [userName, setUserName] = useState("");
-
-  useEffect(() => {
-    document.body.style.backgroundImage = `url('${bg4}')`;
-    document.body.style.backgroundAttachment = "fixed";
-    document.body.style.backgroundRepeat = "no-repeat";
-    document.body.style.backgroundSize = "cover";
-    document.body.style.backgroundPosition = "center";
-    return () => (document.body.style.backgroundImage = "none");
-  });
 
   useEffect(() => {
     window.addEventListener("resize", handleResize);

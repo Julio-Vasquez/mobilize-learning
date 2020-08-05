@@ -3,7 +3,6 @@ import { useSelector } from "react-redux";
 import Toast from "./../../../common/toast";
 import Typed from "typed.js";
 
-import signal from "./../../../assets/images/signals/001.jpg";
 import "./Home.scss";
 
 const Home = () => {
@@ -28,14 +27,6 @@ const Home = () => {
 
     return () => setLd(false);
   }, [ld]);
-
-  useEffect(() => {
-    document.body.style.backgroundImage = `url(${signal})`;
-    document.body.style.backgroundAttachment = "fixed";
-    document.body.style.backgroundRepeat = "no-repeat";
-    document.body.style.backgroundSize = "cover";
-    return () => (document.body.style.backgroundImage = "");
-  });
 
   useEffect(() => {
     if (ResetPassword)

@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React from "react";
 import {
   MDBCarousel,
   MDBContainer,
@@ -12,20 +12,10 @@ import pedagogo from "./../../../assets/images/about/pedagogo.jpg";
 import design from "./../../../assets/images/about/alejandro.jpg";
 import dev from "./../../../assets/images/about/julio.jpg";
 import exp from "./../../../assets/images/about/expert.jpg";
-import bg from "./../../../assets/images/about/b14a75cb-0a5f-4a00-9e63-754fc9249c28.jpeg";
 
 import "./About.scss";
 
 const About = () => {
-  useEffect(() => {
-    document.body.style.backgroundImage = `url('${bg}')`;
-    document.body.style.backgroundAttachment = "fixed";
-    document.body.style.backgroundRepeat = "no-repeat";
-    document.body.style.backgroundSize = "cover";
-    return () => {
-      document.body.style.backgroundImage = "";
-    };
-  });
 
   return (
     <div className="contenido">

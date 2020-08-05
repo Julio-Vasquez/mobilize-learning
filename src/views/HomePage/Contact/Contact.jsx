@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React from "react";
 import {
   MDBRow,
   MDBCol,
@@ -10,17 +10,9 @@ import {
 } from "mdbreact";
 import { MapContainer } from "./../../../components/map-container";
 
-import bg from "./../../../assets/images/QueEs.jpg";
 import "./Contact.scss";
 
 const Contact = () => {
-  useEffect(() => {
-    document.body.style.backgroundImage = `url('${bg}')`;
-    document.body.style.backgroundAttachment = "fixed";
-    document.body.style.backgroundRepeat = "no-repeat";
-    document.body.style.backgroundSize = "cover";
-    return () => (document.body.style.backgroundImage = "");
-  });
 
   return (
     <section className="my-5">

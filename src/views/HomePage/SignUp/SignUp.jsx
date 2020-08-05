@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 import { useDispatch } from "react-redux";
 import {
   Form,
@@ -17,22 +17,12 @@ import { UploadOutlined } from '@ant-design/icons';
 import { auth } from "./../../../services/auth/actions";
 import { TermsAndConditions } from './components/TermsAndConditions';
 
-import bg from "./../../../assets/images/signup/signup.jpg";
 import './SignUp.scss';
 
 const SignUp = () => {
   const { Item } = Form;
   const { Option } = Select;
   const dispatch = useDispatch();
-
-  useEffect(() => {
-    document.body.style.backgroundImage = `url(${bg})`;
-    document.body.style.backgroundAttachment = "fixed";
-    document.body.style.backgroundRepeat = "no-repeat";
-    document.body.style.backgroundSize = "cover";
-    console.log(accept)
-    return () => (document.body.style.backgroundImage = "");
-  });
 
   const [select, setSelect] = useState();
   const [fileUpload, setFileUpload] = useState([]);

@@ -6,19 +6,10 @@ import Toast from "./../../../common/toast";
 import { Loading } from './../../../components/Loading';
 import { auth } from './../../../services/auth/actions'
 
-import bg from "./../../../assets/images/login/Login.jpeg";
 import "./Login.scss";
 
 const Login = () => {
   const { loading, success: { newPassword } } = useSelector((state) => state.Auth);
-
-  useEffect(() => {
-    document.body.style.backgroundImage = `url(${bg})`;
-    document.body.style.backgroundAttachment = "fixed";
-    document.body.style.backgroundRepeat = "no-repeat";
-    document.body.style.backgroundSize = "cover";
-    return () => (document.body.style.backgroundImage = "");
-  });
 
   useEffect(() => {
     setTimeout(hideURLbar, 0);
@@ -95,7 +86,7 @@ const Login = () => {
               <label className="anim">
                 <Link to="request-password-reset" id="forgotPassword">
                   Olvide mi Contraseña
-              </Link>
+                </Link>
               </label>
               <div className="clear"></div>
               <div className="submit-agileits">
