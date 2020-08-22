@@ -1,46 +1,50 @@
 import React, { useEffect, useState } from "react";
-import { useSelector, useDispatch } from 'react-redux';
+import { useSelector, useDispatch } from "react-redux";
 import { Button, message, Row, Col, Card, Comment, Modal, Space } from "antd";
 import { DownloadOutlined, EyeOutlined } from "@ant-design/icons";
 
-import { Loading } from './../../../components/Loading';
-import { FunctionToken } from './../../../common/token';
-import { certificate } from './../../../services/certificate/actions';
+import { Loading } from "./../../../components/Loading";
+import { FunctionToken } from "./../../../common/token";
+import { certificate } from "./../../../services/certificate/actions";
 
 import "./Certificate.scss";
 
 export default function Certificate() {
   const { Meta } = Card;
-  const { token } = useSelector(state => state.Auth);
+  const { token } = useSelector((state) => state.Auth);
 
   const [loading, setLoading] = useState(true);
 
   const dispatch = useDispatch();
 
   useEffect(() => {
-    const { result: { userName } } = FunctionToken.Decode(token);
+    const {
+      result: { userName },
+    } = FunctionToken.Decode(token);
     dispatch(certificate.getCertificate(userName));
   }, [dispatch, token]);
 
-  const { certificateData, error } = useSelector(state => state.Certificate);
+  const { certificateData, error } = useSelector((state) => state.Certificate);
   const { generate } = certificateData;
 
   useEffect(() => {
     if (generate || generate === undefined) {
       setTimeout(() => {
         setLoading(false);
-      }, 4000)
+      }, 4000);
     } else setLoading(false);
   }, [generate]);
 
-  const ErrorModal = () => <Modal
-    title='Contenido tematico no finalizado'
-    visible={true}
-    onOk={() => window.location = '/admin'}
-    onCancel={() => window.location = '/admin'}
-  >
-    <h2>{error.type}</h2>
-  </Modal>;
+  const ErrorModal = () => (
+    <Modal
+      title="Contenido tematico no finalizado"
+      visible={true}
+      onOk={() => (window.location = "/admin")}
+      onCancel={() => (window.location = "/admin")}
+    >
+      <h2>{error.type}</h2>
+    </Modal>
+  );
 
   const Success = () => {
     setTimeout(() => {
@@ -48,16 +52,24 @@ export default function Certificate() {
     }, 300);
   };
 
-  if (certificateData.length < 1) return (
-    <Space>
-      <ErrorModal />
-    </Space>
-  );
+  if (certificateData.length < 1)
+    return (
+      <Space>
+        <ErrorModal />
+      </Space>
+    );
 
-  return loading ? <Loading /> : (
+  return loading ? (
+    <Loading />
+  ) : (
     <div>
       <Row gutter={16}>
-        <Col span={14} offset={1} id="test" onContextMenu={(e) => e.preventDefault()}>
+        <Col
+          span={14}
+          offset={1}
+          id="test"
+          onContextMenu={(e) => e.preventDefault()}
+        >
           <Card
             style={{
               width: "90%",

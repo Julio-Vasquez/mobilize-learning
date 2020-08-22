@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import {
   MDBRow,
   MDBCol,
@@ -13,7 +13,9 @@ import { MapContainer } from "./../../../components/map-container";
 import "./Contact.scss";
 
 const Contact = () => {
-
+  useEffect(() => {
+    return () => (document.getElementById("root").style.background = "");
+  });
   return (
     <section className="my-5">
       <h2 className="h1-responsive font-weight-bold text-center my-5">
@@ -24,8 +26,8 @@ const Contact = () => {
           className="text-center w-responsive mx-auto pb-5"
           style={{ fontSize: 16, fontWeight: 500, color: "black" }}
         >
-          Sus preguntas y opiniónes son muy importantes, completa
-          el formulario para atenderte lo más pronto posible
+          Sus preguntas y opiniónes son muy importantes, completa el formulario
+          para atenderte lo más pronto posible
         </p>
       </div>
 

@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import {
   MDBCarousel,
   MDBContainer,
@@ -17,6 +17,10 @@ import "./About.scss";
 
 const About = () => {
 
+  useEffect(() => {
+    return () => (document.getElementById("root").style.background = "");
+  }, []);
+  
   return (
     <div className="contenido">
       <section id="testimonials" className="text-center py-5 wow fadeIn">

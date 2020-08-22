@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { useDispatch } from "react-redux";
 import {
   Form,
@@ -10,14 +10,14 @@ import {
   Divider,
   Select,
   DatePicker,
-  Upload
+  Upload,
 } from "antd";
-import { UploadOutlined } from '@ant-design/icons';
+import { UploadOutlined } from "@ant-design/icons";
 
 import { auth } from "./../../../services/auth/actions";
-import { TermsAndConditions } from './components/TermsAndConditions';
+import { TermsAndConditions } from "./components/TermsAndConditions";
 
-import './SignUp.scss';
+import "./SignUp.scss";
 
 const SignUp = () => {
   const { Item } = Form;
@@ -27,37 +27,44 @@ const SignUp = () => {
   const [select, setSelect] = useState();
   const [fileUpload, setFileUpload] = useState([]);
   const [form, setForm] = useState({
-    name: '',
-    lastName: '',
-    typeDoc: '',
+    name: "",
+    lastName: "",
+    typeDoc: "",
     identification: 0,
-    dateBirth: '',
-    gender: '',
-    userName: '',
-    password: '',
-    email: '',
-    avatar: ''
+    dateBirth: "",
+    gender: "",
+    userName: "",
+    password: "",
+    email: "",
+    avatar: "",
   });
   const [open, setOpen] = useState(false); //modal
-  const [accept, setAccept] = useState(false);//terms
+  const [accept, setAccept] = useState(false); //terms
 
-  const onRemove = file => {
+  useEffect(() => {
+    return () => (document.getElementById("root").style.background = "");
+  }, []);
+
+  const onRemove = (file) => {
     setFileUpload([]);
     return true;
-  }
+  };
 
-  const beforeUpload = file => {
+  const beforeUpload = (file) => {
     setFileUpload(...fileUpload, file);
     return false;
-  }
+  };
 
-  const openModal = () => setOpen(!open);//modal
-  const termsAccept = () => {//term
+  const openModal = () => setOpen(!open); //modal
+  const termsAccept = () => {
+    //term
     setAccept(true);
     openModal(false);
   };
 
-  const onSelect = (e) => { setSelect(e); };
+  const onSelect = (e) => {
+    setSelect(e);
+  };
   const onChange = (value) => console.log(`selected ${value}`);
   const onSearch = (val) => console.log("search:", val);
 
@@ -66,10 +73,10 @@ const SignUp = () => {
     dispatch(auth.signup({ j: "hola", v: "world" }));
   };
 
-  const onChangeForm = e => {
-    console.log(e.target.name + ':' + e.target.value);
+  const onChangeForm = (e) => {
+    console.log(e.target.name + ":" + e.target.value);
     setForm({ ...form, [e.target.name]: [e.target.value] });
-  }
+  };
   return (
     <Col
       xs={{ span: 22, offset: 1 }}
@@ -93,8 +100,8 @@ const SignUp = () => {
                       required: true,
                       message: "Por favor ingresa su nombre",
                       min: 4,
-                      max: 45
-                    }
+                      max: 45,
+                    },
                   ]}
                 >
                   <Input placeholder="Nombre" name="name" />
@@ -108,8 +115,8 @@ const SignUp = () => {
                       required: true,
                       message: "Por favor ingresa su Apellido",
                       min: 3,
-                      max: 50
-                    }
+                      max: 50,
+                    },
                   ]}
                 >
                   <Input placeholder="Apellido" name="lastName" />
@@ -124,7 +131,7 @@ const SignUp = () => {
                     {
                       required: true,
                       message: "Por favor Seleccione tipo de documento",
-                    }
+                    },
                   ]}
                 >
                   <Select
@@ -136,9 +143,15 @@ const SignUp = () => {
                     name="typeDoc"
                     value={select}
                   >
-                    <Option value="Cédula de Ciudadanía">Cédula de Ciudadanía</Option>
-                    <Option value="Tarjeta de Identidad">Tarjeta de Identidad</Option>
-                    <Option value="Cédula de Extranjería">Cédula de Extranjería</Option>
+                    <Option value="Cédula de Ciudadanía">
+                      Cédula de Ciudadanía
+                    </Option>
+                    <Option value="Tarjeta de Identidad">
+                      Tarjeta de Identidad
+                    </Option>
+                    <Option value="Cédula de Extranjería">
+                      Cédula de Extranjería
+                    </Option>
                     <Option value="Pasaporte">Pasaporte</Option>
                   </Select>
                 </Item>
@@ -151,11 +164,15 @@ const SignUp = () => {
                       required: true,
                       message: "Por favor ingresa una identificacion correcta",
                       min: 6,
-                      max: 12
+                      max: 12,
                     },
                   ]}
                 >
-                  <Input placeholder="Identificacion" name="identification" type="number" />
+                  <Input
+                    placeholder="Identificacion"
+                    name="identification"
+                    type="number"
+                  />
                 </Item>
               </Col>
             </Row>
@@ -170,10 +187,12 @@ const SignUp = () => {
                     },
                     () => ({
                       validator(rule, value) {
-                        if (value.year() <= 2004) return Promise.resolve()
-                        return Promise.reject('Usted debe tener al menos 16 años')
-                      }
-                    })
+                        if (value.year() <= 2004) return Promise.resolve();
+                        return Promise.reject(
+                          "Usted debe tener al menos 16 años"
+                        );
+                      },
+                    }),
                   ]}
                 >
                   <DatePicker
@@ -212,7 +231,7 @@ const SignUp = () => {
                       required: true,
                       message: "Por favor ingresa su nombre de usuario",
                       min: 8,
-                      max: 45
+                      max: 45,
                     },
                   ]}
                 >
@@ -227,14 +246,11 @@ const SignUp = () => {
                       required: true,
                       message: "Por favor ingresa su constraseña, (8)",
                       min: 8,
-                      max: 45
+                      max: 45,
                     },
                   ]}
                 >
-                  <Input.Password
-                    placeholder="Contraseña"
-                    name="password"
-                  />
+                  <Input.Password placeholder="Contraseña" name="password" />
                 </Item>
               </Col>
             </Row>
@@ -246,7 +262,7 @@ const SignUp = () => {
                     {
                       required: true,
                       message: "Por favor ingresa un email correcto",
-                      pattern: /^([a-z]+[a-z1-9._-]*)@{1}([a-z1-9]{2,})\.([a-z]{2,3})$/
+                      pattern: /^([a-z]+[a-z1-9._-]*)@{1}([a-z1-9]{2,})\.([a-z]{2,3})$/,
                     },
                   ]}
                 >
@@ -263,10 +279,7 @@ const SignUp = () => {
                     },
                   ]}
                 >
-                  <Upload
-                    onRemove={onRemove}
-                    beforeUpload={beforeUpload}
-                  >
+                  <Upload onRemove={onRemove} beforeUpload={beforeUpload}>
                     <Button>
                       <UploadOutlined /> Select File
                     </Button>
@@ -281,11 +294,14 @@ const SignUp = () => {
                 sm={{ span: 8, offset: 8 }}
                 lg={{ span: 6, offset: 9 }}
               >
-                <Button type="primary" htmlType="submit" onClick={() => openModal()}>
+                <Button
+                  type="primary"
+                  htmlType="submit"
+                  onClick={() => openModal()}
+                >
                   Registrarse ahora!!
                 </Button>
               </Col>
-
             </Row>
           </Form>
         </Col>

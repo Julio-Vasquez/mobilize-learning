@@ -36,6 +36,10 @@ const Home = () => {
       );
   });
 
+  useEffect(() => {
+    return () => (document.getElementById("root").style.background = "");
+  });
+
   return (
     <div id="conthome">
       <div className="content">
