@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import PropTypes from 'prop-types';
 import { Col, Card, Row, Form, Button, Input } from 'antd';
 import { useDispatch } from 'react-redux';
@@ -7,10 +7,20 @@ import { AlipayOutlined } from '@ant-design/icons';
 import { auth } from '../../../../../services/auth/actions';
 import Toast from '../../../../../common/toast';
 
+import bg3 from '../../../../../assets/images/bg3.jpg';
 import './SetPassword.scss';
 
 export const SetPassword = ({ token }) => {
   const { Item } = Form;
+
+  useEffect(() => {
+    document.body.style.backgroundImage = `url('${bg3}')`;
+    document.body.style.backgroundAttachment = "fixed";
+    document.body.style.backgroundRepeat = "no-repeat";
+    document.body.style.backgroundSize = "cover";
+    document.body.style.backgroundPosition = "center";
+    return () => (document.body.style.backgroundImage = "");
+  }, [bg3]);
 
   const dispatch = useDispatch();
 

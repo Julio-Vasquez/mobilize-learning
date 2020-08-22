@@ -17,10 +17,20 @@ import { UploadOutlined } from "@ant-design/icons";
 import { auth } from "./../../../services/auth/actions";
 import { TermsAndConditions } from "./components/TermsAndConditions";
 
+import bg from "./../../../assets/images/signup/signup.jpg";
 import "./SignUp.scss";
 
 const SignUp = () => {
   const { Item } = Form;
+
+  useEffect(() => {
+    document.body.style.backgroundImage = `url(${bg})`;
+    document.body.style.backgroundAttachment = "fixed";
+    document.body.style.backgroundRepeat = "no-repeat";
+    document.body.style.backgroundSize = "cover";
+    return () => (document.body.style.backgroundImage = "none");
+  }, [bg]);
+
   const { Option } = Select;
   const dispatch = useDispatch();
 
@@ -41,9 +51,7 @@ const SignUp = () => {
   const [open, setOpen] = useState(false); //modal
   const [accept, setAccept] = useState(false); //terms
 
-  useEffect(() => {
-    return () => (document.getElementById("root").style.background = "");
-  }, []);
+
 
   const onRemove = (file) => {
     setFileUpload([]);

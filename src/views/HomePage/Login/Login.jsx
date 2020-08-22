@@ -6,6 +6,7 @@ import Toast from "./../../../common/toast";
 import { Loading } from "./../../../components/Loading";
 import { auth } from "./../../../services/auth/actions";
 
+import bg from "./../../../assets/images/login/Login.jpeg";
 import "./Login.scss";
 
 const Login = () => {
@@ -19,12 +20,19 @@ const Login = () => {
     function hideURLbar() {
       window.scrollTo(0, 1);
     }
-    return () => (document.getElementById("root").style.background = "");
   });
 
   useEffect(() => {
+    document.body.style.backgroundImage = `url(${bg})`;
+    document.body.style.backgroundAttachment = "fixed";
+    document.body.style.backgroundRepeat = "no-repeat";
+    document.body.style.backgroundSize = "cover";
+    return () => (document.body.style.backgroundImage = "");
+  }, [bg]);
+
+  useEffect(() => {
     if (newPassword) Toast("Contraseña cambiada correctamente", "success");
-  });
+  }, [newPassword]);
 
   const [loginValues, setLoginValues] = useState({
     userName: "",
@@ -55,55 +63,55 @@ const Login = () => {
   return loading ? (
     <Loading />
   ) : (
-    <div className="logincontainer">
-      <div className="header">
-        <h1>Iniciar sesión</h1>
-      </div>
-      <div className="main-agileinfo">
-        <div className="wthree-form">
-          <h2>Rellene el siguiente formulario para iniciar sesión</h2>
-          <form
-            method="post"
-            onChange={onChange}
-            onSubmit={onSubmit}
-            name="testform"
-          >
-            <div className="form-sub">
-              <input
-                type="text"
-                name="userName"
-                placeholder="Username "
-                required=""
-              />
-              <div className="icon">
-                <i className="fa fa-user focusI" aria-hidden="true"></i>
+      <div className="logincontainer">
+        <div className="header">
+          <h1>Iniciar sesión</h1>
+        </div>
+        <div className="main-agileinfo">
+          <div className="wthree-form">
+            <h2>Rellene el siguiente formulario para iniciar sesión</h2>
+            <form
+              method="post"
+              onChange={onChange}
+              onSubmit={onSubmit}
+              name="testform"
+            >
+              <div className="form-sub">
+                <input
+                  type="text"
+                  name="userName"
+                  placeholder="Username "
+                  required=""
+                />
+                <div className="icon">
+                  <i className="fa fa-user focusI" aria-hidden="true"></i>
+                </div>
               </div>
-            </div>
-            <div className="form-sub">
-              <input
-                type="password"
-                name="password"
-                placeholder="Password"
-                required=""
-              />
-              <div className="icon">
-                <i className="fa fa-unlock-alt focusI" aria-hidden="true"></i>
+              <div className="form-sub">
+                <input
+                  type="password"
+                  name="password"
+                  placeholder="Password"
+                  required=""
+                />
+                <div className="icon">
+                  <i className="fa fa-unlock-alt focusI" aria-hidden="true"></i>
+                </div>
               </div>
-            </div>
-            <label className="anim">
-              <Link to="request-password-reset" id="forgotPassword">
-                Olvide mi Contraseña
+              <label className="anim">
+                <Link to="request-password-reset" id="forgotPassword">
+                  Olvide mi Contraseña
               </Link>
-            </label>
-            <div className="clear"></div>
-            <div className="submit-agileits">
-              <input type="submit" value="Login" />
-            </div>
-          </form>
+              </label>
+              <div className="clear"></div>
+              <div className="submit-agileits">
+                <input type="submit" value="Login" />
+              </div>
+            </form>
+          </div>
         </div>
       </div>
-    </div>
-  );
+    );
 };
 
 export default Login;

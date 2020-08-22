@@ -9,6 +9,7 @@ import Lock from "./../../../assets/images/lock.png";
 import Toast from "./../../../common/toast";
 import { Loading } from "./../../../components/Loading";
 
+import bg4 from "./../../../assets/images/bg4.jpg";
 import "./ResetPassword.scss";
 
 const ResetPassword = () => {
@@ -23,6 +24,15 @@ const ResetPassword = () => {
     window.addEventListener("resize", handleResize);
     return () => window.removeEventListener("resize", handleResize);
   });
+
+  useEffect(() => {
+    document.body.style.backgroundImage = `url('${bg4}')`;
+    document.body.style.backgroundAttachment = "fixed";
+    document.body.style.backgroundRepeat = "no-repeat";
+    document.body.style.backgroundSize = "cover";
+    document.body.style.backgroundPosition = "center";
+    return () => (document.body.style.backgroundImage = "none");
+  }, [bg4]);
 
   const dispatch = useDispatch();
   const { loading } = useSelector((state) => state.Auth);

@@ -10,12 +10,18 @@ import {
 } from "mdbreact";
 import { MapContainer } from "./../../../components/map-container";
 
+import bg from "./../../../assets/images/QueEs.jpg";
 import "./Contact.scss";
 
 const Contact = () => {
   useEffect(() => {
-    return () => (document.getElementById("root").style.background = "");
-  });
+    document.body.style.backgroundImage = `url('${bg}')`;
+    document.body.style.backgroundAttachment = "fixed";
+    document.body.style.backgroundRepeat = "no-repeat";
+    document.body.style.backgroundSize = "cover";
+    return () => (document.body.style.backgroundImage = "");
+  }, [bg]);
+
   return (
     <section className="my-5">
       <h2 className="h1-responsive font-weight-bold text-center my-5">
