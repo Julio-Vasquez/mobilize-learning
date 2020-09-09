@@ -29,7 +29,7 @@ const SignUp = () => {
     document.body.style.backgroundRepeat = "no-repeat";
     document.body.style.backgroundSize = "cover";
     return () => (document.body.style.backgroundImage = "none");
-  }, [bg]);
+  }, []);
 
   const { Option } = Select;
   const dispatch = useDispatch();

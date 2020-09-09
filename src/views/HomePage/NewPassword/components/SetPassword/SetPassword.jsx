@@ -20,7 +20,7 @@ export const SetPassword = ({ token }) => {
     document.body.style.backgroundSize = "cover";
     document.body.style.backgroundPosition = "center";
     return () => (document.body.style.backgroundImage = "");
-  }, [bg3]);
+  }, []);
 
   const dispatch = useDispatch();
 

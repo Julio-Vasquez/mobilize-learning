@@ -1,0 +1,1 @@
+export { MultipleImageQuest } from './MultipleImageQuest';

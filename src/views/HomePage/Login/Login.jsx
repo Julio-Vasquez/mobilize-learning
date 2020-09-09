@@ -28,7 +28,7 @@ const Login = () => {
     document.body.style.backgroundRepeat = "no-repeat";
     document.body.style.backgroundSize = "cover";
     return () => (document.body.style.backgroundImage = "");
-  }, [bg]);
+  }, []);
 
   useEffect(() => {
     if (newPassword) Toast("Contraseña cambiada correctamente", "success");

@@ -32,7 +32,7 @@ const ResetPassword = () => {
     document.body.style.backgroundSize = "cover";
     document.body.style.backgroundPosition = "center";
     return () => (document.body.style.backgroundImage = "none");
-  }, [bg4]);
+  }, []);
 
   const dispatch = useDispatch();
   const { loading } = useSelector((state) => state.Auth);

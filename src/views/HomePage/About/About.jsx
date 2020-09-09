@@ -24,7 +24,7 @@ const About = () => {
     document.body.style.backgroundRepeat = "no-repeat";
     document.body.style.backgroundSize = "cover";
     return () => (document.body.style.backgroundImage = "");
-  }, [bg]);
+  }, []);
 
   return (
     <div className="contenido">

@@ -6,6 +6,12 @@ import Typed from "typed.js";
 import signal from "./../../../assets/images/signals/001.jpg";
 import "./Home.scss";
 
+
+import { RadioQuest } from './../../DashBoard/EvaluativeTests/components/RadioQuest'
+import { ImageQuest } from './../../DashBoard/EvaluativeTests/components/ImageQuest'
+import { VideoQuest } from "../../DashBoard/EvaluativeTests/components/VideoQuest";
+import { MultipleImageQuest } from "../../DashBoard/EvaluativeTests/components/MultipleImageQuest";
+
 const Home = () => {
   const [ld, setLd] = useState(true);
   const {
@@ -43,12 +49,41 @@ const Home = () => {
     document.body.style.backgroundRepeat = "no-repeat";
     document.body.style.backgroundSize = "cover";
     return () => (document.body.style.backgroundImage = "");
-  }, [signal]);
+  }, []);
 
+  const cont = ["option1", "option2", "option3", "option4"];
+  const conte = [
+    { image: 'https://upload.wikimedia.org/wikipedia/commons/5/5b/Brunei_road_sign_-_Traffic_Signal.svg', descriptionImg: 'description', value: '1' },
+    { image: 'https://upload.wikimedia.org/wikipedia/commons/5/5b/Brunei_road_sign_-_Traffic_Signal.svg', descriptionImg: 'description', value: '2' },
+    { image: 'https://upload.wikimedia.org/wikipedia/commons/5/5b/Brunei_road_sign_-_Traffic_Signal.svg', descriptionImg: 'description', value: '3' },
+    { image: 'https://upload.wikimedia.org/wikipedia/commons/5/5b/Brunei_road_sign_-_Traffic_Signal.svg', descriptionImg: 'description', value: '4' },
+  ]
   return (
     <div id="conthome">
       <div className="content">
         <span id="dintext"></span>
+      </div>
+
+      <div>
+        <RadioQuest
+          options={cont}
+          question="Pregunta problema"
+        />
+        <ImageQuest
+          options={cont}
+          question="Pregunta problema2"
+          image="https://upload.wikimedia.org/wikipedia/commons/5/5b/Brunei_road_sign_-_Traffic_Signal.svg"
+          descriptionImg="signal road"
+        />
+        <VideoQuest
+          options={cont}
+          question="Pregunta problema2"
+          video="https://cldup.com/NsZiP49zu5.mp4"
+        />
+        <MultipleImageQuest
+          options={conte}
+          question="Seleccione imagen"
+        />
       </div>
     </div>
   );
